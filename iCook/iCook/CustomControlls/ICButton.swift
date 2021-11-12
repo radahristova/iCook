@@ -8,10 +8,10 @@
 import Foundation
 import UIKit
 
-@IBDesignable
+
 class ICButton: UIButton {
     
-    @IBInspectable var cornerRadius: CGFloat = 0 {
+  var cornerRadius: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRadius
             clipsToBounds = true
