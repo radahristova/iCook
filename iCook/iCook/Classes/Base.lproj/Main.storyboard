@@ -23,7 +23,11 @@
                                         <rect key="frame" x="20" y="0.0" width="374" height="272"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iCookLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Ou0-Qp-BW3">
-                                                <rect key="frame" x="104" y="53" width="166.5" height="166.5"/>
+                                                <rect key="frame" x="87" y="36" width="200" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="lAG-DG-AxG"/>
+                                                    <constraint firstAttribute="height" constant="200" id="ziQ-xO-ckQ"/>
+                                                </constraints>
                                             </imageView>
                                         </subviews>
                                         <constraints>
@@ -34,8 +38,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSO-62-yGh" userLabel="Middle View">
                                         <rect key="frame" x="0.0" y="273" width="414" height="272"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="gVE-4O-jSg">
-                                                <rect key="frame" x="141" y="91.5" width="132" height="89"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="gVE-4O-jSg">
+                                                <rect key="frame" x="141" y="100.5" width="132" height="71"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iCook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q61-MO-VSu" customClass="ICLabel" customModule="iCook" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="132" height="20.5"/>
@@ -44,7 +48,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Cooking App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6a-rr-cdT" customClass="ICLabel" customModule="iCook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="68.5" width="132" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="50.5" width="132" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -61,7 +65,11 @@
                                         <rect key="frame" x="0.0" y="546" width="414" height="272"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZg-XW-lD4" customClass="ICButton" customModule="iCook" customModuleProvider="target">
-                                                <rect key="frame" x="166" y="231" width="82.5" height="31"/>
+                                                <rect key="frame" x="147" y="212" width="120" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="jjf-ZX-OzB"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="uiX-sN-vOC"/>
+                                                </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Continue">
                                                     <backgroundConfiguration key="background">
