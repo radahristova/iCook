@@ -1,24 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="iCook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="rW7-Ab-JcZ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftG-42-jq7" userLabel="Top View">
+                                        <rect key="frame" x="20" y="0.0" width="374" height="272"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iCookLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Ou0-Qp-BW3">
+                                                <rect key="frame" x="104" y="53" width="166.5" height="166.5"/>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Ou0-Qp-BW3" firstAttribute="centerY" secondItem="ftG-42-jq7" secondAttribute="centerY" id="dnp-wy-OPn"/>
+                                            <constraint firstItem="Ou0-Qp-BW3" firstAttribute="centerX" secondItem="ftG-42-jq7" secondAttribute="centerX" id="w8E-kG-3cZ"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSO-62-yGh" userLabel="Middle View">
+                                        <rect key="frame" x="0.0" y="273" width="414" height="272"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="gVE-4O-jSg">
+                                                <rect key="frame" x="186.5" y="91.5" width="41.5" height="89"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q61-MO-VSu">
+                                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6a-rr-cdT">
+                                                        <rect key="frame" x="0.0" y="68.5" width="41.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="gVE-4O-jSg" firstAttribute="centerX" secondItem="WSO-62-yGh" secondAttribute="centerX" id="dSs-08-JhG"/>
+                                            <constraint firstItem="gVE-4O-jSg" firstAttribute="centerY" secondItem="WSO-62-yGh" secondAttribute="centerY" id="iXQ-Km-MtE"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2xj-iG-0bW" userLabel="Bottom View">
+                                        <rect key="frame" x="0.0" y="546" width="414" height="272"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZg-XW-lD4" customClass="ICButton" customModule="iCook" customModuleProvider="target">
+                                                <rect key="frame" x="173.5" y="231" width="67" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" red="0.19545778629999999" green="0.10632822660000001" blue="0.086268804970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="continuePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GEf-4Z-ZIy"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="iZg-XW-lD4" secondAttribute="bottom" constant="10" id="DZv-Sa-NNS"/>
+                                            <constraint firstItem="iZg-XW-lD4" firstAttribute="centerX" secondItem="2xj-iG-0bW" secondAttribute="centerX" id="H17-B5-8ie"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="2xj-iG-0bW" firstAttribute="leading" secondItem="rW7-Ab-JcZ" secondAttribute="leading" id="8W8-1N-fEa"/>
+                                    <constraint firstItem="WSO-62-yGh" firstAttribute="leading" secondItem="rW7-Ab-JcZ" secondAttribute="leading" id="Rqv-1N-yxN"/>
+                                    <constraint firstAttribute="trailing" secondItem="2xj-iG-0bW" secondAttribute="trailing" id="gbM-Fe-lg8"/>
+                                    <constraint firstAttribute="trailing" secondItem="WSO-62-yGh" secondAttribute="trailing" id="hr6-gz-Mtz"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rW7-Ab-JcZ" secondAttribute="bottom" id="GDl-lb-I8U"/>
+                            <constraint firstItem="rW7-Ab-JcZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Lbu-K6-ZQf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rW7-Ab-JcZ" secondAttribute="trailing" id="hCz-oJ-m5b"/>
+                            <constraint firstItem="rW7-Ab-JcZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zX7-yP-l1I"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="appNameLabel" destination="Q61-MO-VSu" id="d0I-P1-ITS"/>
+                        <outlet property="descriptionLabel" destination="j6a-rr-cdT" id="F6G-Nf-8hb"/>
+                        <outlet property="iCookLogo" destination="Ou0-Qp-BW3" id="cj7-Jn-dKm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="iZg-XW-lD4">
+            <size key="intrinsicContentSize" width="67" height="31"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="iCookLogo" width="166.5" height="166.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
