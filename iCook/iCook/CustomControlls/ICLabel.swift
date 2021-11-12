@@ -10,7 +10,26 @@ import UIKit
 
 class ICLabel: UILabel {
    
+    //MARK: Constants
+    private static let DEFAULT_FONT_SIZE = CGFloat(14)
+    
+    //MARK: Life Cycle
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        configureDefault(withSize: ICLabel.DEFAULT_FONT_SIZE)
+    }
+    
+    //MARK: Public Methods
+    func setFontSize(_ size: CGFloat) {
+        font = UIFont(name: self.font.fontName, size: size)
+    }
+    
+    func configureDefault(withSize size: CGFloat? = ICLabel.DEFAULT_FONT_SIZE) {
+        font = UIFont(name: "Palatino", size: size ?? ICLabel.DEFAULT_FONT_SIZE)
+    }
+    
+    func configureBold(withSize size: CGFloat? = ICLabel.DEFAULT_FONT_SIZE) {
+        font = UIFont(name: "Palatino-Bold", size: size ?? ICLabel.DEFAULT_FONT_SIZE)
+    }
    
 }
-
-

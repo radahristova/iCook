@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 class ICButton: UIButton {
     
   var cornerRadius: CGFloat = 0 {
@@ -17,4 +16,5 @@ class ICButton: UIButton {
             clipsToBounds = true
         }
     }
+    
 }

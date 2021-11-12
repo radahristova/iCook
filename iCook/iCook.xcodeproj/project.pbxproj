@@ -17,6 +17,7 @@
 		24CEA37D273E79C500414D31 /* ICRoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA37C273E79C500414D31 /* ICRoundedImageView.swift */; };
 		24CEA37F273E79EC00414D31 /* ICLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA37E273E79EC00414D31 /* ICLabel.swift */; };
 		24CEA381273E7A0C00414D31 /* ICButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA380273E7A0C00414D31 /* ICButton.swift */; };
+		B213280B273EB7BB00061877 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213280A273EB7BB00061877 /* UIColor+HEX.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		24CEA37C273E79C500414D31 /* ICRoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICRoundedImageView.swift; sourceTree = "<group>"; };
 		24CEA37E273E79EC00414D31 /* ICLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICLabel.swift; sourceTree = "<group>"; };
 		24CEA380273E7A0C00414D31 /* ICButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICButton.swift; sourceTree = "<group>"; };
+		B213280A273EB7BB00061877 /* UIColor+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HEX.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +66,10 @@
 		24CEA363273E6C3100414D31 /* iCook */ = {
 			isa = PBXGroup;
 			children = (
+				B213280C273EBE1E00061877 /* Classes */,
 				24CEA379273E6F2F00414D31 /* CustomControlls */,
+				B2132809273EB78A00061877 /* Extensions */,
 				24CEA378273E6DD100414D31 /* Utils */,
-				24CEA368273E6C3100414D31 /* LoginViewController.swift */,
-				24CEA36A273E6C3100414D31 /* Main.storyboard */,
 			);
 			path = iCook;
 			sourceTree = "<group>";
@@ -93,6 +95,23 @@
 				24CEA380273E7A0C00414D31 /* ICButton.swift */,
 			);
 			path = CustomControlls;
+			sourceTree = "<group>";
+		};
+		B2132809273EB78A00061877 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B213280A273EB7BB00061877 /* UIColor+HEX.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B213280C273EBE1E00061877 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				24CEA368273E6C3100414D31 /* LoginViewController.swift */,
+				24CEA36A273E6C3100414D31 /* Main.storyboard */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24CEA37F273E79EC00414D31 /* ICLabel.swift in Sources */,
+				B213280B273EB7BB00061877 /* UIColor+HEX.swift in Sources */,
 				24CEA37B273E76CF00414D31 /* ICViewController.swift in Sources */,
 				24CEA369273E6C3100414D31 /* LoginViewController.swift in Sources */,
 				24CEA365273E6C3100414D31 /* AppDelegate.swift in Sources */,
