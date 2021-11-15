@@ -10,24 +10,45 @@ import UIKit
 
 class ICTabBarController: UITabBarController {
     
-    
+    //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let favorites = generateNavController(vc: ICViewController(), image: UIImage(systemName: "heart")!)
-        let home = generateNavController(vc: ICViewController(), image: UIImage(systemName:"house")!)
-        let settings = generateNavController(vc: ICViewController(), image: UIImage(systemName: "gearshape")!)
-        viewControllers = [favorites, home, settings]
-        view.backgroundColor = UIColor.redColor
-        self.selectedIndex = 1
+        configureStyle()
+        
+        configureViewControllers()
         
     }
     
-    fileprivate func generateNavController(vc: ICViewController, image: UIImage) -> UINavigationController {
-        let navController = UINavigationController(rootViewController: vc)
-        navController.tabBarItem.image = image
-        return navController
+    private func configureStyle() {
+        modalPresentationStyle = .fullScreen
+        
+        view.backgroundColor = .red
     }
     
+    private func configureViewControllers() {
+        
+        let favorites = UINavigationController(rootViewController: ICViewController())
+        let tabOneBarItem = UITabBarItem(title: "Favourites",
+                                         image: UIImage(systemName: "heart"),
+                                         selectedImage: UIImage(systemName: "heart.fill"))
+        
+        favorites.tabBarItem = tabOneBarItem
+        
+        let home = UINavigationController(rootViewController: ICViewController())
+        let tabTwoBarItem = UITabBarItem(title: "Home",
+                                         image: UIImage(systemName: "house"),
+                                         selectedImage: UIImage(systemName: "house.fill"))
+        home.tabBarItem = tabTwoBarItem
+        
+        let settings = UINavigationController(rootViewController: ICViewController())
+        let tabThreeBarItem = UITabBarItem(title: "Settings",
+                                         image: UIImage(systemName: "gearshape"),
+                                         selectedImage: UIImage(systemName: "gearshape.fill"))
+        settings.tabBarItem = tabThreeBarItem
+        
+        viewControllers = [favorites, home, settings]
+
+    }
     
 }
