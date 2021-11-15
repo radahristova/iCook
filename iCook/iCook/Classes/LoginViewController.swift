@@ -28,6 +28,15 @@ class LoginViewController: ICViewController {
     
     //MARK: IBActions
     @IBAction func continuePressed(_ sender: UIButton) {
+       self.performSegue(withIdentifier: "tabBarSegue", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "tabBarSegue" {
+            let tabBarVC = segue.destination as! ICTabBarController
+            tabBarVC.selectedIndex = 1
+        }
     
     }
 

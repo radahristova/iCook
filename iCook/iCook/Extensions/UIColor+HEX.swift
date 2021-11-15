@@ -11,6 +11,7 @@ import UIKit
 extension UIColor {
     
     static var beigeColor = UIColor(hexaString: "#FCF8E8")
+    static var redColor = UIColor(hexaString: "#F64B31")
     
     
     //Init from HEX color
