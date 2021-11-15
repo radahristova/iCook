@@ -10,8 +10,13 @@ import UIKit
 
 extension UIColor {
     
-    static var beigeColor = UIColor(hexaString: "#FCF8E8");
+    static var icBeigeColor = UIColor(hexaString: "#FCF8E8")
     static var icRedColor = UIColor(hexaString: "#F64B31")
+    static var icGreenColor = UIColor(hexaString: "#D4E2D4")
+    static var icLightOrangeColor = UIColor(hexaString: "#ECB390")
+    static var icDarkOrangeColor = UIColor(hexaString: "#DF7861")
+    static var icDarkColor = UIColor(hexaString: "#3B1D17")
+    static var icLightColor = UIColor(hexaString: "#F1CF91")
     
     
     //Init from HEX color

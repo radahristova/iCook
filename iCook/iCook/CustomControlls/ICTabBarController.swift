@@ -23,7 +23,14 @@ class ICTabBarController: UITabBarController {
     private func configureStyle() {
         modalPresentationStyle = .fullScreen
         
-        view.backgroundColor = .red
+        
+        view.backgroundColor = .icRedColor
+        tabBar.backgroundColor = .icDarkColor
+        self.tabBar.unselectedItemTintColor = .icGreenColor
+        self.tabBar.tintColor = .icBeigeColor
+        
+    
+        
     }
     
     private func configureViewControllers() {
@@ -34,6 +41,7 @@ class ICTabBarController: UITabBarController {
                                          selectedImage: UIImage(systemName: "heart.fill"))
         
         favorites.tabBarItem = tabOneBarItem
+        
         
         let home = UINavigationController(rootViewController: ICViewController())
         let tabTwoBarItem = UITabBarItem(title: "Home",
@@ -51,4 +59,5 @@ class ICTabBarController: UITabBarController {
 
     }
     
+
 }

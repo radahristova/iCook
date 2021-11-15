@@ -18,7 +18,8 @@ class LoginViewController: ICViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.beigeColor
+        setBackgroundColor(color: .icBeigeColor)
+       
         
         appNameLabel.configureDefault(withSize: 30)
         descriptionLabel.configureDefault(withSize: 26)
