@@ -31,5 +31,13 @@ class ICLabel: UILabel {
     func configureBold(withSize size: CGFloat? = ICLabel.DEFAULT_FONT_SIZE) {
         font = UIFont(name: "Palatino-Bold", size: size ?? ICLabel.DEFAULT_FONT_SIZE)
     }
+    
+    func configureItalic(withSize size: CGFloat? = ICLabel.DEFAULT_FONT_SIZE) {
+        font = UIFont(name: "Palatino-Italic", size: size ?? ICLabel.DEFAULT_FONT_SIZE)
+    }
+    func configureBoldItalic(withSize size: CGFloat? = ICLabel.DEFAULT_FONT_SIZE) {
+        font = UIFont(name: "Palatino-BoldItalic", size: size ?? ICLabel.DEFAULT_FONT_SIZE)
+    }
+    
    
 }

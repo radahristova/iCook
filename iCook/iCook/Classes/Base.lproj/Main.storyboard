@@ -22,16 +22,16 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftG-42-jq7" userLabel="Top View">
                                         <rect key="frame" x="20" y="0.0" width="374" height="272"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iCookLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Ou0-Qp-BW3">
-                                                <rect key="frame" x="87" y="36" width="200" height="200"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iCookLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Ou0-Qp-BW3" customClass="ICRoundedImageView" customModule="iCook" customModuleProvider="target">
+                                                <rect key="frame" x="71.5" y="20.5" width="231" height="231"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="lAG-DG-AxG"/>
-                                                    <constraint firstAttribute="height" constant="200" id="ziQ-xO-ckQ"/>
+                                                    <constraint firstAttribute="width" secondItem="Ou0-Qp-BW3" secondAttribute="height" multiplier="1:1" id="ms8-Rw-oky"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="Ou0-Qp-BW3" firstAttribute="centerY" secondItem="ftG-42-jq7" secondAttribute="centerY" id="dnp-wy-OPn"/>
+                                            <constraint firstItem="Ou0-Qp-BW3" firstAttribute="height" secondItem="ftG-42-jq7" secondAttribute="height" multiplier="0.85" id="edp-w2-IeC"/>
                                             <constraint firstItem="Ou0-Qp-BW3" firstAttribute="centerX" secondItem="ftG-42-jq7" secondAttribute="centerX" id="w8E-kG-3cZ"/>
                                         </constraints>
                                     </view>

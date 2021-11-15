@@ -10,7 +10,7 @@ import UIKit
 class LoginViewController: ICViewController {
     
     //MARK: IBOutlets
-    @IBOutlet weak var iCookLogo: UIImageView!
+    @IBOutlet weak var iCookLogo: ICRoundedImageView!
     @IBOutlet weak var appNameLabel: ICLabel!
     @IBOutlet weak var descriptionLabel: ICLabel!
     
@@ -19,11 +19,10 @@ class LoginViewController: ICViewController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.beigeColor
-        iCookLogo.layer.cornerRadius = 15
-        iCookLogo.clipsToBounds = true
         
         appNameLabel.configureDefault(withSize: 30)
         descriptionLabel.configureDefault(withSize: 26)
+        
         
     }
     
