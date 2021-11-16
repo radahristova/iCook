@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		248FA5932742B5A600D40BC4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA5912742B5A600D40BC4 /* HomeViewController.swift */; };
+		248FA5942742B5A600D40BC4 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 248FA5922742B5A600D40BC4 /* HomeViewController.xib */; };
+		249F6D40274265BF0084ABDD /* ICTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F6D3F274265BF0084ABDD /* ICTabBarController.swift */; };
 		24CEA365273E6C3100414D31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA364273E6C3100414D31 /* AppDelegate.swift */; };
 		24CEA367273E6C3100414D31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA366273E6C3100414D31 /* SceneDelegate.swift */; };
 		24CEA369273E6C3100414D31 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA368273E6C3100414D31 /* LoginViewController.swift */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		248FA5912742B5A600D40BC4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		248FA5922742B5A600D40BC4 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		249F6D3F274265BF0084ABDD /* ICTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICTabBarController.swift; sourceTree = "<group>"; };
 		24CEA361273E6C3100414D31 /* iCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CEA364273E6C3100414D31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24CEA366273E6C3100414D31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +53,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		248FA5952742B5AF00D40BC4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				24CEA368273E6C3100414D31 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		248FA5962742B5BF00D40BC4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				248FA5912742B5A600D40BC4 /* HomeViewController.swift */,
+				248FA5922742B5A600D40BC4 /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		24CEA358273E6C3100414D31 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +116,7 @@
 				24CEA37C273E79C500414D31 /* ICRoundedImageView.swift */,
 				24CEA37E273E79EC00414D31 /* ICLabel.swift */,
 				24CEA380273E7A0C00414D31 /* ICButton.swift */,
+				249F6D3F274265BF0084ABDD /* ICTabBarController.swift */,
 			);
 			path = CustomControlls;
 			sourceTree = "<group>";
@@ -108,7 +132,8 @@
 		B213280C273EBE1E00061877 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				24CEA368273E6C3100414D31 /* LoginViewController.swift */,
+				248FA5962742B5BF00D40BC4 /* Home */,
+				248FA5952742B5AF00D40BC4 /* Login */,
 				24CEA36A273E6C3100414D31 /* Main.storyboard */,
 			);
 			path = Classes;
@@ -175,6 +200,7 @@
 				24CEA371273E6C3400414D31 /* LaunchScreen.storyboard in Resources */,
 				24CEA36E273E6C3400414D31 /* Assets.xcassets in Resources */,
 				24CEA36C273E6C3100414D31 /* Main.storyboard in Resources */,
+				248FA5942742B5A600D40BC4 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +216,8 @@
 				24CEA37B273E76CF00414D31 /* ICViewController.swift in Sources */,
 				24CEA369273E6C3100414D31 /* LoginViewController.swift in Sources */,
 				24CEA365273E6C3100414D31 /* AppDelegate.swift in Sources */,
+				248FA5932742B5A600D40BC4 /* HomeViewController.swift in Sources */,
+				249F6D40274265BF0084ABDD /* ICTabBarController.swift in Sources */,
 				24CEA381273E7A0C00414D31 /* ICButton.swift in Sources */,
 				24CEA37D273E79C500414D31 /* ICRoundedImageView.swift in Sources */,
 				24CEA367273E6C3100414D31 /* SceneDelegate.swift in Sources */,

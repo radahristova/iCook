@@ -17,18 +17,15 @@ class LoginViewController: ICViewController {
     //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = UIColor.beigeColor
-        
+        setBackgroundColor(color: .icBeigeColor)
         appNameLabel.configureDefault(withSize: 30)
         descriptionLabel.configureDefault(withSize: 26)
-        
-        
     }
     
     //MARK: IBActions
     @IBAction func continuePressed(_ sender: UIButton) {
-    
+        let tabBar = ICTabBarController()
+        tabBar.selectedIndex = 1
+        present(tabBar, animated: true, completion: nil)
     }
-
 }

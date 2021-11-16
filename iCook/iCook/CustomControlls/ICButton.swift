@@ -10,13 +10,6 @@ import UIKit
 
 class ICButton: UIButton {
     
-//  var cornerRadius: CGFloat = 0 {
-//        didSet {
-//            layer.cornerRadius = cornerRadius
-//            clipsToBounds = true
-//        }
-//    }
-    
     var cornerRadius: CGFloat {
         
         get {
@@ -28,7 +21,4 @@ class ICButton: UIButton {
         }
     
     }
-    
-    
-    
 }

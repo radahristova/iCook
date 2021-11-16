@@ -10,15 +10,15 @@ import UIKit
 
 class ICViewController: UIViewController {
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
-  
-    
+    func setBackgroundColor(color: UIColor) {
+        view.backgroundColor = color
+    }
+
 }
 
 
