@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		248FA5932742B5A600D40BC4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA5912742B5A600D40BC4 /* HomeViewController.swift */; };
 		248FA5942742B5A600D40BC4 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 248FA5922742B5A600D40BC4 /* HomeViewController.xib */; };
+		248FA59B2743B27C00D40BC4 /* CategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA5992743B27C00D40BC4 /* CategoriesTableViewCell.swift */; };
+		248FA59C2743B27C00D40BC4 /* CategoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 248FA59A2743B27C00D40BC4 /* CategoriesTableViewCell.xib */; };
+		248FA5A32743BE8F00D40BC4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA5A22743BE8F00D40BC4 /* Category.swift */; };
+		248FA5A42743F14900D40BC4 /* CategoriesArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA59E2743B4F400D40BC4 /* CategoriesArray.swift */; };
 		249F6D40274265BF0084ABDD /* ICTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F6D3F274265BF0084ABDD /* ICTabBarController.swift */; };
 		24CEA365273E6C3100414D31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA364273E6C3100414D31 /* AppDelegate.swift */; };
 		24CEA367273E6C3100414D31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA366273E6C3100414D31 /* SceneDelegate.swift */; };
@@ -26,6 +30,10 @@
 /* Begin PBXFileReference section */
 		248FA5912742B5A600D40BC4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		248FA5922742B5A600D40BC4 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		248FA5992743B27C00D40BC4 /* CategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewCell.swift; sourceTree = "<group>"; };
+		248FA59A2743B27C00D40BC4 /* CategoriesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesTableViewCell.xib; sourceTree = "<group>"; };
+		248FA59E2743B4F400D40BC4 /* CategoriesArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesArray.swift; sourceTree = "<group>"; };
+		248FA5A22743BE8F00D40BC4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		249F6D3F274265BF0084ABDD /* ICTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICTabBarController.swift; sourceTree = "<group>"; };
 		24CEA361273E6C3100414D31 /* iCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CEA364273E6C3100414D31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,10 +72,30 @@
 		248FA5962742B5BF00D40BC4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				248FA5A12743B52200D40BC4 /* View */,
+				248FA59D2743B4EA00D40BC4 /* Model */,
 				248FA5912742B5A600D40BC4 /* HomeViewController.swift */,
-				248FA5922742B5A600D40BC4 /* HomeViewController.xib */,
+				248FA5992743B27C00D40BC4 /* CategoriesTableViewCell.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		248FA59D2743B4EA00D40BC4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				248FA59E2743B4F400D40BC4 /* CategoriesArray.swift */,
+				248FA5A22743BE8F00D40BC4 /* Category.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		248FA5A12743B52200D40BC4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				248FA5922742B5A600D40BC4 /* HomeViewController.xib */,
+				248FA59A2743B27C00D40BC4 /* CategoriesTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		24CEA358273E6C3100414D31 = {
@@ -199,6 +227,7 @@
 			files = (
 				24CEA371273E6C3400414D31 /* LaunchScreen.storyboard in Resources */,
 				24CEA36E273E6C3400414D31 /* Assets.xcassets in Resources */,
+				248FA59C2743B27C00D40BC4 /* CategoriesTableViewCell.xib in Resources */,
 				24CEA36C273E6C3100414D31 /* Main.storyboard in Resources */,
 				248FA5942742B5A600D40BC4 /* HomeViewController.xib in Resources */,
 			);
@@ -212,15 +241,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				24CEA37F273E79EC00414D31 /* ICLabel.swift in Sources */,
+				248FA5A42743F14900D40BC4 /* CategoriesArray.swift in Sources */,
 				B213280B273EB7BB00061877 /* UIColor+HEX.swift in Sources */,
 				24CEA37B273E76CF00414D31 /* ICViewController.swift in Sources */,
 				24CEA369273E6C3100414D31 /* LoginViewController.swift in Sources */,
 				24CEA365273E6C3100414D31 /* AppDelegate.swift in Sources */,
+				248FA59B2743B27C00D40BC4 /* CategoriesTableViewCell.swift in Sources */,
 				248FA5932742B5A600D40BC4 /* HomeViewController.swift in Sources */,
 				249F6D40274265BF0084ABDD /* ICTabBarController.swift in Sources */,
 				24CEA381273E7A0C00414D31 /* ICButton.swift in Sources */,
 				24CEA37D273E79C500414D31 /* ICRoundedImageView.swift in Sources */,
 				24CEA367273E6C3100414D31 /* SceneDelegate.swift in Sources */,
+				248FA5A32743BE8F00D40BC4 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

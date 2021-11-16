@@ -38,7 +38,7 @@ class ICTabBarController: UITabBarController {
         favorites.tabBarItem = tabOneBarItem
         
         
-        let home = UINavigationController(rootViewController: ICViewController())
+        let home = UINavigationController(rootViewController: HomeViewController())
         let tabTwoBarItem = UITabBarItem(title: "Home",
                                          image: UIImage(systemName: "house"),
                                          selectedImage: UIImage(systemName: "house.fill"))
