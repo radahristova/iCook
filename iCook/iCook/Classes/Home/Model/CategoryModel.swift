@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class Category {
+class CategoryModel {
 
     //MARK: Properties
     let categoryID: String?
@@ -23,9 +23,9 @@ class Category {
         self.categoryDescription = dictionary["strCategoryDescription"]
     }
     
-    static func categories(dictionaries: [[String:String]]) -> [Category] {
+    static func categories(dictionaries: [[String:String]]) -> [CategoryModel] {
         dictionaries.map { dictionary in
-            Category(dictionary: dictionary)
+            CategoryModel(dictionary: dictionary)
         }
     }
 }

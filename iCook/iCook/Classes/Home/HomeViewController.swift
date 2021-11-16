@@ -12,7 +12,7 @@ class HomeViewController: ICViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var categories = Category.categories(dictionaries: categoriesArray)
+    var categories = CategoryModel.categories(dictionaries: categoriesArray)
     
     override func viewDidLoad() {
         super.viewDidLoad()
