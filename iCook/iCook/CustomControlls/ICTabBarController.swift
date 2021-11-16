@@ -22,15 +22,10 @@ class ICTabBarController: UITabBarController {
     
     private func configureStyle() {
         modalPresentationStyle = .fullScreen
-        
-        
         view.backgroundColor = .icRedColor
         tabBar.backgroundColor = .icDarkColor
-        self.tabBar.unselectedItemTintColor = .icGreenColor
+        self.tabBar.unselectedItemTintColor = .icTransparentGreenColor
         self.tabBar.tintColor = .icBeigeColor
-        
-    
-        
     }
     
     private func configureViewControllers() {
@@ -58,6 +53,4 @@ class ICTabBarController: UITabBarController {
         viewControllers = [favorites, home, settings]
 
     }
-    
-
 }

@@ -10,8 +10,6 @@ import UIKit
 
 class ICViewController: UIViewController {
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,9 +18,7 @@ class ICViewController: UIViewController {
     func setBackgroundColor(color: UIColor) {
         view.backgroundColor = color
     }
-    
-  
-    
+
 }
 
 

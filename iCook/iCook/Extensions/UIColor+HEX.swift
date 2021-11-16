@@ -17,6 +17,7 @@ extension UIColor {
     static var icDarkOrangeColor = UIColor(hexaString: "#DF7861")
     static var icDarkColor = UIColor(hexaString: "#3B1D17")
     static var icLightColor = UIColor(hexaString: "#F1CF91")
+    static var icTransparentGreenColor = icGreenColor.withAlphaComponent(0.35)
     
     
     //Init from HEX color
