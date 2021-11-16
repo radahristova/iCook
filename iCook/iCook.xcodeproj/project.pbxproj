@@ -65,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				24CEA368273E6C3100414D31 /* LoginViewController.swift */,
+				24CEA36A273E6C3100414D31 /* Main.storyboard */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -75,7 +76,7 @@
 				248FA5A12743B52200D40BC4 /* View */,
 				248FA59D2743B4EA00D40BC4 /* Model */,
 				248FA5912742B5A600D40BC4 /* HomeViewController.swift */,
-				248FA5992743B27C00D40BC4 /* CategoriesTableViewCell.swift */,
+				248FA5922742B5A600D40BC4 /* HomeViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -92,7 +93,7 @@
 		248FA5A12743B52200D40BC4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				248FA5922742B5A600D40BC4 /* HomeViewController.xib */,
+				248FA5992743B27C00D40BC4 /* CategoriesTableViewCell.swift */,
 				248FA59A2743B27C00D40BC4 /* CategoriesTableViewCell.xib */,
 			);
 			path = View;
@@ -160,9 +161,8 @@
 		B213280C273EBE1E00061877 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				248FA5962742B5BF00D40BC4 /* Home */,
 				248FA5952742B5AF00D40BC4 /* Login */,
-				24CEA36A273E6C3100414D31 /* Main.storyboard */,
+				248FA5962742B5BF00D40BC4 /* Home */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

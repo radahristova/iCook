@@ -8,7 +8,7 @@ import Foundation
 
 import UIKit
 
-class HomeViewController: ICViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: ICViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -17,13 +17,16 @@ class HomeViewController: ICViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let nib = UINib(nibName: "CategoriesTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "CategoriesTableViewCell")
+        let nib = UINib(nibName: CategoriesTableViewCell.CELL_IDENTIFIER, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: CategoriesTableViewCell.CELL_IDENTIFIER)
         tableView.delegate = self
         tableView.dataSource = self
-
-        
     }
+
+}
+
+//MARK: - TableView Extension
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categories.count
@@ -31,10 +34,9 @@ class HomeViewController: ICViewController, UITableViewDelegate, UITableViewData
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoriesTableViewCell", for: indexPath) as! CategoriesTableViewCell
-    
-        cell.cellCategoryTitle.text = "Test Cell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: CategoriesTableViewCell.CELL_IDENTIFIER, for: indexPath) as! CategoriesTableViewCell
+        cell.populate(withCategory: categories[indexPath.row])
         return cell
     }
-
+    
 }

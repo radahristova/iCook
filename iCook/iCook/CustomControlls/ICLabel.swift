@@ -16,7 +16,6 @@ class ICLabel: UILabel {
     //MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        configureDefault(withSize: ICLabel.DEFAULT_FONT_SIZE)
     }
     
     //MARK: Public Methods
