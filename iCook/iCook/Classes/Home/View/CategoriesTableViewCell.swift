@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CategoriesTableViewCell: UITableViewCell {
+class CategoriesTableViewCell: ICTableViewCell {
     
     //MARK: Constants
     static let CELL_IDENTIFIER = "CategoriesTableViewCell"
