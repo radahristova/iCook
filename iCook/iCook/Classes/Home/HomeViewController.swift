@@ -40,13 +40,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CategoriesTableViewCell.CELL_IDENTIFIER, for: indexPath) as! CategoriesTableViewCell
         cell.populate(withCategory: categories[indexPath.row])
-       
-        //Adding Subview to the cell
-        let lineView = UIView(frame: CGRect(x: 10, y: cell.frame.size.height - 3, width: tableView.frame.size.width - 2 * 10 , height: 3.0))
-        lineView.backgroundColor = .icDarkColor
-
-        cell.addSubview(lineView)
-
         return cell
     }
     
