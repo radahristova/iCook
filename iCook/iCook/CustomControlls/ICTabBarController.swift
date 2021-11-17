@@ -22,15 +22,18 @@ class ICTabBarController: UITabBarController {
     
     private func configureStyle() {
         modalPresentationStyle = .fullScreen
-        view.backgroundColor = .icRedColor
+        
+        tabBar.isTranslucent = false
+        
         tabBar.backgroundColor = .icDarkColor
-        self.tabBar.unselectedItemTintColor = .icTransparentGreenColor
-        self.tabBar.tintColor = .icBeigeColor
+        tabBar.unselectedItemTintColor = .icTransparentGreenColor
+        tabBar.tintColor = .icBeigeColor
+        tabBar.barTintColor = .icDarkColor
     }
     
     private func configureViewControllers() {
         
-        let favorites = UINavigationController(rootViewController: ICViewController())
+        let favorites = ICNavigationController(rootViewController: ICViewController())
         let tabOneBarItem = UITabBarItem(title: "Favourites",
                                          image: UIImage(systemName: "heart"),
                                          selectedImage: UIImage(systemName: "heart.fill"))
@@ -38,13 +41,13 @@ class ICTabBarController: UITabBarController {
         favorites.tabBarItem = tabOneBarItem
         
         
-        let home = UINavigationController(rootViewController: ICViewController())
+        let home = ICNavigationController(rootViewController: HomeViewController())
         let tabTwoBarItem = UITabBarItem(title: "Home",
                                          image: UIImage(systemName: "house"),
                                          selectedImage: UIImage(systemName: "house.fill"))
         home.tabBarItem = tabTwoBarItem
         
-        let settings = UINavigationController(rootViewController: ICViewController())
+        let settings = ICNavigationController(rootViewController: ICViewController())
         let tabThreeBarItem = UITabBarItem(title: "Settings",
                                          image: UIImage(systemName: "gearshape"),
                                          selectedImage: UIImage(systemName: "gearshape.fill"))
