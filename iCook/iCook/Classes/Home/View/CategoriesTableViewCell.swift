@@ -18,6 +18,8 @@ class CategoriesTableViewCell: ICTableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        cellCategoryTitle.configureDefault(withSize: 21)
                 
     }
     
