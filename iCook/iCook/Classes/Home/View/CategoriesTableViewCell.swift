@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CategoriesTableViewCell: UITableViewCell {
+class CategoriesTableViewCell: ICTableViewCell {
     
     //MARK: Constants
     static let CELL_IDENTIFIER = "CategoriesTableViewCell"
@@ -18,6 +18,8 @@ class CategoriesTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        cellCategoryTitle.configureDefault(withSize: 21)
                 
     }
     

@@ -21,8 +21,12 @@ class HomeViewController: ICViewController {
         tableView.register(nib, forCellReuseIdentifier: CategoriesTableViewCell.CELL_IDENTIFIER)
         tableView.delegate = self
         tableView.dataSource = self
+        
+        // Divider Color set to clear
+        tableView.separatorColor = .clear
+        
     }
-
+    
 }
 
 //MARK: - TableView Extension
@@ -38,5 +42,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.populate(withCategory: categories[indexPath.row])
         return cell
     }
+    
+   
     
 }
