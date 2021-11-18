@@ -54,12 +54,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      
+        
+    }
+    
 }
 
 extension HomeViewController: HTTPManagerDelegate {
     
     func didGetResponse(model: Cat) {
-        self.categories = categories
+        self.categories = model
     }
     
 }
