@@ -12,7 +12,6 @@
 		248FA59B2743B27C00D40BC4 /* CategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA5992743B27C00D40BC4 /* CategoriesTableViewCell.swift */; };
 		248FA59C2743B27C00D40BC4 /* CategoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 248FA59A2743B27C00D40BC4 /* CategoriesTableViewCell.xib */; };
 		248FA5A32743BE8F00D40BC4 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA5A22743BE8F00D40BC4 /* CategoryModel.swift */; };
-		248FA5A42743F14900D40BC4 /* CategoriesArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA59E2743B4F400D40BC4 /* CategoriesArray.swift */; };
 		248FA5A827440D1F00D40BC4 /* ICNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA5A727440D1F00D40BC4 /* ICNavigationController.swift */; };
 		248FA5AC2745143300D40BC4 /* ICTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA5AB2745143300D40BC4 /* ICTableViewCell.swift */; };
 		248FA5B027454BFD00D40BC4 /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA5AF27454BFD00D40BC4 /* HTTPManager.swift */; };
@@ -33,6 +32,7 @@
 		24CEA37F273E79EC00414D31 /* ICLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA37E273E79EC00414D31 /* ICLabel.swift */; };
 		24CEA381273E7A0C00414D31 /* ICButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA380273E7A0C00414D31 /* ICButton.swift */; };
 		B213280B273EB7BB00061877 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213280A273EB7BB00061877 /* UIColor+HEX.swift */; };
+		B21C1CF727466CED00B1E844 /* ICServerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21C1CF627466CED00B1E844 /* ICServerConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,6 @@
 		248FA5922742B5A600D40BC4 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		248FA5992743B27C00D40BC4 /* CategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewCell.swift; sourceTree = "<group>"; };
 		248FA59A2743B27C00D40BC4 /* CategoriesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesTableViewCell.xib; sourceTree = "<group>"; };
-		248FA59E2743B4F400D40BC4 /* CategoriesArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesArray.swift; sourceTree = "<group>"; };
 		248FA5A22743BE8F00D40BC4 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		248FA5A727440D1F00D40BC4 /* ICNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICNavigationController.swift; sourceTree = "<group>"; };
 		248FA5AB2745143300D40BC4 /* ICTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICTableViewCell.swift; sourceTree = "<group>"; };
@@ -64,6 +63,7 @@
 		24CEA37E273E79EC00414D31 /* ICLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICLabel.swift; sourceTree = "<group>"; };
 		24CEA380273E7A0C00414D31 /* ICButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICButton.swift; sourceTree = "<group>"; };
 		B213280A273EB7BB00061877 /* UIColor+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HEX.swift"; sourceTree = "<group>"; };
+		B21C1CF627466CED00B1E844 /* ICServerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICServerConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +89,8 @@
 		248FA5962742B5BF00D40BC4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				248FA5A12743B52200D40BC4 /* View */,
 				248FA59D2743B4EA00D40BC4 /* Model */,
+				248FA5A12743B52200D40BC4 /* View */,
 				248FA5912742B5A600D40BC4 /* HomeViewController.swift */,
 				248FA5922742B5A600D40BC4 /* HomeViewController.xib */,
 			);
@@ -100,7 +100,6 @@
 		248FA59D2743B4EA00D40BC4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				248FA59E2743B4F400D40BC4 /* CategoriesArray.swift */,
 				248FA5A22743BE8F00D40BC4 /* CategoryModel.swift */,
 			);
 			path = Model;
@@ -127,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				248FA5AF27454BFD00D40BC4 /* HTTPManager.swift */,
+				B21C1CF627466CED00B1E844 /* ICServerConstants.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -178,8 +178,8 @@
 		24CEA363273E6C3100414D31 /* iCook */ = {
 			isa = PBXGroup;
 			children = (
-				248FA5AD27454B9500D40BC4 /* Managers */,
 				B213280C273EBE1E00061877 /* Classes */,
+				248FA5AD27454B9500D40BC4 /* Managers */,
 				24CEA379273E6F2F00414D31 /* CustomControlls */,
 				B2132809273EB78A00061877 /* Extensions */,
 				24CEA378273E6DD100414D31 /* Utils */,
@@ -308,10 +308,10 @@
 			files = (
 				248FA5AC2745143300D40BC4 /* ICTableViewCell.swift in Sources */,
 				24CEA37F273E79EC00414D31 /* ICLabel.swift in Sources */,
-				248FA5A42743F14900D40BC4 /* CategoriesArray.swift in Sources */,
 				B213280B273EB7BB00061877 /* UIColor+HEX.swift in Sources */,
 				248FA5A827440D1F00D40BC4 /* ICNavigationController.swift in Sources */,
 				24CEA37B273E76CF00414D31 /* ICViewController.swift in Sources */,
+				B21C1CF727466CED00B1E844 /* ICServerConstants.swift in Sources */,
 				24CEA369273E6C3100414D31 /* LoginViewController.swift in Sources */,
 				248FA5B027454BFD00D40BC4 /* HTTPManager.swift in Sources */,
 				24CEA365273E6C3100414D31 /* AppDelegate.swift in Sources */,
