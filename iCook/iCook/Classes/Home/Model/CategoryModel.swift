@@ -8,21 +8,24 @@
 import Foundation
 import UIKit
 
-class Cat: Codable {
+class CategoryModelResponse: BaseAPIObject {
     
     var categories: [CategoryModel]?
     
     private enum CodingKeys: String, CodingKey {
         case categories
     }
-    
+
     required init(from decoder: Decoder) throws {
-        let decoder = try? decoder.container(keyedBy: CodingKeys.self)
-        categories = try? decoder?.decode([CategoryModel].self, forKey: .categories)
+        let container = try? decoder.container(keyedBy: CodingKeys.self)
+        categories = try? container?.decode([CategoryModel].self, forKey: .categories)
+
+        super.init()
     }
+    
 }
 
-class CategoryModel: Codable {
+class CategoryModel: BaseAPIObject {
 
     var idCategory: String?
     var strCategory: String?
@@ -35,10 +38,12 @@ class CategoryModel: Codable {
     }
     
     required init(from decoder: Decoder) throws {
-        let decoder = try? decoder.container(keyedBy: CodingKeys.self)
-        idCategory = try? decoder?.decode(String.self, forKey: .idCategory)
-        strCategory = try? decoder?.decode(String.self, forKey: .strCategory)
-        strCategoryThumb = try? decoder?.decode(String.self, forKey: .strCategoryThumb)
+        let container = try? decoder.container(keyedBy: CodingKeys.self)
+        idCategory = try? container?.decode(String.self, forKey: .idCategory)
+        strCategory = try? container?.decode(String.self, forKey: .strCategory)
+        strCategoryThumb = try? container?.decode(String.self, forKey: .strCategoryThumb)
+        
+        super.init()
     }
     
 }

@@ -6,42 +6,52 @@
 //
 
 import Foundation
+import UIKit
 
 protocol HTTPManagerDelegate {
-    func didGetResponse(model: Cat)
+    func didGetResponse(model: BaseAPIObject)
 }
 
 class HTTPManager {
     
+    //MARK: Constants
     static let sharedInstance = HTTPManager()
-    private init() {
-        
-    }
+    private init() {}
     
-    private let baseURLString = "https://www.themealdb.com/api/json/v1/1/"
+    //MARK: Variables
+    private var dataHandlingDelegate: HTTPManagerDelegate?
     
-    var dataHandlingDelegate: HTTPManagerDelegate?
-    
-    func getCategories() {
-        guard let url = URL(string:"\(baseURLString)categories.php") else {
+    //Generic request method
+    private func makeRequest(delegate: HTTPManagerDelegate,
+                             route: ICServerConstants.Routes,
+                             responseModel: BaseAPIObject.Type) {
+        guard let url = URL(string:"\(ICServerConstants.BASE_URL)\(route.rawValue)") else {
             return
         }
         let request = URLRequest(url: url)
         let task = URLSession.shared.dataTask(with: request, completionHandler: { ( data, response, error) in
-            guard let data = data else {
-                return
+            
+            DispatchQueue.main.async {
+                guard let data = data else {
+                    return
+                }
+                let responseObject = try! JSONDecoder().decode(responseModel.self, from: data)
+                delegate.didGetResponse(model: responseObject)
             }
-            guard let dataJson = try? JSONSerialization
-                    .jsonObject(with: data, options: .allowFragments) as? [String : [Any]] else {return}
-            print(dataJson)
             
-            let categoriesModel: Cat = try! JSONDecoder().decode(Cat.self, from: data)
-            
-            self.dataHandlingDelegate?.didGetResponse(model: categoriesModel)
         })
-        
         task.resume()
-        
     }
+    
+    //MARK: Requests Methos
+    func getCategoriesRequest(delegate: HTTPManagerDelegate) {
+        makeRequest(delegate: delegate,
+                    route: .categoriesList,
+                    responseModel: CategoryModelResponse.self)
+    }
+        
+}
+
+class BaseAPIObject: Codable {
     
 }
