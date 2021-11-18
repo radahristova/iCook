@@ -8,24 +8,42 @@
 import Foundation
 import UIKit
 
-class CategoryModel {
+class CategoryModelResponse: BaseAPIObject {
+    
+    var categories: [CategoryModel]?
+    
+    private enum CodingKeys: String, CodingKey {
+        case categories
+    }
 
-    //MARK: Properties
-    let categoryID: String?
-    let categoryString: String?
-    let categoryImageURL: String?
-    let categoryDescription: String?
-    
-    init(dictionary: [String: String]) {
-        self.categoryID = dictionary["idCategory"]
-        self.categoryString = dictionary["strCategory"]
-        self.categoryImageURL = dictionary["strCategoryThumb"]
-        self.categoryDescription = dictionary["strCategoryDescription"]
+    required init(from decoder: Decoder) throws {
+        let container = try? decoder.container(keyedBy: CodingKeys.self)
+        categories = try? container?.decode([CategoryModel].self, forKey: .categories)
+
+        super.init()
     }
     
-    static func categories(dictionaries: [[String:String]]) -> [CategoryModel] {
-        dictionaries.map { dictionary in
-            CategoryModel(dictionary: dictionary)
-        }
+}
+
+class CategoryModel: BaseAPIObject {
+
+    var idCategory: String?
+    var strCategory: String?
+    var strCategoryThumb: String?
+    
+    private enum CodingKeys: String, CodingKey {
+        case idCategory
+        case strCategory
+        case strCategoryThumb
     }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try? decoder.container(keyedBy: CodingKeys.self)
+        idCategory = try? container?.decode(String.self, forKey: .idCategory)
+        strCategory = try? container?.decode(String.self, forKey: .strCategory)
+        strCategoryThumb = try? container?.decode(String.self, forKey: .strCategoryThumb)
+        
+        super.init()
+    }
+    
 }
