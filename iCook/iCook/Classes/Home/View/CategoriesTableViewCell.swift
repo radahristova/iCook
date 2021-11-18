@@ -24,7 +24,7 @@ class CategoriesTableViewCell: ICTableViewCell {
     }
     
     func populate(withCategory category: CategoryModel) {
-        cellCategoryTitle.text = category.categoryString
+        cellCategoryTitle.text = category.strCategory
     }
     
 }

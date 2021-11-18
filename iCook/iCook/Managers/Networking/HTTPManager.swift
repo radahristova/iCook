@@ -8,8 +8,7 @@
 import Foundation
 
 protocol HTTPManagerDelegate {
-    func didGet(categories: [CategoryModel])
-    
+    func didGetResponse(model: Cat)
 }
 
 class HTTPManager {
@@ -32,13 +31,13 @@ class HTTPManager {
             guard let data = data else {
                 return
             }
-//                  let categories = try? JSONSerialization
-//                    .jsonObject(with: data, options: .allowFragments) as [String] else {
-//                        return
-//                    }
-       //     self.dataHandlingDelegate?.didGet(categories: categories)
-    
+            guard let dataJson = try? JSONSerialization
+                    .jsonObject(with: data, options: .allowFragments) as? [String : [Any]] else {return}
+            print(dataJson)
             
+            let categoriesModel: Cat = try! JSONDecoder().decode(Cat.self, from: data)
+            
+            self.dataHandlingDelegate?.didGetResponse(model: categoriesModel)
         })
         
         task.resume()

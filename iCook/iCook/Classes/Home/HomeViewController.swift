@@ -12,9 +12,14 @@ class HomeViewController: ICViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    
-    var categories = CategoryModel.categories(dictionaries: categoriesArray)
-    
+    private var categories: Cat? {
+        didSet{
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.reloadData()
+            }
+        }
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,6 +30,8 @@ class HomeViewController: ICViewController {
         
         // Divider Color set to clear
         tableView.separatorColor = .clear
+        
+        HTTPManager.sharedInstance.dataHandlingDelegate = self
         HTTPManager.sharedInstance.getCategories()
         
     }
@@ -35,16 +42,24 @@ class HomeViewController: ICViewController {
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+        return categories?.categories?.count ?? 0
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CategoriesTableViewCell.CELL_IDENTIFIER, for: indexPath) as! CategoriesTableViewCell
-        cell.populate(withCategory: categories[indexPath.row])
+        if let category = categories?.categories?[indexPath.row] {
+            cell.populate(withCategory: category)
+        }
         return cell
     }
     
-   
+}
+
+extension HomeViewController: HTTPManagerDelegate {
+    
+    func didGetResponse(model: Cat) {
+        self.categories = categories
+    }
     
 }

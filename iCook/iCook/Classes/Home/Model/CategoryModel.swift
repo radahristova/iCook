@@ -8,28 +8,37 @@
 import Foundation
 import UIKit
 
-class CategoryModel: Codable {
-
-    //MARK: Properties
-    var categoryID: String?
-    var categoryString: String?
-    var categoryImageURL: String?
-    var categoryDescription: String?
+class Cat: Codable {
     
-    init(dictionary: [String: String]) {
-        self.categoryID = dictionary["idCategory"]
-        self.categoryString = dictionary["strCategory"]
-        self.categoryImageURL = dictionary["strCategoryThumb"]
-        self.categoryDescription = dictionary["strCategoryDescription"]
+    var categories: [CategoryModel]?
+    
+    private enum CodingKeys: String, CodingKey {
+        case categories
     }
     
     required init(from decoder: Decoder) throws {
-        
+        let decoder = try? decoder.container(keyedBy: CodingKeys.self)
+        categories = try? decoder?.decode([CategoryModel].self, forKey: .categories)
+    }
+}
+
+class CategoryModel: Codable {
+
+    var idCategory: String?
+    var strCategory: String?
+    var strCategoryThumb: String?
+    
+    private enum CodingKeys: String, CodingKey {
+        case idCategory
+        case strCategory
+        case strCategoryThumb
     }
     
-    static func categories(dictionaries: [[String:String]]) -> [CategoryModel] {
-        dictionaries.map { dictionary in
-            CategoryModel(dictionary: dictionary)
-        }
+    required init(from decoder: Decoder) throws {
+        let decoder = try? decoder.container(keyedBy: CodingKeys.self)
+        idCategory = try? decoder?.decode(String.self, forKey: .idCategory)
+        strCategory = try? decoder?.decode(String.self, forKey: .strCategory)
+        strCategoryThumb = try? decoder?.decode(String.self, forKey: .strCategoryThumb)
     }
+    
 }
