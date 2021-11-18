@@ -8,19 +8,23 @@
 import Foundation
 import UIKit
 
-class CategoryModel {
+class CategoryModel: Codable {
 
     //MARK: Properties
-    let categoryID: String?
-    let categoryString: String?
-    let categoryImageURL: String?
-    let categoryDescription: String?
+    var categoryID: String?
+    var categoryString: String?
+    var categoryImageURL: String?
+    var categoryDescription: String?
     
     init(dictionary: [String: String]) {
         self.categoryID = dictionary["idCategory"]
         self.categoryString = dictionary["strCategory"]
         self.categoryImageURL = dictionary["strCategoryThumb"]
         self.categoryDescription = dictionary["strCategoryDescription"]
+    }
+    
+    required init(from decoder: Decoder) throws {
+        
     }
     
     static func categories(dictionaries: [[String:String]]) -> [CategoryModel] {

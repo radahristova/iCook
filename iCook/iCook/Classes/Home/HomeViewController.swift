@@ -12,6 +12,7 @@ class HomeViewController: ICViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    
     var categories = CategoryModel.categories(dictionaries: categoriesArray)
     
     override func viewDidLoad() {
@@ -24,6 +25,7 @@ class HomeViewController: ICViewController {
         
         // Divider Color set to clear
         tableView.separatorColor = .clear
+        HTTPManager.sharedInstance.getCategories()
         
     }
     

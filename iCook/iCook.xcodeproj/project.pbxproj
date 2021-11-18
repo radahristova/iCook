@@ -15,6 +15,7 @@
 		248FA5A42743F14900D40BC4 /* CategoriesArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA59E2743B4F400D40BC4 /* CategoriesArray.swift */; };
 		248FA5A827440D1F00D40BC4 /* ICNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA5A727440D1F00D40BC4 /* ICNavigationController.swift */; };
 		248FA5AC2745143300D40BC4 /* ICTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA5AB2745143300D40BC4 /* ICTableViewCell.swift */; };
+		248FA5B027454BFD00D40BC4 /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA5AF27454BFD00D40BC4 /* HTTPManager.swift */; };
 		249F6D40274265BF0084ABDD /* ICTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F6D3F274265BF0084ABDD /* ICTabBarController.swift */; };
 		24CEA365273E6C3100414D31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA364273E6C3100414D31 /* AppDelegate.swift */; };
 		24CEA367273E6C3100414D31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA366273E6C3100414D31 /* SceneDelegate.swift */; };
@@ -38,6 +39,7 @@
 		248FA5A22743BE8F00D40BC4 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		248FA5A727440D1F00D40BC4 /* ICNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICNavigationController.swift; sourceTree = "<group>"; };
 		248FA5AB2745143300D40BC4 /* ICTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICTableViewCell.swift; sourceTree = "<group>"; };
+		248FA5AF27454BFD00D40BC4 /* HTTPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPManager.swift; sourceTree = "<group>"; };
 		249F6D3F274265BF0084ABDD /* ICTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICTabBarController.swift; sourceTree = "<group>"; };
 		24CEA361273E6C3100414D31 /* iCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CEA364273E6C3100414D31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		248FA5AD27454B9500D40BC4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				248FA5AE27454BA300D40BC4 /* Networking */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		248FA5AE27454BA300D40BC4 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				248FA5AF27454BFD00D40BC4 /* HTTPManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		24CEA358273E6C3100414D31 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +140,7 @@
 		24CEA363273E6C3100414D31 /* iCook */ = {
 			isa = PBXGroup;
 			children = (
+				248FA5AD27454B9500D40BC4 /* Managers */,
 				B213280C273EBE1E00061877 /* Classes */,
 				24CEA379273E6F2F00414D31 /* CustomControlls */,
 				B2132809273EB78A00061877 /* Extensions */,
@@ -253,6 +272,7 @@
 				248FA5A827440D1F00D40BC4 /* ICNavigationController.swift in Sources */,
 				24CEA37B273E76CF00414D31 /* ICViewController.swift in Sources */,
 				24CEA369273E6C3100414D31 /* LoginViewController.swift in Sources */,
+				248FA5B027454BFD00D40BC4 /* HTTPManager.swift in Sources */,
 				24CEA365273E6C3100414D31 /* AppDelegate.swift in Sources */,
 				248FA59B2743B27C00D40BC4 /* CategoriesTableViewCell.swift in Sources */,
 				248FA5932742B5A600D40BC4 /* HomeViewController.swift in Sources */,
