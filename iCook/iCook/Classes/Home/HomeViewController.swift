@@ -21,7 +21,7 @@ class HomeViewController: ICViewController {
             }
         }
     }
-     
+    
     //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,8 +59,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      
-        
+        guard let category = categories?[indexPath.row].strCategory else {
+            return
+        }
+        let mealsViewController = MealsListViewController(category: category)
+        navigationController?.pushViewController(mealsViewController, animated: true)
     }
     
 }
@@ -68,15 +71,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 //MARK: HTTPManagerDelegate Extension
 extension HomeViewController: HTTPManagerDelegate {
     
-<<<<<<< HEAD
-    func didGetResponse(model: Cat) {
-        self.categories = model
-=======
     func didGetResponse(model: BaseAPIObject) {
         if let categories = model as? CategoryModelResponse {
             self.categories = categories.categories
         }
->>>>>>> ICNetworking
+        
     }
     
 }
+
+
+
+

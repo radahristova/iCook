@@ -8,9 +8,27 @@
 import UIKit
 
 class MealsListViewController: ICViewController {
+    private let category: String
     
-
     @IBOutlet weak var tableView: UITableView!
+    
+    private var mealList: [MealListModel]? {
+        didSet{
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.reloadData()
+            }
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        category = ""
+        super.init(coder: coder)
+    }
+    
+    init(category: String){
+        self.category = category
+        super.init(nibName: String(describing: MealsListViewController.self), bundle: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,20 +39,35 @@ class MealsListViewController: ICViewController {
         
         // Divider Color set to clear
         tableView.separatorColor = .clear
-
         
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        HTTPManager.sharedInstance.getMeals(by: category, delegate: self)
+    }
+    
 }
 
 extension MealsListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return mealList?.count ?? 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: MealListTableViewCell.CELL_IDENTIFIER, for: indexPath) as! MealListTableViewCell
+        if let meal = mealList?[indexPath.row]{
+            cell.populate(withMeal: meal)
+        }
+        return cell
     }
-    
-    
+}
+
+
+extension MealsListViewController: HTTPManagerDelegate {
+    func didGetResponse(model: BaseAPIObject) {
+        if let mealList = model as? MealListModelResponse {
+            self.mealList = mealList.mealList
+        }
+    }
 }

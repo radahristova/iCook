@@ -7,6 +7,23 @@
 
 import Foundation
 
+class MealListModelResponse: BaseAPIObject {
+    var mealList: [MealListModel]?
+    
+    private enum CodingKeys: String, CodingKey {
+        case meals
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try? decoder.container(keyedBy: CodingKeys.self)
+        mealList = try? container?.decode([MealListModel].self, forKey: .meals)
+        
+        super.init()
+                                 
+    }
+}
+
+
 class MealListModel: Codable {
     
     var strMeal: String?
