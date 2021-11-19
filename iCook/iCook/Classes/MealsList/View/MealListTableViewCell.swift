@@ -19,11 +19,14 @@ class MealListTableViewCell: ICTableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        categoryImageView.setImageActivity()
        
     }
     
     
     func populate(withMeal meals: MealListModel) {
+        let url = URL(string: meals.strMealThumb ?? "")
+        categoryImageView.kf.setImage(with: url)
         categoryMealLabel.text = meals.strMeal
     }
 
