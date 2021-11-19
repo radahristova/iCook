@@ -26,4 +26,5 @@ class ICNavigationController: UINavigationController {
         navigationBar.scrollEdgeAppearance = navigationBar.standardAppearance
         navigationBar.tintColor = .accentColor
     }
+    
 }

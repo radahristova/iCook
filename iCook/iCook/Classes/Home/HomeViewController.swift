@@ -33,6 +33,8 @@ class HomeViewController: ICViewController {
         
         // Divider Color set to clear
         tableView.separatorColor = .clear
+        
+        navigationItem.title = "Categories"
     }
     
     override func viewWillAppear(_ animated: Bool) {

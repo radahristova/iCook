@@ -234,7 +234,6 @@
 				CE0F787305F8178A4926DDAD /* Pods-iCook.debug.xcconfig */,
 				5C8E974E47E76CDABC9902D3 /* Pods-iCook.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -249,9 +248,9 @@
 		B213280C273EBE1E00061877 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				248FA5B1274661FC00D40BC4 /* MealsList */,
 				248FA5952742B5AF00D40BC4 /* Login */,
 				248FA5962742B5BF00D40BC4 /* Home */,
+				248FA5B1274661FC00D40BC4 /* MealsList */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

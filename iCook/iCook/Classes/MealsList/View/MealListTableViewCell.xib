@@ -16,12 +16,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iCookLogo" translatesAutoresizingMaskIntoConstraints="NO" id="dTn-Jv-8fq" customClass="ICRoundedImageView" customModule="iCook" customModuleProvider="target">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iCookLogo" translatesAutoresizingMaskIntoConstraints="NO" id="dTn-Jv-8fq" customClass="ICRoundedImageView" customModule="iCook" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8v9-wB-yaI">
-                        <rect key="frame" x="26" y="130" width="41.5" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="8v9-wB-yaI" customClass="ICLabel" customModule="iCook" customModuleProvider="target">
+                        <rect key="frame" x="26" y="130" width="54.5" height="27.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -33,6 +33,7 @@
                     <constraint firstItem="8v9-wB-yaI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="gMQ-z4-niY"/>
                     <constraint firstItem="dTn-Jv-8fq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="mvj-Z6-lcF"/>
                     <constraint firstAttribute="trailing" secondItem="dTn-Jv-8fq" secondAttribute="trailing" id="sSi-3D-m90"/>
+                    <constraint firstItem="8v9-wB-yaI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="uJA-L2-TX1"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

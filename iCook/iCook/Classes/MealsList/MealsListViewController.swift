@@ -45,6 +45,8 @@ class MealsListViewController: ICViewController {
         // Divider Color set to clear
         tableView.separatorColor = .clear
         
+        navigationItem.title = category
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
