@@ -22,15 +22,26 @@ class ICTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 25, bottom: 10, right: 25))
+        contentView.backgroundColor = .white
+        contentView.clipsToBounds = true
+        contentView.layer.cornerRadius = 10
+        clipsToBounds = true
+        layer.cornerRadius = 10
+        backgroundColor = .clear
+        layer.masksToBounds = true
+        layer.shadowOpacity = 0.5
+        layer.shadowRadius = 7
+        layer.shadowOffset = .zero
         
-        addLineDivider()
-        chevron()
+        //    addLineDivider()
+        //    chevron()
     }
     
     //MARK: Private Methods
     private func addLineDivider() {
         let lineDivider = UIView()
-        lineDivider.backgroundColor = .icDarkColor
+      //  lineDivider.backgroundColor = .icDarkColor
         lineDivider.translatesAutoresizingMaskIntoConstraints = false
         
         contentView.addSubview(lineDivider)
@@ -46,7 +57,7 @@ class ICTableViewCell: UITableViewCell {
     
     private func chevron() {
         let chevronImage = UIImageView(image: UIImage(systemName: "chevron.compact.right"))
-        chevronImage.tintColor = .icDarkColor
+   //     chevronImage.tintColor = .icDarkColor
         chevronImage.translatesAutoresizingMaskIntoConstraints = false
         
         contentView.addSubview(chevronImage)

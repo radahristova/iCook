@@ -20,7 +20,7 @@ class MealListTableViewCell: ICTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         categoryImageView.setImageActivity()
-       
+        categoryImageView.radiusRatioToSmallerSide = 0
     }
     
     

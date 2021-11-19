@@ -25,10 +25,10 @@ class ICTabBarController: UITabBarController {
         
         tabBar.isTranslucent = false
         
-        tabBar.backgroundColor = .icDarkColor
-        tabBar.unselectedItemTintColor = .icTransparentGreenColor
-        tabBar.tintColor = .icBeigeColor
-        tabBar.barTintColor = .icDarkColor
+        tabBar.backgroundColor = .backgroundColor
+        tabBar.unselectedItemTintColor = .black.withAlphaComponent(0.7)
+        tabBar.tintColor = .accentColor
+      //  tabBar.barTintColor = .icDarkColor
     }
     
     private func configureViewControllers() {
@@ -42,7 +42,7 @@ class ICTabBarController: UITabBarController {
         
         
         let home = ICNavigationController(rootViewController: HomeViewController())
-        let tabTwoBarItem = UITabBarItem(title: "Home",
+        let tabTwoBarItem = UITabBarItem(title: "Categories",
                                          image: UIImage(systemName: "house"),
                                          selectedImage: UIImage(systemName: "house.fill"))
         home.tabBarItem = tabTwoBarItem
