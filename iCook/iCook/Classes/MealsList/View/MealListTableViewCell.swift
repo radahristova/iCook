@@ -9,8 +9,10 @@ import UIKit
 
 class MealListTableViewCell: ICTableViewCell {
     
+    //MARK: Constants
     static let CELL_IDENTIFIER = "MealListTableViewCell"
 
+    //MARK:  IBOutlets
     @IBOutlet weak var categoryImageView: ICRoundedImageView!
     
     @IBOutlet weak var categoryMealLabel: ICLabel!

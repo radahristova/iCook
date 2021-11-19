@@ -8,10 +8,14 @@
 import UIKit
 
 class MealsListViewController: ICViewController {
+    
+    //MARK: Properties
     private let category: String
     
+    //MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
     
+    //MARK: Variables
     private var mealList: [MealListModel]? {
         didSet{
             DispatchQueue.main.async { [weak self] in
@@ -30,6 +34,7 @@ class MealsListViewController: ICViewController {
         super.init(nibName: String(describing: MealsListViewController.self), bundle: nil)
     }
     
+    //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         let nib = UINib(nibName: MealListTableViewCell.CELL_IDENTIFIER, bundle: nil)
@@ -49,6 +54,7 @@ class MealsListViewController: ICViewController {
     
 }
 
+//MARK: - TableView Extension
 extension MealsListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,7 +68,6 @@ extension MealsListViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }
-
 
 extension MealsListViewController: HTTPManagerDelegate {
     func didGetResponse(model: BaseAPIObject) {
