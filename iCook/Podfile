@@ -1,0 +1,8 @@
+platform :ios, '12.0'
+
+
+target 'iCook' do
+  use_frameworks!
+  
+  pod 'Kingfisher', '~> 7.0'
+end
