@@ -21,7 +21,7 @@ class HomeViewController: ICViewController {
             }
         }
     }
-     
+    
     //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +58,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let category = categories?[indexPath.row].strCategory else {
+            return
+        }
+        let mealsViewController = MealsListViewController(category: category)
+        navigationController?.pushViewController(mealsViewController, animated: true)
+    }
+    
 }
 
 //MARK: HTTPManagerDelegate Extension
@@ -67,6 +75,11 @@ extension HomeViewController: HTTPManagerDelegate {
         if let categories = model as? CategoryModelResponse {
             self.categories = categories.categories
         }
+        
     }
     
 }
+
+
+
+

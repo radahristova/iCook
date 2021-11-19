@@ -24,18 +24,20 @@ class HTTPManager {
     //Generic request method
     private func makeRequest(delegate: HTTPManagerDelegate,
                              route: ICServerConstants.Routes,
+                             parameter:String = "",
                              responseModel: BaseAPIObject.Type) {
-        guard let url = URL(string:"\(ICServerConstants.BASE_URL)\(route.rawValue)") else {
+        guard let url = URL(string:"\(ICServerConstants.BASE_URL)\(route.rawValue)\(parameter)") else {
             return
         }
         let request = URLRequest(url: url)
         let task = URLSession.shared.dataTask(with: request, completionHandler: { ( data, response, error) in
             
             DispatchQueue.main.async {
-                guard let data = data else {
+                guard let data = data,
+                      let responseObject = try? JSONDecoder()
+                        .decode(responseModel.self, from: data) else {
                     return
                 }
-                let responseObject = try! JSONDecoder().decode(responseModel.self, from: data)
                 delegate.didGetResponse(model: responseObject)
             }
             
@@ -48,6 +50,11 @@ class HTTPManager {
         makeRequest(delegate: delegate,
                     route: .categoriesList,
                     responseModel: CategoryModelResponse.self)
+    }
+    
+    func getMeals(by category:String, delegate: HTTPManagerDelegate){
+        makeRequest(delegate: delegate, route: .fiterByCategory,parameter: category,
+                    responseModel: MealListModelResponse.self)
     }
         
 }
