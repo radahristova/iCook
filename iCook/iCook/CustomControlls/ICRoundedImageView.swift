@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+
 class ICRoundedImageView: UIImageView {
     
     lazy var radiusRatioToSmallerSide: CGFloat? = 0.15
@@ -39,4 +40,10 @@ class ICRoundedImageView: UIImageView {
     deinit {
         removeObserver(self, forKeyPath: #keyPath(bounds))
     }
+    
+
+    func setImageActivity() {
+        self.kf.indicatorType = .activity
+    }
+   
 }

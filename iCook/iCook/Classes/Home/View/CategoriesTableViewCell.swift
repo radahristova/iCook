@@ -18,13 +18,15 @@ class CategoriesTableViewCell: ICTableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        imageViewCell.setImageActivity()
+
         cellCategoryTitle.configureDefault(withSize: 21)
-                
     }
     
     func populate(withCategory category: CategoryModel) {
+        let url = URL(string: category.strCategoryThumb ?? "")
+        imageViewCell.kf.setImage(with: url)
         cellCategoryTitle.text = category.strCategory
     }
-    
+
 }
