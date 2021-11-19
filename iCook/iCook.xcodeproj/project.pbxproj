@@ -15,6 +15,11 @@
 		248FA5A827440D1F00D40BC4 /* ICNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA5A727440D1F00D40BC4 /* ICNavigationController.swift */; };
 		248FA5AC2745143300D40BC4 /* ICTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA5AB2745143300D40BC4 /* ICTableViewCell.swift */; };
 		248FA5B027454BFD00D40BC4 /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA5AF27454BFD00D40BC4 /* HTTPManager.swift */; };
+		248FA5B42746624700D40BC4 /* MealsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA5B22746624600D40BC4 /* MealsListViewController.swift */; };
+		248FA5B52746624700D40BC4 /* MealsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 248FA5B32746624600D40BC4 /* MealsListViewController.xib */; };
+		248FA5B82746634D00D40BC4 /* MealListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA5B72746634D00D40BC4 /* MealListModel.swift */; };
+		248FA5BE274664D300D40BC4 /* MealListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA5BC274664D300D40BC4 /* MealListTableViewCell.swift */; };
+		248FA5BF274664D300D40BC4 /* MealListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 248FA5BD274664D300D40BC4 /* MealListTableViewCell.xib */; };
 		249F6D40274265BF0084ABDD /* ICTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F6D3F274265BF0084ABDD /* ICTabBarController.swift */; };
 		24CEA365273E6C3100414D31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA364273E6C3100414D31 /* AppDelegate.swift */; };
 		24CEA367273E6C3100414D31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA366273E6C3100414D31 /* SceneDelegate.swift */; };
@@ -41,6 +46,11 @@
 		248FA5A727440D1F00D40BC4 /* ICNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICNavigationController.swift; sourceTree = "<group>"; };
 		248FA5AB2745143300D40BC4 /* ICTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICTableViewCell.swift; sourceTree = "<group>"; };
 		248FA5AF27454BFD00D40BC4 /* HTTPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPManager.swift; sourceTree = "<group>"; };
+		248FA5B22746624600D40BC4 /* MealsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsListViewController.swift; sourceTree = "<group>"; };
+		248FA5B32746624600D40BC4 /* MealsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealsListViewController.xib; sourceTree = "<group>"; };
+		248FA5B72746634D00D40BC4 /* MealListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListModel.swift; sourceTree = "<group>"; };
+		248FA5BC274664D300D40BC4 /* MealListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListTableViewCell.swift; sourceTree = "<group>"; };
+		248FA5BD274664D300D40BC4 /* MealListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealListTableViewCell.xib; sourceTree = "<group>"; };
 		249F6D3F274265BF0084ABDD /* ICTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICTabBarController.swift; sourceTree = "<group>"; };
 		24CEA361273E6C3100414D31 /* iCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CEA364273E6C3100414D31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +134,34 @@
 				B21C1CF627466CED00B1E844 /* ICServerConstants.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		248FA5B1274661FC00D40BC4 /* MealsList */ = {
+			isa = PBXGroup;
+			children = (
+				248FA5B9274663DF00D40BC4 /* View */,
+				248FA5B62746629200D40BC4 /* Model */,
+				248FA5B22746624600D40BC4 /* MealsListViewController.swift */,
+				248FA5B32746624600D40BC4 /* MealsListViewController.xib */,
+			);
+			path = MealsList;
+			sourceTree = "<group>";
+		};
+		248FA5B62746629200D40BC4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				248FA5B72746634D00D40BC4 /* MealListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		248FA5B9274663DF00D40BC4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				248FA5BC274664D300D40BC4 /* MealListTableViewCell.swift */,
+				248FA5BD274664D300D40BC4 /* MealListTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		24CEA358273E6C3100414D31 = {
@@ -211,6 +249,7 @@
 		B213280C273EBE1E00061877 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				248FA5B1274661FC00D40BC4 /* MealsList */,
 				248FA5952742B5AF00D40BC4 /* Login */,
 				248FA5962742B5BF00D40BC4 /* Home */,
 			);
@@ -278,8 +317,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				24CEA371273E6C3400414D31 /* LaunchScreen.storyboard in Resources */,
+				248FA5B52746624700D40BC4 /* MealsListViewController.xib in Resources */,
 				24CEA36E273E6C3400414D31 /* Assets.xcassets in Resources */,
 				248FA59C2743B27C00D40BC4 /* CategoriesTableViewCell.xib in Resources */,
+				248FA5BF274664D300D40BC4 /* MealListTableViewCell.xib in Resources */,
 				24CEA36C273E6C3100414D31 /* Main.storyboard in Resources */,
 				248FA5942742B5A600D40BC4 /* HomeViewController.xib in Resources */,
 			);
@@ -344,8 +385,11 @@
 				248FA5B027454BFD00D40BC4 /* HTTPManager.swift in Sources */,
 				24CEA365273E6C3100414D31 /* AppDelegate.swift in Sources */,
 				248FA59B2743B27C00D40BC4 /* CategoriesTableViewCell.swift in Sources */,
+				248FA5B82746634D00D40BC4 /* MealListModel.swift in Sources */,
+				248FA5BE274664D300D40BC4 /* MealListTableViewCell.swift in Sources */,
 				248FA5932742B5A600D40BC4 /* HomeViewController.swift in Sources */,
 				249F6D40274265BF0084ABDD /* ICTabBarController.swift in Sources */,
+				248FA5B42746624700D40BC4 /* MealsListViewController.swift in Sources */,
 				24CEA381273E7A0C00414D31 /* ICButton.swift in Sources */,
 				24CEA37D273E79C500414D31 /* ICRoundedImageView.swift in Sources */,
 				24CEA367273E6C3100414D31 /* SceneDelegate.swift in Sources */,
