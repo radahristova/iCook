@@ -38,17 +38,17 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSO-62-yGh" userLabel="Middle View">
                                         <rect key="frame" x="0.0" y="273" width="414" height="272"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="gVE-4O-jSg">
-                                                <rect key="frame" x="141" y="100.5" width="132" height="71"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gVE-4O-jSg">
+                                                <rect key="frame" x="146.5" y="70.5" width="121" height="51"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iCook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q61-MO-VSu" customClass="ICLabel" customModule="iCook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="132" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="121" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Cooking App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6a-rr-cdT" customClass="ICLabel" customModule="iCook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="50.5" width="132" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Recipe App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6a-rr-cdT" customClass="ICLabel" customModule="iCook" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="30.5" width="121" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -58,24 +58,25 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="gVE-4O-jSg" firstAttribute="centerX" secondItem="WSO-62-yGh" secondAttribute="centerX" id="dSs-08-JhG"/>
-                                            <constraint firstItem="gVE-4O-jSg" firstAttribute="centerY" secondItem="WSO-62-yGh" secondAttribute="centerY" id="iXQ-Km-MtE"/>
+                                            <constraint firstItem="gVE-4O-jSg" firstAttribute="centerY" secondItem="WSO-62-yGh" secondAttribute="centerY" constant="-40" id="iXQ-Km-MtE"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2xj-iG-0bW" userLabel="Bottom View">
                                         <rect key="frame" x="0.0" y="546" width="414" height="272"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZg-XW-lD4" customClass="ICButton" customModule="iCook" customModuleProvider="target">
-                                                <rect key="frame" x="147" y="212" width="120" height="50"/>
+                                                <rect key="frame" x="147" y="212" width="120" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="jjf-ZX-OzB"/>
+                                                    <constraint firstAttribute="height" constant="40" id="jjf-ZX-OzB"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="uiX-sN-vOC"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Continue">
                                                     <backgroundConfiguration key="background">
-                                                        <color key="backgroundColor" red="0.19545778629999999" green="0.10632822660000001" blue="0.086268804970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="strokeColor" red="0.93820375199999995" green="0.56087571380000001" blue="0.32150018219999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </backgroundConfiguration>
-                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseForegroundColor" red="0.93820375199999995" green="0.56087571380000001" blue="0.32150018219999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="continuePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GEf-4Z-ZIy"/>
@@ -83,7 +84,7 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="iZg-XW-lD4" secondAttribute="bottom" constant="10" id="DZv-Sa-NNS"/>
+                                            <constraint firstAttribute="bottom" secondItem="iZg-XW-lD4" secondAttribute="bottom" constant="20" id="DZv-Sa-NNS"/>
                                             <constraint firstItem="iZg-XW-lD4" firstAttribute="centerX" secondItem="2xj-iG-0bW" secondAttribute="centerX" id="H17-B5-8ie"/>
                                         </constraints>
                                     </view>
