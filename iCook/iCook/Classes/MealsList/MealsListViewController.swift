@@ -72,6 +72,7 @@ extension MealsListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+
 extension MealsListViewController: HTTPManagerDelegate {
     func didGetResponse(model: BaseAPIObject) {
         if let mealList = model as? MealListModelResponse {

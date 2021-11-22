@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MealDetailsViewController" customModule="iCook" customModuleProvider="target">
+            <connections>
+                <outlet property="areaDescriptionLabel" destination="0rA-8q-za3" id="aH3-i3-AFK"/>
+                <outlet property="areaLabel" destination="5Ob-SN-8h8" id="1Vh-04-fvc"/>
+                <outlet property="categoryDescriptionLabel" destination="5Ob-SN-8h8" id="Ca5-hj-HVn"/>
+                <outlet property="categoryLabel" destination="mFB-ro-gua" id="MeA-Ig-1IX"/>
+                <outlet property="mealDescriptionTextField" destination="oci-i5-abq" id="OyA-Md-J6p"/>
+                <outlet property="mealDetailsImageView" destination="zBL-j2-4Ye" id="qjZ-YW-S85"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <viewController id="eyr-eB-Ckj" customClass="MealDetailsViewController" customModule="iCook" customModuleProvider="target">
+            <view key="view" contentMode="scaleToFill" id="IM0-Nc-XC1">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zBL-j2-4Ye" customClass="ICRoundedImageView" customModule="iCook" customModuleProvider="target">
+                        <rect key="frame" x="20" y="64" width="374" height="250"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="250" id="su5-L2-57x"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uax-8d-ngh">
+                        <rect key="frame" x="20" y="352" width="144" height="128"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFB-ro-gua" customClass="ICLabel" customModule="iCook" customModuleProvider="target">
+                                <rect key="frame" x="42" y="20" width="70" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CategoryDescription" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kq6-zE-Pql" customClass="ICLabel" customModule="iCook" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="75" width="158" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tLg-hf-HPi">
+                        <rect key="frame" x="209" y="352" width="194" height="128"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Area" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ob-SN-8h8" customClass="ICLabel" customModule="iCook" customModuleProvider="target">
+                                <rect key="frame" x="76" y="18" width="529" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AreaDescription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rA-8q-za3" customClass="ICLabel" customModule="iCook" customModuleProvider="target">
+                                <rect key="frame" x="36" y="74" width="123" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MQ6-Sj-pqe">
+                        <rect key="frame" x="0.0" y="488" width="414" height="374"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QOS-FM-1bT">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="374"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oci-i5-abq">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="374"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="QOS-FM-1bT" firstAttribute="top" secondItem="78E-vE-ZKE" secondAttribute="top" id="7pg-ej-rMC"/>
+                            <constraint firstItem="78E-vE-ZKE" firstAttribute="bottom" secondItem="QOS-FM-1bT" secondAttribute="bottom" id="Ffz-p7-HwM"/>
+                            <constraint firstItem="78E-vE-ZKE" firstAttribute="trailing" secondItem="QOS-FM-1bT" secondAttribute="trailing" id="VK6-tU-UGr"/>
+                            <constraint firstItem="QOS-FM-1bT" firstAttribute="leading" secondItem="78E-vE-ZKE" secondAttribute="leading" id="bxb-bn-OJX"/>
+                        </constraints>
+                        <viewLayoutGuide key="contentLayoutGuide" id="k7N-Pa-Mhh"/>
+                        <viewLayoutGuide key="frameLayoutGuide" id="78E-vE-ZKE"/>
+                    </scrollView>
+                </subviews>
+                <viewLayoutGuide key="safeArea" id="4rp-bH-pwO"/>
+                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            </view>
+            <point key="canvasLocation" x="859.4202898550725" y="48.883928571428569"/>
+        </viewController>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
