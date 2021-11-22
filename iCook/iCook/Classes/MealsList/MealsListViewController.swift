@@ -37,6 +37,9 @@ class MealsListViewController: ICViewController {
     //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = category
+        
         let nib = UINib(nibName: MealListTableViewCell.CELL_IDENTIFIER, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: MealListTableViewCell.CELL_IDENTIFIER)
         tableView.delegate = self
@@ -44,8 +47,6 @@ class MealsListViewController: ICViewController {
         
         // Divider Color set to clear
         tableView.separatorColor = .clear
-        
-        navigationItem.title = category
         
     }
     

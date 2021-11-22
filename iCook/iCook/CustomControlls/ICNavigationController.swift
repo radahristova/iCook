@@ -19,12 +19,13 @@ class ICNavigationController: UINavigationController {
         let appearance = UINavigationBarAppearance()
         modalPresentationStyle = .fullScreen
         navigationBar.isTranslucent = false
-        navigationBar.backgroundColor = .backgroundColor
-        navigationBar.barTintColor = .backgroundColor
-        appearance.backgroundColor = .backgroundColor
+        navigationBar.backgroundColor = .icBackgroundColor
+        navigationBar.barTintColor = .icBackgroundColor
+        appearance.backgroundColor = .icBackgroundColor
         navigationBar.standardAppearance = appearance;
         navigationBar.scrollEdgeAppearance = navigationBar.standardAppearance
-        navigationBar.tintColor = .accentColor
+        navigationBar.tintColor = .icAccentColor
+
     }
     
 }

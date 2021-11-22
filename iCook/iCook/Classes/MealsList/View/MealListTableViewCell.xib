@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="8v9-wB-yaI" customClass="ICLabel" customModule="iCook" customModuleProvider="target">
-                        <rect key="frame" x="26" y="130" width="54.5" height="27.5"/>
+                        <rect key="frame" x="26" y="135" width="54.5" height="19"/>
                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -28,11 +28,12 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="dTn-Jv-8fq" secondAttribute="bottom" constant="60" id="27D-4q-3nc"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="8v9-wB-yaI" secondAttribute="bottom" constant="15" id="74a-EC-pfK"/>
                     <constraint firstItem="dTn-Jv-8fq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JWf-4h-o6G"/>
-                    <constraint firstItem="8v9-wB-yaI" firstAttribute="top" secondItem="dTn-Jv-8fq" secondAttribute="bottom" constant="10" id="dPj-eZ-h5O"/>
                     <constraint firstItem="8v9-wB-yaI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="gMQ-z4-niY"/>
                     <constraint firstItem="dTn-Jv-8fq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="mvj-Z6-lcF"/>
                     <constraint firstAttribute="trailing" secondItem="dTn-Jv-8fq" secondAttribute="trailing" id="sSi-3D-m90"/>
+                    <constraint firstItem="8v9-wB-yaI" firstAttribute="top" secondItem="dTn-Jv-8fq" secondAttribute="bottom" constant="15" id="taa-gH-Dx8"/>
                     <constraint firstItem="8v9-wB-yaI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="uJA-L2-TX1"/>
                 </constraints>
             </tableViewCellContentView>

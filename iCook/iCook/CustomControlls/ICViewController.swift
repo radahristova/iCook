@@ -18,7 +18,7 @@ class ICViewController: UIViewController {
     func setBackgroundColor(color: UIColor) {
         view.backgroundColor = color
     }
-
+    
 }
 
 

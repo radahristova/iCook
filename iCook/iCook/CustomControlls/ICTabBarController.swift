@@ -25,9 +25,9 @@ class ICTabBarController: UITabBarController {
         
         tabBar.isTranslucent = false
         
-        tabBar.backgroundColor = .backgroundColor
+        tabBar.backgroundColor = .icBackgroundColor
         tabBar.unselectedItemTintColor = .black.withAlphaComponent(0.7)
-        tabBar.tintColor = .accentColor
+        tabBar.tintColor = .icAccentColor
       //  tabBar.barTintColor = .icDarkColor
     }
     
