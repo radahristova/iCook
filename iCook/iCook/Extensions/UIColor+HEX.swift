@@ -19,6 +19,10 @@ extension UIColor {
     static var icLightColor = UIColor(hexaString: "#F1CF91")
     static var icTransparentGreenColor = icGreenColor.withAlphaComponent(0.35)
     
+    static let icAccentColor = UIColor(hexaString: "#FF8942")
+    static let icAccentColorTransparent = icAccentColor.withAlphaComponent(0.6)
+    static let icBackgroundColor = UIColor(hexaString: "#F7F7F7")
+    
     
     //Init from HEX color
     convenience init(hexaString: String, alpha: CGFloat = 1) {

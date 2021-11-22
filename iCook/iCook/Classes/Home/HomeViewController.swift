@@ -26,6 +26,8 @@ class HomeViewController: ICViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Categories"
+        
         let nib = UINib(nibName: CategoriesTableViewCell.CELL_IDENTIFIER, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: CategoriesTableViewCell.CELL_IDENTIFIER)
         tableView.delegate = self
@@ -33,6 +35,7 @@ class HomeViewController: ICViewController {
         
         // Divider Color set to clear
         tableView.separatorColor = .clear
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
