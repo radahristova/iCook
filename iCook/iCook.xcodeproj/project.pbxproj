@@ -36,6 +36,8 @@
 		24CEA381273E7A0C00414D31 /* ICButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA380273E7A0C00414D31 /* ICButton.swift */; };
 		B213280B273EB7BB00061877 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213280A273EB7BB00061877 /* UIColor+HEX.swift */; };
 		B21C1CF727466CED00B1E844 /* ICServerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21C1CF627466CED00B1E844 /* ICServerConstants.swift */; };
+		B2F0FA37274CD5A3004BBE75 /* MealDetailsImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F0FA35274CD5A3004BBE75 /* MealDetailsImageTableViewCell.swift */; };
+		B2F0FA38274CD5A3004BBE75 /* MealDetailsImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F0FA36274CD5A3004BBE75 /* MealDetailsImageTableViewCell.xib */; };
 		CA5E3312F8DA57B791A8ABFB /* Pods_iCook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2343F090490E7B43A4C5FDEE /* Pods_iCook.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,8 @@
 		5C8E974E47E76CDABC9902D3 /* Pods-iCook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCook.release.xcconfig"; path = "Target Support Files/Pods-iCook/Pods-iCook.release.xcconfig"; sourceTree = "<group>"; };
 		B213280A273EB7BB00061877 /* UIColor+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HEX.swift"; sourceTree = "<group>"; };
 		B21C1CF627466CED00B1E844 /* ICServerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICServerConstants.swift; sourceTree = "<group>"; };
+		B2F0FA35274CD5A3004BBE75 /* MealDetailsImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsImageTableViewCell.swift; sourceTree = "<group>"; };
+		B2F0FA36274CD5A3004BBE75 /* MealDetailsImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealDetailsImageTableViewCell.xib; sourceTree = "<group>"; };
 		CE0F787305F8178A4926DDAD /* Pods-iCook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCook.debug.xcconfig"; path = "Target Support Files/Pods-iCook/Pods-iCook.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +177,7 @@
 		24AC3808274BD39800850B71 /* MealDetails */ = {
 			isa = PBXGroup;
 			children = (
+				B2F0FA34274CD57C004BBE75 /* View */,
 				24AC380D274BD82E00850B71 /* Model */,
 				24AC3809274BD3CE00850B71 /* MealDetailsViewController.swift */,
 				24AC380A274BD3CE00850B71 /* MealDetailsViewController.xib */,
@@ -280,6 +285,15 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		B2F0FA34274CD57C004BBE75 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B2F0FA35274CD5A3004BBE75 /* MealDetailsImageTableViewCell.swift */,
+				B2F0FA36274CD5A3004BBE75 /* MealDetailsImageTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -340,6 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2F0FA38274CD5A3004BBE75 /* MealDetailsImageTableViewCell.xib in Resources */,
 				24CEA371273E6C3400414D31 /* LaunchScreen.storyboard in Resources */,
 				248FA5B52746624700D40BC4 /* MealsListViewController.xib in Resources */,
 				24AC380C274BD3CE00850B71 /* MealDetailsViewController.xib in Resources */,
@@ -415,6 +430,7 @@
 				248FA5BE274664D300D40BC4 /* MealListTableViewCell.swift in Sources */,
 				248FA5932742B5A600D40BC4 /* HomeViewController.swift in Sources */,
 				249F6D40274265BF0084ABDD /* ICTabBarController.swift in Sources */,
+				B2F0FA37274CD5A3004BBE75 /* MealDetailsImageTableViewCell.swift in Sources */,
 				248FA5B42746624700D40BC4 /* MealsListViewController.swift in Sources */,
 				24CEA381273E7A0C00414D31 /* ICButton.swift in Sources */,
 				24CEA37D273E79C500414D31 /* ICRoundedImageView.swift in Sources */,

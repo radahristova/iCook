@@ -16,6 +16,7 @@ class ICServerConstants {
     enum Routes: String {
         case categoriesList = "/categories.php"
         case fiterByCategory = "/filter.php?c="
+        case getMealById = "/lookup.php?i="
     }
     
 }

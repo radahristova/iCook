@@ -22,7 +22,7 @@ class MealDetailsModelResponse: BaseAPIObject {
     }
 }
 
-class MealDetailsModel: Codable {
+class MealDetailsModel: BaseAPIObject {
 
     
     var idMeal: String?
@@ -49,5 +49,7 @@ class MealDetailsModel: Codable {
         strArea = try? decoder?.decode(String.self, forKey: .strArea)
         strInstructions = try? decoder?.decode(String.self, forKey: .strInstructions)
         strMealThumb = try? decoder?.decode(String.self, forKey: .strMealThumb)
+        
+        super.init()
     }
 }
