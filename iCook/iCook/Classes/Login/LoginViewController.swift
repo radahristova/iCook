@@ -17,7 +17,6 @@ class LoginViewController: ICViewController {
     //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBackgroundColor(color: .icBeigeColor)
         appNameLabel.configureDefault(withSize: 30)
         descriptionLabel.configureDefault(withSize: 26)
     }
