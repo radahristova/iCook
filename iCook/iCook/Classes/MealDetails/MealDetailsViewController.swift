@@ -56,14 +56,18 @@ class MealDetailsViewController: ICViewController {
         }
     }
     
-//    private func getLabelHeight(text: String, font: UIFont, width: CGFloat) -> CGFloat {
-//        
-//        let maxSize = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
-//        let actualSize = self.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin], attributes: [.font : font], context: nil)
-//        return actualSize.height
-//        
-//    }
-    
+    private func getLabelHeight(text: String, font: UIFont, width: CGFloat) -> CGFloat {
+        
+        let label = ICLabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
+        label.configureDefault(withSize: 17)
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.text = text
+        label.sizeToFit()
+        return label.frame.height
+
+    }
+
 }
 
 
@@ -97,6 +101,12 @@ extension MealDetailsViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return MealDetailsImageTableViewCell.CELL_HEIGHT
+        } else if indexPath.row == 1 {
+            var actualSize = MealDetailsInformationTableViewCell.CELL_BASE_HEIGHT
+            actualSize += getLabelHeight(text: meal?.strInstructions ?? "",
+                                         font: UIFont(name: "Palatino", size: 19)!,
+                                         width: UIScreen.main.bounds.width - 70)
+            return actualSize
         }
         return 10
     }
