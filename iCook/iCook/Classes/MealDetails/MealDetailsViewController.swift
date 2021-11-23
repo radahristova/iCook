@@ -36,11 +36,14 @@ class MealDetailsViewController: ICViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         let nib = UINib(nibName: MealDetailsImageTableViewCell.CELL_IDENTIFIER, bundle: nil)
+        let nibTwo = UINib(nibName: MealDetailsInformationTableViewCell.CELL_IDENTIFIER, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: MealDetailsImageTableViewCell.CELL_IDENTIFIER)
+        tableView.register(nibTwo, forCellReuseIdentifier: MealDetailsInformationTableViewCell.CELL_IDENTIFIER)
         tableView.delegate = self
         tableView.dataSource = self
+        
         
         // Divider Color set to clear
         tableView.separatorColor = .clear
@@ -53,23 +56,42 @@ class MealDetailsViewController: ICViewController {
         }
     }
     
+//    private func getLabelHeight(text: String, font: UIFont, width: CGFloat) -> CGFloat {
+//        
+//        let maxSize = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
+//        let actualSize = self.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin], attributes: [.font : font], context: nil)
+//        return actualSize.height
+//        
+//    }
+    
 }
+
 
 //MARK: Extension UITableView
 extension MealDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MealDetailsImageTableViewCell.CELL_IDENTIFIER, for: indexPath) as! MealDetailsImageTableViewCell
-        
-        if let meal = meal {
-            cell.populate(withMeal: meal)
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: MealDetailsImageTableViewCell.CELL_IDENTIFIER, for: indexPath) as! MealDetailsImageTableViewCell
+            
+            if let meal = meal {
+                cell.populate(withMeal: meal)
+            }
+            return cell
+            
+        } else if indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: MealDetailsInformationTableViewCell.CELL_IDENTIFIER, for: indexPath) as! MealDetailsInformationTableViewCell
+            if let meal = meal {
+                cell.populate(withMeal: meal)
+            }
+            return cell
         }
+        return UITableViewCell()
         
-        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

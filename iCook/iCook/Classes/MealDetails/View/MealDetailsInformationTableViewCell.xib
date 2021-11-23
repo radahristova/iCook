@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MealDetailsInformationTableViewCell" rowHeight="250" id="KGk-i7-Jjw" customClass="MealDetailsInformationTableViewCell" customModule="iCook" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="483" height="250"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="483" height="250"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40C-4X-Ydf" customClass="ICLabel" customModule="iCook" customModuleProvider="target">
+                        <rect key="frame" x="15" y="15" width="453" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Area:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Usf-d2-ZTC" customClass="ICLabel" customModule="iCook" customModuleProvider="target">
+                        <rect key="frame" x="15" y="46" width="453" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJs-XU-kZ5" customClass="ICLabel" customModule="iCook" customModuleProvider="target">
+                        <rect key="frame" x="194.5" y="114.5" width="94.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xk-MV-bf9" customClass="ICLabel" customModule="iCook" customModuleProvider="target">
+                        <rect key="frame" x="15" y="107" width="41.5" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVI-vi-EbH" customClass="ICLabel" customModule="iCook" customModuleProvider="target">
+                        <rect key="frame" x="426" y="15" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2o6-Jm-BIQ" customClass="ICLabel" customModule="iCook" customModuleProvider="target">
+                        <rect key="frame" x="426" y="46" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="2o6-Jm-BIQ" firstAttribute="top" secondItem="40C-4X-Ydf" secondAttribute="bottom" constant="10" id="2QB-mk-dab"/>
+                    <constraint firstItem="Usf-d2-ZTC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="2ez-w7-Jhn"/>
+                    <constraint firstItem="40C-4X-Ydf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="CXq-x0-6vl"/>
+                    <constraint firstItem="tJs-XU-kZ5" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="JT3-rG-yVQ"/>
+                    <constraint firstAttribute="trailing" secondItem="2o6-Jm-BIQ" secondAttribute="trailing" constant="15" id="N0O-7X-Z3k"/>
+                    <constraint firstAttribute="trailing" secondItem="Usf-d2-ZTC" secondAttribute="trailing" constant="15" id="SQi-20-kPu"/>
+                    <constraint firstAttribute="trailing" secondItem="aVI-vi-EbH" secondAttribute="trailing" constant="15" id="Vhc-io-FLP"/>
+                    <constraint firstAttribute="trailing" secondItem="40C-4X-Ydf" secondAttribute="trailing" constant="15" id="Zcw-cO-em1"/>
+                    <constraint firstItem="aVI-vi-EbH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="j8W-Mf-Wna"/>
+                    <constraint firstItem="Usf-d2-ZTC" firstAttribute="top" secondItem="40C-4X-Ydf" secondAttribute="bottom" constant="10" id="nGl-oG-u7B"/>
+                    <constraint firstItem="tJs-XU-kZ5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="upb-5N-gOm"/>
+                    <constraint firstItem="40C-4X-Ydf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="zfg-AC-ibJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="areaDescription" destination="2o6-Jm-BIQ" id="Dur-tq-iUB"/>
+                <outlet property="areaLabel" destination="Usf-d2-ZTC" id="wNp-Nw-z5R"/>
+                <outlet property="categoryDescription" destination="aVI-vi-EbH" id="X7e-Je-tSd"/>
+                <outlet property="categoryLabel" destination="40C-4X-Ydf" id="pst-yA-g8P"/>
+                <outlet property="instructionDescription" destination="2Xk-MV-bf9" id="mbr-aF-Swz"/>
+                <outlet property="instructionsLabel" destination="tJs-XU-kZ5" id="APS-Mp-GWV"/>
+            </connections>
+            <point key="canvasLocation" x="255.79710144927537" y="160.04464285714286"/>
+        </tableViewCell>
+    </objects>
+</document>
