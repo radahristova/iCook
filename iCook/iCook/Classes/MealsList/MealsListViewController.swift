@@ -70,7 +70,14 @@ extension MealsListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let mealId = mealList?[indexPath.row].idMeal {
+            let mealDetailsVC = MealDetailsViewController(withMealId: mealId)
+            navigationController?.pushViewController(mealDetailsVC, animated: true)
+        }
+    }
 }
+
 
 extension MealsListViewController: HTTPManagerDelegate {
     func didGetResponse(model: BaseAPIObject) {

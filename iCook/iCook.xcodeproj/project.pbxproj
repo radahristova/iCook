@@ -21,6 +21,12 @@
 		248FA5BE274664D300D40BC4 /* MealListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA5BC274664D300D40BC4 /* MealListTableViewCell.swift */; };
 		248FA5BF274664D300D40BC4 /* MealListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 248FA5BD274664D300D40BC4 /* MealListTableViewCell.xib */; };
 		249F6D40274265BF0084ABDD /* ICTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F6D3F274265BF0084ABDD /* ICTabBarController.swift */; };
+		24AC380B274BD3CE00850B71 /* MealDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC3809274BD3CE00850B71 /* MealDetailsViewController.swift */; };
+		24AC380C274BD3CE00850B71 /* MealDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24AC380A274BD3CE00850B71 /* MealDetailsViewController.xib */; };
+		24AC380F274BD84300850B71 /* MealDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC380E274BD84300850B71 /* MealDetailsModel.swift */; };
+		24AC3813274CE5DE00850B71 /* MealDetailsInformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24AC3811274CE5DE00850B71 /* MealDetailsInformationTableViewCell.xib */; };
+		24AC3814274CF7B300850B71 /* MealDetailsInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC3810274CE5DE00850B71 /* MealDetailsInformationTableViewCell.swift */; };
+		24AC3816274CFF7E00850B71 /* UILabel+Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC3815274CFF7E00850B71 /* UILabel+Height.swift */; };
 		24CEA365273E6C3100414D31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA364273E6C3100414D31 /* AppDelegate.swift */; };
 		24CEA367273E6C3100414D31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA366273E6C3100414D31 /* SceneDelegate.swift */; };
 		24CEA369273E6C3100414D31 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA368273E6C3100414D31 /* LoginViewController.swift */; };
@@ -33,6 +39,8 @@
 		24CEA381273E7A0C00414D31 /* ICButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA380273E7A0C00414D31 /* ICButton.swift */; };
 		B213280B273EB7BB00061877 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213280A273EB7BB00061877 /* UIColor+HEX.swift */; };
 		B21C1CF727466CED00B1E844 /* ICServerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21C1CF627466CED00B1E844 /* ICServerConstants.swift */; };
+		B2F0FA37274CD5A3004BBE75 /* MealDetailsImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F0FA35274CD5A3004BBE75 /* MealDetailsImageTableViewCell.swift */; };
+		B2F0FA38274CD5A3004BBE75 /* MealDetailsImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F0FA36274CD5A3004BBE75 /* MealDetailsImageTableViewCell.xib */; };
 		CA5E3312F8DA57B791A8ABFB /* Pods_iCook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2343F090490E7B43A4C5FDEE /* Pods_iCook.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +60,12 @@
 		248FA5BC274664D300D40BC4 /* MealListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListTableViewCell.swift; sourceTree = "<group>"; };
 		248FA5BD274664D300D40BC4 /* MealListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealListTableViewCell.xib; sourceTree = "<group>"; };
 		249F6D3F274265BF0084ABDD /* ICTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICTabBarController.swift; sourceTree = "<group>"; };
+		24AC3809274BD3CE00850B71 /* MealDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsViewController.swift; sourceTree = "<group>"; };
+		24AC380A274BD3CE00850B71 /* MealDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealDetailsViewController.xib; sourceTree = "<group>"; };
+		24AC380E274BD84300850B71 /* MealDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsModel.swift; sourceTree = "<group>"; };
+		24AC3810274CE5DE00850B71 /* MealDetailsInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsInformationTableViewCell.swift; sourceTree = "<group>"; };
+		24AC3811274CE5DE00850B71 /* MealDetailsInformationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealDetailsInformationTableViewCell.xib; sourceTree = "<group>"; };
+		24AC3815274CFF7E00850B71 /* UILabel+Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Height.swift"; sourceTree = "<group>"; };
 		24CEA361273E6C3100414D31 /* iCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CEA364273E6C3100414D31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24CEA366273E6C3100414D31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +81,8 @@
 		5C8E974E47E76CDABC9902D3 /* Pods-iCook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCook.release.xcconfig"; path = "Target Support Files/Pods-iCook/Pods-iCook.release.xcconfig"; sourceTree = "<group>"; };
 		B213280A273EB7BB00061877 /* UIColor+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HEX.swift"; sourceTree = "<group>"; };
 		B21C1CF627466CED00B1E844 /* ICServerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICServerConstants.swift; sourceTree = "<group>"; };
+		B2F0FA35274CD5A3004BBE75 /* MealDetailsImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsImageTableViewCell.swift; sourceTree = "<group>"; };
+		B2F0FA36274CD5A3004BBE75 /* MealDetailsImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealDetailsImageTableViewCell.xib; sourceTree = "<group>"; };
 		CE0F787305F8178A4926DDAD /* Pods-iCook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCook.debug.xcconfig"; path = "Target Support Files/Pods-iCook/Pods-iCook.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,6 +180,25 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		24AC3808274BD39800850B71 /* MealDetails */ = {
+			isa = PBXGroup;
+			children = (
+				B2F0FA34274CD57C004BBE75 /* View */,
+				24AC380D274BD82E00850B71 /* Model */,
+				24AC3809274BD3CE00850B71 /* MealDetailsViewController.swift */,
+				24AC380A274BD3CE00850B71 /* MealDetailsViewController.xib */,
+			);
+			path = MealDetails;
+			sourceTree = "<group>";
+		};
+		24AC380D274BD82E00850B71 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				24AC380E274BD84300850B71 /* MealDetailsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		24CEA358273E6C3100414D31 = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				B213280A273EB7BB00061877 /* UIColor+HEX.swift */,
+				24AC3815274CFF7E00850B71 /* UILabel+Height.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -251,8 +287,20 @@
 				248FA5952742B5AF00D40BC4 /* Login */,
 				248FA5962742B5BF00D40BC4 /* Home */,
 				248FA5B1274661FC00D40BC4 /* MealsList */,
+				24AC3808274BD39800850B71 /* MealDetails */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		B2F0FA34274CD57C004BBE75 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B2F0FA35274CD5A3004BBE75 /* MealDetailsImageTableViewCell.swift */,
+				B2F0FA36274CD5A3004BBE75 /* MealDetailsImageTableViewCell.xib */,
+				24AC3810274CE5DE00850B71 /* MealDetailsInformationTableViewCell.swift */,
+				24AC3811274CE5DE00850B71 /* MealDetailsInformationTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,12 +363,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2F0FA38274CD5A3004BBE75 /* MealDetailsImageTableViewCell.xib in Resources */,
 				24CEA371273E6C3400414D31 /* LaunchScreen.storyboard in Resources */,
 				248FA5B52746624700D40BC4 /* MealsListViewController.xib in Resources */,
+				24AC380C274BD3CE00850B71 /* MealDetailsViewController.xib in Resources */,
 				24CEA36E273E6C3400414D31 /* Assets.xcassets in Resources */,
 				248FA59C2743B27C00D40BC4 /* CategoriesTableViewCell.xib in Resources */,
 				248FA5BF274664D300D40BC4 /* MealListTableViewCell.xib in Resources */,
 				24CEA36C273E6C3100414D31 /* Main.storyboard in Resources */,
+				24AC3813274CE5DE00850B71 /* MealDetailsInformationTableViewCell.xib in Resources */,
 				248FA5942742B5A600D40BC4 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,6 +426,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				248FA5AC2745143300D40BC4 /* ICTableViewCell.swift in Sources */,
+				24AC3816274CFF7E00850B71 /* UILabel+Height.swift in Sources */,
+				24AC380F274BD84300850B71 /* MealDetailsModel.swift in Sources */,
 				24CEA37F273E79EC00414D31 /* ICLabel.swift in Sources */,
 				B213280B273EB7BB00061877 /* UIColor+HEX.swift in Sources */,
 				248FA5A827440D1F00D40BC4 /* ICNavigationController.swift in Sources */,
@@ -387,11 +440,14 @@
 				248FA5B82746634D00D40BC4 /* MealListModel.swift in Sources */,
 				248FA5BE274664D300D40BC4 /* MealListTableViewCell.swift in Sources */,
 				248FA5932742B5A600D40BC4 /* HomeViewController.swift in Sources */,
+				24AC3814274CF7B300850B71 /* MealDetailsInformationTableViewCell.swift in Sources */,
 				249F6D40274265BF0084ABDD /* ICTabBarController.swift in Sources */,
+				B2F0FA37274CD5A3004BBE75 /* MealDetailsImageTableViewCell.swift in Sources */,
 				248FA5B42746624700D40BC4 /* MealsListViewController.swift in Sources */,
 				24CEA381273E7A0C00414D31 /* ICButton.swift in Sources */,
 				24CEA37D273E79C500414D31 /* ICRoundedImageView.swift in Sources */,
 				24CEA367273E6C3100414D31 /* SceneDelegate.swift in Sources */,
+				24AC380B274BD3CE00850B71 /* MealDetailsViewController.swift in Sources */,
 				248FA5A32743BE8F00D40BC4 /* CategoryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,7 +596,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J8MUWCUC7C;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -555,8 +612,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.radahristova.iCook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobilewaves.icook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "iCook Dev Profile";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -569,7 +627,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J8MUWCUC7C;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -584,8 +643,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.radahristova.iCook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobilewaves.icook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "iCook Dev Profile";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

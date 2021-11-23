@@ -56,6 +56,13 @@ class HTTPManager {
         makeRequest(delegate: delegate, route: .fiterByCategory,parameter: category,
                     responseModel: MealListModelResponse.self)
     }
+    
+    func getMeal(byId id: String, delegate: HTTPManagerDelegate) {
+        makeRequest(delegate: delegate,
+                    route: .getMealById,
+                    parameter: id,
+                    responseModel: MealDetailsModelResponse.self)
+    }
         
 }
 
