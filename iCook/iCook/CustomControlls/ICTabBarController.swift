@@ -33,7 +33,7 @@ class ICTabBarController: UITabBarController {
     
     private func configureViewControllers() {
         
-        let favorites = ICNavigationController(rootViewController: ICViewController())
+        let favorites = ICNavigationController(rootViewController: FavoritesViewController())
         let tabOneBarItem = UITabBarItem(title: "Favourites",
                                          image: UIImage(systemName: "heart"),
                                          selectedImage: UIImage(systemName: "heart.fill"))
