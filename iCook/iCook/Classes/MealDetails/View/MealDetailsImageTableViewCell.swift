@@ -25,7 +25,7 @@ class MealDetailsImageTableViewCell: ICTableViewCell {
         mealNameLabel.configureDefault(withSize: 19)
     }
     
-    func populate(withMeal meal: MealDetailsModel) {
+    func populate(withMeal meal: MealListModel) {
         let url = URL(string: meal.strMealThumb ?? "")
         mealImageView.kf.setImage(with: url)
         

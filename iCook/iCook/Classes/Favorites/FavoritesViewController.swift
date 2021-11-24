@@ -9,7 +9,13 @@ import UIKit
 
 class FavoritesViewController: ICViewController {
     
-    var favorites: [MealListModel]?
+    var favorites: [MealListModel]? {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.reloadData()
+            }
+        }
+    }
 
     @IBOutlet weak var tableView: UITableView!
     

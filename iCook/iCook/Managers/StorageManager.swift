@@ -7,16 +7,26 @@
 
 import Foundation
 
-class StorageManager {
+protocol StorageManaging {
+    var favorites: [MealListModel] { get set }
+}
+
+class StorageManager : StorageManaging {
     static var shared = StorageManager()
     
     var favorites: [MealListModel] {
         set {
             favoritesInMemory = newValue
-            UserDefaults.standard.set(favoritesInMemory, forKey: "favorites")
+            let data = try? JSONEncoder().encode(newValue)
+            UserDefaults.standard.set(data, forKey: "favorites")
         }
         get {
-            favoritesInMemory ?? UserDefaults.standard.value(forKey: "favorites") as? [MealListModel] ?? []
+            if favoritesInMemory == nil,
+               let data = UserDefaults.standard.value(forKey: "favorites") as? Data,
+               let favorites = try? JSONDecoder().decode([MealListModel].self, from: data) {
+                favoritesInMemory = favorites
+            }
+            return favoritesInMemory ?? []
         }
     }
     
