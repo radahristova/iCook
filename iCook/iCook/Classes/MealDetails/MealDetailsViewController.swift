@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import PKHUD
 
 class MealDetailsViewController: ICViewController {
     
@@ -16,6 +17,7 @@ class MealDetailsViewController: ICViewController {
     //MARK: Dependencies
     private let httpManager: HTTPManager
     private var storageManager: StorageManaging
+    private var hud: PKHUD
     
     //MARK: Variables
     private var meal: MealListModel!
@@ -23,10 +25,12 @@ class MealDetailsViewController: ICViewController {
     //MARK: Life Cycle
     init(with meal: MealListModel,
          httpManager: HTTPManager = HTTPManager.sharedInstance,
-         storageManager: StorageManaging = StorageManager.shared) {
+         storageManager: StorageManaging = StorageManager.shared,
+         hud: PKHUD = PKHUD.sharedHUD) {
         self.meal = meal
         self.httpManager = httpManager
         self.storageManager = storageManager
+        self.hud = hud
         super.init(nibName: "MealDetailsViewController", bundle: nil)
         
     }
@@ -34,6 +38,7 @@ class MealDetailsViewController: ICViewController {
     required init?(coder: NSCoder) {
         self.httpManager = HTTPManager.sharedInstance
         self.storageManager = StorageManager.shared
+        self.hud = PKHUD.sharedHUD
         super.init(coder: coder)
     }
     
@@ -67,22 +72,45 @@ class MealDetailsViewController: ICViewController {
         }
     }
     
+    
     private func addFavoriteButton() {
-        let wasAdded = storageManager.favorites.first(where: { $0.idMeal == meal.idMeal }) != nil
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: wasAdded ?  "heart.fill" : "heart"), style: .plain , target: self, action: #selector(tappedFavorite))
+        let wasAdded = storageManager.hasAddedAtIndex(toFavorites: meal.idMeal) != nil
+        let image = UIImage(named: wasAdded ? "heart.fill" : "heart")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: .plain , target: self, action: #selector(tappedFavorite))
     }
     
     @objc func tappedFavorite(_ barButtonItem: UIBarButtonItem) {
         guard let meal = meal else {
             return
         }
-        if let index = storageManager.favorites
-            .firstIndex(where: { $0.idMeal == meal.idMeal }) {
-            storageManager.favorites.remove(at: index)
+        if let index = storageManager.hasAddedAtIndex(toFavorites: meal.idMeal) {
+            storageManager.remove(fromFavoritesAt: index)
             barButtonItem.image = UIImage(named: "heart")
         } else {
-            storageManager.favorites.append(meal)
-            barButtonItem.image = UIImage(named: "heart.fill")
+            if storageManager.hasAddedMaxFavorites {
+               showMaximumAlert()
+            } else {
+                storageManager.add(toFavorites: meal) 
+                barButtonItem.image = UIImage(named: "heart.fill")
+                showSuccessAlert()
+            }
+        }
+        
+    }
+    
+    private func showMaximumAlert() {
+        hud.contentView = PKHUDTextView(text: "You cannot add more than \(storageManager.maxFavorites) recipes!")
+        hud.show()
+        hud.hide(afterDelay: 3.0) { success in
+            // Completion Handler
+        }
+    }
+    
+    private func showSuccessAlert() {
+        hud.contentView = PKHUDSuccessView()
+        hud.show()
+        hud.hide(afterDelay: 1.0) { success in
+            // Completion Handler
         }
     }
     

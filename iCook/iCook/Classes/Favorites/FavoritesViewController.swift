@@ -7,21 +7,16 @@
 
 import UIKit
 
+
 class FavoritesViewController: ICViewController {
     
-    var favorites: [MealListModel]? {
-        didSet {
-            DispatchQueue.main.async { [weak self] in
-                self?.tableView.reloadData()
-            }
-        }
-    }
-
+    private var storageManager: StorageManaging = StorageManager.shared
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         title = "Favorites"
         let nib = UINib(nibName: MealListTableViewCell.CELL_IDENTIFIER, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: MealListTableViewCell.CELL_IDENTIFIER)
@@ -34,23 +29,43 @@ class FavoritesViewController: ICViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        favorites = StorageManager.shared.favorites
+        tableView.reloadData()
     }
-
+    
 }
 
 extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favorites?.count ?? 0
+        storageManager.favoritesCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MealListTableViewCell.CELL_IDENTIFIER, for: indexPath) as! MealListTableViewCell
-        if let meal = favorites?[indexPath.row]{
+        if let meal = storageManager.meal(at: indexPath.row) {
             cell.populate(withMeal: meal)
         }
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let meal = storageManager.meal(at: indexPath.row) {
+            let mealDetailsVC = MealDetailsViewController(with: meal)
+            navigationController?.pushViewController(mealDetailsVC, animated: true)
+        }
+    }
     
+
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            storageManager.remove(fromFavoritesAt: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.endUpdates()
+        }
+    }
+   
 }

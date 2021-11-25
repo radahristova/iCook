@@ -8,13 +8,30 @@
 import Foundation
 
 protocol StorageManaging {
-    var favorites: [MealListModel] { get set }
+    var favoritesCount: Int { get }
+    var maxFavorites: Int { get }
+    var hasAddedMaxFavorites: Bool { get }
+    @discardableResult
+    func add(toFavorites meal: MealListModel) -> Bool
+    func remove(fromFavoritesAt index: Int)
+    func hasAddedAtIndex(toFavorites mealID: String?) -> Int?
+    func meal(at index: Int) -> MealListModel?
 }
 
 class StorageManager : StorageManaging {
     static var shared = StorageManager()
     
-    var favorites: [MealListModel] {
+    var favoritesCount: Int {
+        favorites.count
+    }
+    var hasAddedMaxFavorites: Bool {
+        favorites.count >= maxFavorites
+    }
+    var maxFavorites: Int {
+        10
+    }
+    
+    private var favorites: [MealListModel] {
         set {
             favoritesInMemory = newValue
             let data = try? JSONEncoder().encode(newValue)
@@ -31,4 +48,32 @@ class StorageManager : StorageManaging {
     }
     
     private var favoritesInMemory: [MealListModel]?
+    
+    func add(toFavorites meal: MealListModel) -> Bool {
+        if hasAddedMaxFavorites == false {
+            favorites.append(meal)
+            return true
+        }
+        return false
+    }
+    
+    func hasAddedAtIndex(toFavorites mealID: String?) -> Int? {
+        favorites.firstIndex(where: { $0.idMeal == mealID })
+    }
+    
+    func remove(fromFavoritesAt index: Int)  {
+        favorites.remove(at: index)
+    }
+    
+    func meal(at index: Int) -> MealListModel? {
+        favorites[safe: index]
+    }
+}
+
+extension Collection {
+    
+    /// Returns the element at the specified index if it is within bounds, otherwise nil.
+    subscript (safe index: Index) -> Element? {
+        indices.contains(index) ? self[index] : nil
+    }
 }
