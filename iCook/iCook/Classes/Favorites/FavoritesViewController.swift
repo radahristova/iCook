@@ -54,18 +54,17 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            tableView.beginUpdates()
-            storageManager.remove(fromFavoritesAt: indexPath.row)
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let delete = UIContextualAction(style: .destructive, title: "Delete") { [unowned self] action, view, completionHandler in
+            self.storageManager.remove(fromFavoritesAt: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            tableView.endUpdates()
+            
+            completionHandler(true)
+            
         }
+        delete.backgroundColor = .icAccentColor
+        return UISwipeActionsConfiguration(actions: [delete])
     }
-   
 }
+
