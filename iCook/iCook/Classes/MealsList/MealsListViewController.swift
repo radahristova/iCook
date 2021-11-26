@@ -63,16 +63,19 @@ extension MealsListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return mealList?.count ?? 0
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MealListTableViewCell.CELL_IDENTIFIER, for: indexPath) as! MealListTableViewCell
         if let meal = mealList?[indexPath.row]{
             cell.populate(withMeal: meal)
         }
+        
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let mealId = mealList?[indexPath.row].idMeal {
-            let mealDetailsVC = MealDetailsViewController(withMealId: mealId)
+        if let meal = mealList?[indexPath.row] {
+            let mealDetailsVC = MealDetailsViewController(with: meal)
             navigationController?.pushViewController(mealDetailsVC, animated: true)
         }
     }

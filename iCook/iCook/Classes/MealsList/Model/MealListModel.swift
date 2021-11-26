@@ -29,18 +29,20 @@ class MealListModel: Codable {
     var strMeal: String?
     var strMealThumb: String?
     var idMeal: String?
-    
+    var details: MealDetailsModel?
     
     private enum CodingKeys: String, CodingKey {
         case strMeal
         case strMealThumb
         case idMeal
+        case details
     }
     
     required init(from decoder: Decoder) throws {
-        let decoder = try? decoder.container(keyedBy: CodingKeys.self)
-        strMeal = try? decoder?.decode(String.self, forKey: .strMeal)
-        strMealThumb = try? decoder?.decode(String.self, forKey: .strMealThumb)
-        idMeal = try? decoder?.decode(String.self, forKey: .idMeal)
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        strMeal = try container.decode(String.self, forKey: .strMeal)
+        strMealThumb = try container.decode(String.self, forKey: .strMealThumb)
+        idMeal = try container.decode(String.self, forKey: .idMeal)
+        details = try? container.decode(MealDetailsModel.self, forKey: .details)
     }
 }
