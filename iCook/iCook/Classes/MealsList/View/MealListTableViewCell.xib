@@ -18,28 +18,38 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iCookLogo" translatesAutoresizingMaskIntoConstraints="NO" id="dTn-Jv-8fq" customClass="ICRoundedImageView" customModule="iCook" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHC-cz-VXo">
-                        <rect key="frame" x="0.0" y="120" width="320" height="60"/>
+                        <rect key="frame" x="0.0" y="130" width="320" height="50"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="8v9-wB-yaI" customClass="ICLabel" customModule="iCook" customModuleProvider="target">
-                                <rect key="frame" x="10" y="16.5" width="300" height="27.5"/>
+                                <rect key="frame" x="10" y="11.5" width="260" height="27.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" translatesAutoresizingMaskIntoConstraints="NO" id="TpA-C2-13T">
+                                <rect key="frame" x="280" y="10" width="30" height="30"/>
+                                <color key="tintColor" red="0.93820375199999995" green="0.56087571380000001" blue="0.32150018219999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Am8-yK-vhW"/>
+                                    <constraint firstAttribute="height" constant="30" id="Qr3-4x-i4A"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="8v9-wB-yaI" secondAttribute="trailing" constant="10" id="pU3-Gm-azP"/>
+                            <constraint firstAttribute="trailing" secondItem="TpA-C2-13T" secondAttribute="trailing" constant="10" id="OEp-Gl-aEW"/>
+                            <constraint firstAttribute="trailing" secondItem="8v9-wB-yaI" secondAttribute="trailing" constant="50" id="pU3-Gm-azP"/>
                             <constraint firstItem="8v9-wB-yaI" firstAttribute="leading" secondItem="vHC-cz-VXo" secondAttribute="leading" constant="10" id="tdd-jp-4sx"/>
                             <constraint firstItem="8v9-wB-yaI" firstAttribute="centerY" secondItem="vHC-cz-VXo" secondAttribute="centerY" id="wBk-Fe-Bdf"/>
+                            <constraint firstItem="TpA-C2-13T" firstAttribute="top" secondItem="vHC-cz-VXo" secondAttribute="top" constant="10" id="yAg-sg-6Nb"/>
+                            <constraint firstAttribute="bottom" secondItem="TpA-C2-13T" secondAttribute="bottom" constant="10" id="yI6-Jq-MbE"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="dTn-Jv-8fq" secondAttribute="bottom" constant="60" id="27D-4q-3nc"/>
                     <constraint firstAttribute="trailing" secondItem="vHC-cz-VXo" secondAttribute="trailing" id="55b-Q1-eMj"/>
                     <constraint firstItem="dTn-Jv-8fq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JWf-4h-o6G"/>
                     <constraint firstAttribute="bottom" secondItem="vHC-cz-VXo" secondAttribute="bottom" id="VIb-jt-Wy6"/>
@@ -53,11 +63,13 @@
             <connections>
                 <outlet property="categoryImageView" destination="dTn-Jv-8fq" id="iFO-fX-eul"/>
                 <outlet property="categoryMealLabel" destination="8v9-wB-yaI" id="qHi-R3-EtK"/>
+                <outlet property="favoriteImage" destination="TpA-C2-13T" id="fRF-dl-WUd"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="63.616071428571423"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="heart.fill" width="19.5" height="18.5"/>
         <image name="iCookLogo" width="166.5" height="166.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

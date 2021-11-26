@@ -43,6 +43,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: MealListTableViewCell.CELL_IDENTIFIER, for: indexPath) as! MealListTableViewCell
         if let meal = storageManager.meal(at: indexPath.row) {
             cell.populate(withMeal: meal)
+            cell.favoriteImage.isHidden = true
         }
         return cell
     }

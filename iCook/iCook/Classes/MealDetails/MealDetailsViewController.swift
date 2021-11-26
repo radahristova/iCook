@@ -56,6 +56,7 @@ class MealDetailsViewController: ICViewController {
         
         // Divider Color set to clear
         tableView.separatorColor = .clear
+        showDetails()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,6 +87,7 @@ class MealDetailsViewController: ICViewController {
         if let index = storageManager.hasAddedAtIndex(toFavorites: meal.idMeal) {
             storageManager.remove(fromFavoritesAt: index)
             barButtonItem.image = UIImage(named: "heart")
+            showSuccessAlert()
         } else {
             if storageManager.hasAddedMaxFavorites {
                showMaximumAlert()
@@ -93,6 +95,7 @@ class MealDetailsViewController: ICViewController {
                 storageManager.add(toFavorites: meal) 
                 barButtonItem.image = UIImage(named: "heart.fill")
                 showSuccessAlert()
+                hapticFeedBack()
             }
         }
         
@@ -112,6 +115,11 @@ class MealDetailsViewController: ICViewController {
         hud.hide(afterDelay: 1.0) { success in
             // Completion Handler
         }
+    }
+    
+    private func hapticFeedBack() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
     }
     
     private func getLabelHeight(text: String, font: UIFont, width: CGFloat) -> CGFloat {

@@ -16,6 +16,7 @@ protocol StorageManaging {
     func remove(fromFavoritesAt index: Int)
     func hasAddedAtIndex(toFavorites mealID: String?) -> Int?
     func meal(at index: Int) -> MealListModel?
+   
 }
 
 class StorageManager : StorageManaging {
@@ -68,6 +69,8 @@ class StorageManager : StorageManaging {
     func meal(at index: Int) -> MealListModel? {
         favorites[safe: index]
     }
+    
+    
 }
 
 extension Collection {

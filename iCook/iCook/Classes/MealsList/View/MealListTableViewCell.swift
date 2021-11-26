@@ -17,18 +17,26 @@ class MealListTableViewCell: ICTableViewCell {
     
     @IBOutlet weak var categoryMealLabel: ICLabel!
     
+    @IBOutlet weak var favoriteImage: UIImageView!
+    
+    lazy var storageManager: StorageManaging = StorageManager.shared
+    
+  
     override func awakeFromNib() {
         super.awakeFromNib()
         categoryImageView.setImageActivity()
         categoryImageView.radiusRatioToSmallerSide = 0
         categoryMealLabel.configureDefault(withSize: 19)
+        
     }
     
     
-    func populate(withMeal meals: MealListModel) {
-        let url = URL(string: meals.strMealThumb ?? "")
+    
+    func populate(withMeal meal: MealListModel) {
+        let url = URL(string: meal.strMealThumb ?? "")
         categoryImageView.kf.setImage(with: url)
-        categoryMealLabel.text = meals.strMeal
+        categoryMealLabel.text = meal.strMeal
+        favoriteImage.isHidden = storageManager.hasAddedAtIndex(toFavorites: meal.idMeal) == nil
     }
 
 }
