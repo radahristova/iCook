@@ -6,4 +6,7 @@ target 'iCook' do
   
   pod 'Kingfisher', '~> 7.0'
   pod 'PKHUD'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
+
 end
