@@ -10,7 +10,6 @@ import UIKit
 
 class FavoritesViewController: ICViewController {
     
-    private var storageManager: StorageManaging = StorageManager.shared
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -36,12 +35,12 @@ class FavoritesViewController: ICViewController {
 
 extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        storageManager.favoritesCount
+        StorageManager.sharedInstance.favoritesCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MealListTableViewCell.CELL_IDENTIFIER, for: indexPath) as! MealListTableViewCell
-        if let meal = storageManager.meal(at: indexPath.row) {
+        if let meal = StorageManager.sharedInstance.meal(at: indexPath.row) {
             cell.populate(withMeal: meal)
             cell.favoriteImage.isHidden = true
         }
@@ -49,7 +48,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let meal = storageManager.meal(at: indexPath.row) {
+        if let meal = StorageManager.sharedInstance.meal(at: indexPath.row) {
             let mealDetailsVC = MealDetailsViewController(with: meal)
             navigationController?.pushViewController(mealDetailsVC, animated: true)
         }
@@ -58,7 +57,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let delete = UIContextualAction(style: .destructive, title: "Delete") { [unowned self] action, view, completionHandler in
-            self.storageManager.remove(fromFavoritesAt: indexPath.row)
+            StorageManager.sharedInstance.remove(fromFavoritesAt: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             
             completionHandler(true)

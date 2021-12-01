@@ -20,7 +20,10 @@ protocol StorageManaging {
 }
 
 class StorageManager : StorageManaging {
-    static var shared = StorageManager()
+    static var sharedInstance = StorageManager()
+    private init() {
+        
+    }
     
     var favoritesCount: Int {
         favorites.count

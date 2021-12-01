@@ -11,6 +11,7 @@ class MealListTableViewCell: ICTableViewCell {
     
     //MARK: Constants
     static let CELL_IDENTIFIER = "MealListTableViewCell"
+    static let DEFAULT_FONT_SIZE_LABEL = CGFloat(19)
 
     //MARK:  IBOutlets
     @IBOutlet weak var categoryImageView: ICRoundedImageView!
@@ -19,14 +20,13 @@ class MealListTableViewCell: ICTableViewCell {
     
     @IBOutlet weak var favoriteImage: UIImageView!
     
-    lazy var storageManager: StorageManaging = StorageManager.shared
     
   
     override func awakeFromNib() {
         super.awakeFromNib()
         categoryImageView.setImageActivity()
         categoryImageView.radiusRatioToSmallerSide = 0
-        categoryMealLabel.configureDefault(withSize: 19)
+        categoryMealLabel.configureDefault(withSize: MealListTableViewCell.DEFAULT_FONT_SIZE_LABEL)
         
     }
     
@@ -36,7 +36,7 @@ class MealListTableViewCell: ICTableViewCell {
         let url = URL(string: meal.strMealThumb ?? "")
         categoryImageView.kf.setImage(with: url)
         categoryMealLabel.text = meal.strMeal
-        favoriteImage.isHidden = storageManager.hasAddedAtIndex(toFavorites: meal.idMeal) == nil
+        favoriteImage.isHidden = StorageManager.sharedInstance.hasAddedAtIndex(toFavorites: meal.idMeal) == nil
     }
 
 }

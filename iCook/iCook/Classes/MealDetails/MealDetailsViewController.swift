@@ -11,34 +11,24 @@ import PKHUD
 
 class MealDetailsViewController: ICViewController {
     
+    //MARK: Constants
+    static let HEIGHT_CELL = CGFloat(10)
+    
     //MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
     
-    //MARK: Dependencies
-    private let httpManager: HTTPManager
-    private var storageManager: StorageManaging
-    private var hud: PKHUD
     
     //MARK: Variables
     private var meal: MealListModel!
     
     //MARK: Life Cycle
-    init(with meal: MealListModel,
-         httpManager: HTTPManager = HTTPManager.sharedInstance,
-         storageManager: StorageManaging = StorageManager.shared,
-         hud: PKHUD = PKHUD.sharedHUD) {
+    init(with meal: MealListModel) {
         self.meal = meal
-        self.httpManager = httpManager
-        self.storageManager = storageManager
-        self.hud = hud
         super.init(nibName: "MealDetailsViewController", bundle: nil)
         
     }
     
     required init?(coder: NSCoder) {
-        self.httpManager = HTTPManager.sharedInstance
-        self.storageManager = StorageManager.shared
-        self.hud = PKHUD.sharedHUD
         super.init(coder: coder)
     }
     
@@ -62,7 +52,7 @@ class MealDetailsViewController: ICViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if meal.details == nil, let mealId = meal.idMeal {
-            httpManager.getMeal(byId: mealId, delegate: self)
+            HTTPManager.sharedInstance.getMeal(byId: mealId, delegate: self)
         }
     }
     
@@ -75,7 +65,7 @@ class MealDetailsViewController: ICViewController {
     
     
     private func addFavoriteButton() {
-        let wasAdded = storageManager.hasAddedAtIndex(toFavorites: meal.idMeal) != nil
+        let wasAdded = StorageManager.sharedInstance.hasAddedAtIndex(toFavorites: meal.idMeal) != nil
         let image = UIImage(named: wasAdded ? "heart.fill" : "heart")
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: .plain , target: self, action: #selector(tappedFavorite))
     }
@@ -84,15 +74,15 @@ class MealDetailsViewController: ICViewController {
         guard let meal = meal else {
             return
         }
-        if let index = storageManager.hasAddedAtIndex(toFavorites: meal.idMeal) {
-            storageManager.remove(fromFavoritesAt: index)
+        if let index = StorageManager.sharedInstance.hasAddedAtIndex(toFavorites: meal.idMeal) {
+            StorageManager.sharedInstance.remove(fromFavoritesAt: index)
             barButtonItem.image = UIImage(named: "heart")
             showSuccessAlert()
         } else {
-            if storageManager.hasAddedMaxFavorites {
+            if StorageManager.sharedInstance.hasAddedMaxFavorites {
                showMaximumAlert()
             } else {
-                storageManager.add(toFavorites: meal) 
+                StorageManager.sharedInstance.add(toFavorites: meal)
                 barButtonItem.image = UIImage(named: "heart.fill")
                 showSuccessAlert()
                 hapticFeedBack()
@@ -102,17 +92,17 @@ class MealDetailsViewController: ICViewController {
     }
     
     private func showMaximumAlert() {
-        hud.contentView = PKHUDTextView(text: "You cannot add more than \(storageManager.maxFavorites) recipes!")
-        hud.show()
-        hud.hide(afterDelay: 3.0) { success in
+        PKHUD.sharedHUD.contentView = PKHUDTextView(text: "You cannot add more than \(StorageManager.sharedInstance.maxFavorites) recipes!")
+        PKHUD.sharedHUD.show()
+        PKHUD.sharedHUD.hide(afterDelay: 3.0) { success in
             // Completion Handler
         }
     }
     
     private func showSuccessAlert() {
-        hud.contentView = PKHUDSuccessView()
-        hud.show()
-        hud.hide(afterDelay: 1.0) { success in
+        PKHUD.sharedHUD.contentView = PKHUDSuccessView()
+        PKHUD.sharedHUD.show()
+        PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
             // Completion Handler
         }
     }
@@ -166,7 +156,7 @@ extension MealDetailsViewController: UITableViewDelegate, UITableViewDataSource 
                                          width: UIScreen.main.bounds.width - 70)
             return actualSize
         }
-        return 10
+        return MealDetailsViewController.HEIGHT_CELL
     }
     
 }

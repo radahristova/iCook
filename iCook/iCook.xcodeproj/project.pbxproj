@@ -32,6 +32,8 @@
 		24AC381C274E2D0700850B71 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC381A274E2D0700850B71 /* FavoritesViewController.swift */; };
 		24AC381D274E2D0700850B71 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24AC381B274E2D0700850B71 /* FavoritesViewController.xib */; };
 		24AC381F274E345800850B71 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC381E274E345800850B71 /* StorageManager.swift */; };
+		24B7492D2756321E004136DC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B7492B2756321E004136DC /* SettingsViewController.swift */; };
+		24B7492E2756321E004136DC /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24B7492C2756321E004136DC /* SettingsViewController.xib */; };
 		24CEA365273E6C3100414D31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA364273E6C3100414D31 /* AppDelegate.swift */; };
 		24CEA367273E6C3100414D31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA366273E6C3100414D31 /* SceneDelegate.swift */; };
 		24CEA369273E6C3100414D31 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA368273E6C3100414D31 /* LoginViewController.swift */; };
@@ -76,6 +78,8 @@
 		24AC381A274E2D0700850B71 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		24AC381B274E2D0700850B71 /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
 		24AC381E274E345800850B71 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		24B7492B2756321E004136DC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		24B7492C2756321E004136DC /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		24CEA361273E6C3100414D31 /* iCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CEA364273E6C3100414D31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24CEA366273E6C3100414D31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,6 +223,15 @@
 			path = Favorites;
 			sourceTree = "<group>";
 		};
+		24B7492A275631EA004136DC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				24B7492B2756321E004136DC /* SettingsViewController.swift */,
+				24B7492C2756321E004136DC /* SettingsViewController.xib */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		24CEA358273E6C3100414D31 = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +324,7 @@
 				248FA5B1274661FC00D40BC4 /* MealsList */,
 				24AC3808274BD39800850B71 /* MealDetails */,
 				24AC3819274E2CC600850B71 /* Favorites */,
+				24B7492A275631EA004136DC /* Settings */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -386,6 +400,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24B7492E2756321E004136DC /* SettingsViewController.xib in Resources */,
 				B2F0FA38274CD5A3004BBE75 /* MealDetailsImageTableViewCell.xib in Resources */,
 				24CEA371273E6C3400414D31 /* LaunchScreen.storyboard in Resources */,
 				248FA5B52746624700D40BC4 /* MealsListViewController.xib in Resources */,
@@ -473,6 +488,7 @@
 				248FA5B42746624700D40BC4 /* MealsListViewController.swift in Sources */,
 				24AC381F274E345800850B71 /* StorageManager.swift in Sources */,
 				24CEA381273E7A0C00414D31 /* ICButton.swift in Sources */,
+				24B7492D2756321E004136DC /* SettingsViewController.swift in Sources */,
 				24CEA37D273E79C500414D31 /* ICRoundedImageView.swift in Sources */,
 				24CEA367273E6C3100414D31 /* SceneDelegate.swift in Sources */,
 				24AC380B274BD3CE00850B71 /* MealDetailsViewController.swift in Sources */,
