@@ -34,8 +34,9 @@ class SettingsViewController: UIViewController {
             print("Error signing out: %@", signOutError)
         }
         //main.storyboard.init - go back to Login, without the controllers in the back
-        //TODO: 
+        //TODO:
+       
         print("Signed out")
     }
-
+ 
 }

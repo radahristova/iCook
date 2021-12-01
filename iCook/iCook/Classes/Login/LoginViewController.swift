@@ -23,6 +23,7 @@ class LoginViewController: ICViewController {
         appNameLabel.configureDefault(withSize: 30)
         descriptionLabel.configureDefault(withSize: 26)
         //TODO: Check if has a previous login
+        checkIfAlreadyLoggedIn()
         //TODO: Separate method 
     }
     
@@ -65,6 +66,17 @@ class LoginViewController: ICViewController {
         }
     }
     
+    private func checkIfAlreadyLoggedIn() {
+        if(GIDSignIn.sharedInstance.currentUser != nil)
+        {
+        //loggedIn
+        }
+        else
+        {
+        //not loggedIn
+        }
+    }
+    
     private func fireBaseLogin(with credential: AuthCredential) {
         Auth.auth().signIn(with: credential) { [weak self] authResult, error in
             if let error = error {
@@ -72,8 +84,9 @@ class LoginViewController: ICViewController {
             }
             else {
                 //Initialize tab bar controller
-                
-//              self.showMessagePrompt(error.localizedDescription)
+                let tabBar = ICTabBarController()
+                tabBar.selectedIndex = 1
+                self?.present(tabBar, animated: true, completion: nil)
             }
         }
     }
