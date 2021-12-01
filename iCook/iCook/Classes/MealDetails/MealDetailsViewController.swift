@@ -12,7 +12,7 @@ import PKHUD
 class MealDetailsViewController: ICViewController {
     
     //MARK: Constants
-    static let HEIGHT_CELL = CGFloat(10)
+    private let HEIGHT_CELL = CGFloat(10)
     
     //MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -156,7 +156,7 @@ extension MealDetailsViewController: UITableViewDelegate, UITableViewDataSource 
                                          width: UIScreen.main.bounds.width - 70)
             return actualSize
         }
-        return MealDetailsViewController.HEIGHT_CELL
+        return HEIGHT_CELL
     }
     
 }

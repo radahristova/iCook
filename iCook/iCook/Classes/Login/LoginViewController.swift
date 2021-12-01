@@ -22,9 +22,7 @@ class LoginViewController: ICViewController {
         
         appNameLabel.configureDefault(withSize: 30)
         descriptionLabel.configureDefault(withSize: 26)
-        //TODO: Check if has a previous login
         checkIfAlreadyLoggedIn()
-        //TODO: Separate method 
     }
     
     //MARK: IBActions

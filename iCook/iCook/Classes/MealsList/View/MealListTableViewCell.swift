@@ -11,7 +11,7 @@ class MealListTableViewCell: ICTableViewCell {
     
     //MARK: Constants
     static let CELL_IDENTIFIER = "MealListTableViewCell"
-    static let DEFAULT_FONT_SIZE_LABEL = CGFloat(19)
+    private let DEFAULT_FONT_SIZE_LABEL = CGFloat(19)
 
     //MARK:  IBOutlets
     @IBOutlet weak var categoryImageView: ICRoundedImageView!
@@ -26,12 +26,10 @@ class MealListTableViewCell: ICTableViewCell {
         super.awakeFromNib()
         categoryImageView.setImageActivity()
         categoryImageView.radiusRatioToSmallerSide = 0
-        categoryMealLabel.configureDefault(withSize: MealListTableViewCell.DEFAULT_FONT_SIZE_LABEL)
+        categoryMealLabel.configureDefault(withSize: DEFAULT_FONT_SIZE_LABEL)
         
     }
-    
-    
-    
+
     func populate(withMeal meal: MealListModel) {
         let url = URL(string: meal.strMealThumb ?? "")
         categoryImageView.kf.setImage(with: url)

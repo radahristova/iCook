@@ -13,7 +13,7 @@ class MealDetailsImageTableViewCell: ICTableViewCell {
     //MARK: Constants
     static let CELL_IDENTIFIER = "MealDetailsImageTableViewCell"
     static let CELL_HEIGHT = CGFloat(250)
-    static let DEFAULT_FONT_SIZE_LABEL = CGFloat(19)
+    private let DEFAULT_FONT_SIZE_LABEL = CGFloat(19)
     
     //MARK: IBOutlets
     @IBOutlet weak var mealImageView: UIImageView!
@@ -23,7 +23,7 @@ class MealDetailsImageTableViewCell: ICTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        mealNameLabel.configureDefault(withSize: MealDetailsImageTableViewCell.DEFAULT_FONT_SIZE_LABEL)
+        mealNameLabel.configureDefault(withSize: DEFAULT_FONT_SIZE_LABEL)
     }
     
     func populate(withMeal meal: MealListModel) {

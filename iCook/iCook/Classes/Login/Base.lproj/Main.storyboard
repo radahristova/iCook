@@ -65,13 +65,13 @@
                                         <rect key="frame" x="0.0" y="546" width="414" height="272"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZg-XW-lD4">
-                                                <rect key="frame" x="147" y="212" width="120" height="40"/>
+                                                <rect key="frame" x="119" y="212" width="176" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="jjf-ZX-OzB"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="uiX-sN-vOC"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Continue">
+                                                <buttonConfiguration key="configuration" style="plain" title="Continue Without Login">
                                                     <backgroundConfiguration key="background">
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="strokeColor" red="0.93820375199999995" green="0.56087571380000001" blue="0.32150018219999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
