@@ -27,16 +27,24 @@ class SettingsViewController: UIViewController {
     @objc func signOut(_ sender: UIButton) {
         GIDSignIn.sharedInstance.signOut()
         
+        
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
+            
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)
         }
-        //main.storyboard.init - go back to Login, without the controllers in the back
-        //TODO:
-       
-        print("Signed out")
+        
+        if let controller = UIApplication.shared.rootViewController {
+            controller.dismiss(animated: true)
+        }
     }
- 
+    
+}
+
+extension UIApplication {
+    var rootViewController: UIViewController? {
+        (connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController
+    }
 }
