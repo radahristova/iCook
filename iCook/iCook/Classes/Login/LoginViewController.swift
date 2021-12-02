@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import simd
 
 class LoginViewController: ICViewController {
     
@@ -59,6 +60,10 @@ class LoginViewController: ICViewController {
             
             let credential = GoogleAuthProvider.credential(withIDToken: idToken,
                                                            accessToken: authentication.accessToken)
+                        
+            if let userProfileData = user?.profile {
+                UserDefaults.saveUserProfile(userProfileData)
+            }
             
             fireBaseLogin(with: credential)
         }

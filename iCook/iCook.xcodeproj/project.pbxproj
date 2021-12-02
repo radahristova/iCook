@@ -28,7 +28,7 @@
 		24AC3813274CE5DE00850B71 /* MealDetailsInformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24AC3811274CE5DE00850B71 /* MealDetailsInformationTableViewCell.xib */; };
 		24AC3814274CF7B300850B71 /* MealDetailsInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC3810274CE5DE00850B71 /* MealDetailsInformationTableViewCell.swift */; };
 		24AC3816274CFF7E00850B71 /* UILabel+Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC3815274CFF7E00850B71 /* UILabel+Height.swift */; };
-		24AC3818274D2CB400850B71 /* UserDefaults+Favourites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC3817274D2CB400850B71 /* UserDefaults+Favourites.swift */; };
+		24AC3818274D2CB400850B71 /* UserDefaults+UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC3817274D2CB400850B71 /* UserDefaults+UserProfile.swift */; };
 		24AC381C274E2D0700850B71 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC381A274E2D0700850B71 /* FavoritesViewController.swift */; };
 		24AC381D274E2D0700850B71 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24AC381B274E2D0700850B71 /* FavoritesViewController.xib */; };
 		24AC381F274E345800850B71 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC381E274E345800850B71 /* StorageManager.swift */; };
@@ -74,7 +74,7 @@
 		24AC3810274CE5DE00850B71 /* MealDetailsInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsInformationTableViewCell.swift; sourceTree = "<group>"; };
 		24AC3811274CE5DE00850B71 /* MealDetailsInformationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealDetailsInformationTableViewCell.xib; sourceTree = "<group>"; };
 		24AC3815274CFF7E00850B71 /* UILabel+Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Height.swift"; sourceTree = "<group>"; };
-		24AC3817274D2CB400850B71 /* UserDefaults+Favourites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Favourites.swift"; sourceTree = "<group>"; };
+		24AC3817274D2CB400850B71 /* UserDefaults+UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+UserProfile.swift"; sourceTree = "<group>"; };
 		24AC381A274E2D0700850B71 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		24AC381B274E2D0700850B71 /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
 		24AC381E274E345800850B71 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -311,7 +311,7 @@
 			children = (
 				B213280A273EB7BB00061877 /* UIColor+HEX.swift */,
 				24AC3815274CFF7E00850B71 /* UILabel+Height.swift */,
-				24AC3817274D2CB400850B71 /* UserDefaults+Favourites.swift */,
+				24AC3817274D2CB400850B71 /* UserDefaults+UserProfile.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -478,7 +478,7 @@
 				248FA5B027454BFD00D40BC4 /* HTTPManager.swift in Sources */,
 				24CEA365273E6C3100414D31 /* AppDelegate.swift in Sources */,
 				248FA59B2743B27C00D40BC4 /* CategoriesTableViewCell.swift in Sources */,
-				24AC3818274D2CB400850B71 /* UserDefaults+Favourites.swift in Sources */,
+				24AC3818274D2CB400850B71 /* UserDefaults+UserProfile.swift in Sources */,
 				248FA5B82746634D00D40BC4 /* MealListModel.swift in Sources */,
 				248FA5BE274664D300D40BC4 /* MealListTableViewCell.swift in Sources */,
 				248FA5932742B5A600D40BC4 /* HomeViewController.swift in Sources */,
