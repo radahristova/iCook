@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import GoogleSignIn
 import PKHUD
+import Kingfisher
 
 class SettingsViewController: UIViewController {
     
@@ -18,21 +19,30 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var userLastName: UILabel!
     @IBOutlet weak var userAccountPhoto: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        userProfile = UserDefaults.getUserProfile()
-        userFirstName.text = userProfile?.givenName
-        userLastName.text = userProfile?.familyName
-        
-        print(userProfile?.email)
         addSignOutButton()
     }
-    private func showGooglePhoto(){
-        let dimension = round(userAccountPhoto.bounds.width * UIScreen.main.scale)
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        let pic = userProfile?.imageURL(withDimension: UInt(dimension))
-        print("Image URL: \(pic)")
+        userProfile = UserDefaults.getUserProfile()
+
+        showGooglePhoto()
+        
+        userFirstName.text = userProfile?.givenName
+        userLastName.text = userProfile?.familyName
+    }
+    
+    private func showGooglePhoto(){
+        let pic = userProfile?.imageURL(withDimension: 300)
+        userAccountPhoto.kf.setImage(with: pic)
+        
+        userAccountPhoto.clipsToBounds = true
+        userAccountPhoto.layer.cornerRadius = userAccountPhoto.frame.size.width / 2
     }
     
     private func addSignOutButton() {

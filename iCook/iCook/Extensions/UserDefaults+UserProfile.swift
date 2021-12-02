@@ -26,8 +26,7 @@ extension UserDefaults {
     }
     
     static func deleteUserProfile() {
-        //TODO: delete
-     UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.userProfileData.rawValue)
+        UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.userProfileData.rawValue)
     }
     
 }

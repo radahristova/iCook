@@ -27,55 +27,45 @@ class LoginViewController: ICViewController {
     }
     
     //MARK: IBActions
-    @IBAction func continuePressed(_ sender: UIButton!) {
-        let tabBar = ICTabBarController()
-        tabBar.selectedIndex = 1
-        present(tabBar, animated: true, completion: nil)
+    @IBAction func didPressContinueWithoutLogin(_ sender: UIButton!) {
+        UserDefaults.deleteUserProfile()
+        openApp()
     }
     
     @IBAction func didTouchUpInside(_ button: GIDSignInButton) {
         googleSignIn()
     }
     
+    //MARK: Util Methods
     @objc private func googleSignIn() {
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
-        
-        // Create Google Sign In configuration object.
         let config = GIDConfiguration(clientID: clientID)
         
-        // Start the sign in flow!
         GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { [unowned self] user, error in
-            
             if let error = error {
                 print(error.localizedDescription)
                 return
             }
-            
             guard
                 let authentication = user?.authentication,
                 let idToken = authentication.idToken
             else {
                 return
             }
-            
             let credential = GoogleAuthProvider.credential(withIDToken: idToken,
                                                            accessToken: authentication.accessToken)
-                        
+            
             if let userProfileData = user?.profile {
                 UserDefaults.saveUserProfile(userProfileData)
             }
-            
             fireBaseLogin(with: credential)
         }
     }
     
     private func checkIfAlreadyLoggedIn() {
-        if(GIDSignIn.sharedInstance.currentUser != nil)
-        {
-        //loggedIn
-        }
-        else
-        {
+        if(GIDSignIn.sharedInstance.currentUser != nil) {
+            openApp()
+        } else {
         //not loggedIn
         }
     }
@@ -83,19 +73,18 @@ class LoginViewController: ICViewController {
     private func fireBaseLogin(with credential: AuthCredential) {
         Auth.auth().signIn(with: credential) { [weak self] authResult, error in
             if let error = error {
-                self?.mfa(error: error)
+                print(error)
             }
             else {
-                //Initialize tab bar controller
-                let tabBar = ICTabBarController()
-                tabBar.selectedIndex = 1
-                self?.present(tabBar, animated: true, completion: nil)
+                self?.openApp()
             }
         }
     }
     
-    private func mfa(error: Error) {
-
+    private func openApp() {
+        let tabBar = ICTabBarController()
+        tabBar.selectedIndex = 1
+        present(tabBar, animated: true, completion: nil)
     }
     
 }

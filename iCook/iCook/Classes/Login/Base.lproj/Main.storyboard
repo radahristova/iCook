@@ -79,7 +79,7 @@
                                                     <color key="baseForegroundColor" red="0.93820375199999995" green="0.56087571380000001" blue="0.32150018219999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="continuePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GEf-4Z-ZIy"/>
+                                                    <action selector="didPressContinueWithoutLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PD5-p3-Vrt"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WI5-8l-kCq" customClass="GIDSignInButton">
