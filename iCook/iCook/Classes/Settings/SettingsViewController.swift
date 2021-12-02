@@ -11,15 +11,16 @@ import GoogleSignIn
 import PKHUD
 import Kingfisher
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: ICViewController {
     
+    //MARK: IBOutlets
+    @IBOutlet weak var fullNameLabel: ICLabel!
+    @IBOutlet weak var userAccountPhotoImageView: UIImageView!
+    
+    //MARK: Variables
     var userProfile: GIDProfileData?
-    
-    @IBOutlet weak var userFirstName: UILabel!
-    
-    @IBOutlet weak var userLastName: UILabel!
-    @IBOutlet weak var userAccountPhoto: UIImageView!
-    
+
+    //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,18 +32,22 @@ class SettingsViewController: UIViewController {
         
         userProfile = UserDefaults.getUserProfile()
 
-        showGooglePhoto()
+        configureGooglePhoto()
         
-        userFirstName.text = userProfile?.givenName
-        userLastName.text = userProfile?.familyName
+        if let firstName = userProfile?.givenName,
+           let lastName = userProfile?.familyName {
+            fullNameLabel.configureDefault(withSize: 20)
+            fullNameLabel.text = "\(firstName) \(lastName)"
+        }
     }
     
-    private func showGooglePhoto(){
+    //MARK: Util Methods
+    private func configureGooglePhoto(){
         let pic = userProfile?.imageURL(withDimension: 300)
-        userAccountPhoto.kf.setImage(with: pic)
+        userAccountPhotoImageView.kf.setImage(with: pic)
         
-        userAccountPhoto.clipsToBounds = true
-        userAccountPhoto.layer.cornerRadius = userAccountPhoto.frame.size.width / 2
+        userAccountPhotoImageView.clipsToBounds = true
+        userAccountPhotoImageView.layer.cornerRadius = userAccountPhotoImageView.frame.size.width / 2
     }
     
     private func addSignOutButton() {

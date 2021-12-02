@@ -14,6 +14,7 @@ class ICViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .icBackgroundColor
     }
     
     func setBackgroundColor(color: UIColor) {
