@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import PKHUD
 
 class SettingsViewController: UIViewController {
     
@@ -27,7 +28,6 @@ class SettingsViewController: UIViewController {
     @objc func signOut(_ sender: UIButton) {
         GIDSignIn.sharedInstance.signOut()
         
-        
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
@@ -36,15 +36,13 @@ class SettingsViewController: UIViewController {
             print("Error signing out: %@", signOutError)
         }
         
-        if let controller = UIApplication.shared.rootViewController {
-            controller.dismiss(animated: true)
-        }
+        let alertVC = UIAlertController(title: "Logout", message: "Are you sure?", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "No", style: .cancel, handler: {_ in return}))
+        alertVC.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { [weak self] _ in
+            HUD.flash(.success, delay: 0.3)
+            self?.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+        }))
+        present(alertVC, animated: true, completion: nil)
     }
     
-}
-
-extension UIApplication {
-    var rootViewController: UIViewController? {
-        (connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController
-    }
 }
