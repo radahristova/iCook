@@ -14,13 +14,25 @@ class SettingsViewController: UIViewController {
     
     var userProfile: GIDProfileData?
     
+    @IBOutlet weak var userFirstName: UILabel!
+    
+    @IBOutlet weak var userLastName: UILabel!
+    @IBOutlet weak var userAccountPhoto: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         userProfile = UserDefaults.getUserProfile()
-               
+        userFirstName.text = userProfile?.givenName
+        userLastName.text = userProfile?.familyName
+        
         print(userProfile?.email)
         addSignOutButton()
+    }
+    private func showGooglePhoto(){
+        let dimension = round(userAccountPhoto.bounds.width * UIScreen.main.scale)
+        
+        let pic = userProfile?.imageURL(withDimension: UInt(dimension))
+        print("Image URL: \(pic)")
     }
     
     private func addSignOutButton() {
@@ -48,6 +60,7 @@ class SettingsViewController: UIViewController {
         alertVC.addAction(UIAlertAction(title: "No", style: .cancel, handler: {_ in return}))
         alertVC.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { [weak self] _ in
             HUD.flash(.success, delay: 0.3)
+            UserDefaults.deleteUserProfile()
             self?.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
         }))
         present(alertVC, animated: true, completion: nil)
