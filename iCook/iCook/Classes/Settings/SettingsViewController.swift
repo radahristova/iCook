@@ -14,34 +14,55 @@ import Kingfisher
 class SettingsViewController: ICViewController {
     
     //MARK: IBOutlets
+    @IBOutlet weak var userInformationShadowView: ICShadowView!
     @IBOutlet weak var fullNameLabel: ICLabel!
     @IBOutlet weak var userAccountPhotoImageView: UIImageView!
+    @IBOutlet weak var signOutButton: ICButton!
     
     //MARK: Variables
-    var userProfile: GIDProfileData?
-
+    private var userProfile: GIDProfileData?
+    private var hasLoggedInUser: Bool?
+    
     //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addSignOutButton()
+        signOutButton.cornerRadius = 10
+        signOutButton.tintColor = .red
+        signOutButton.layer.borderWidth = 2
+        signOutButton.layer.borderColor = UIColor.red.cgColor
+        signOutButton.addTarget(self, action: #selector(self.signOut(_:)), for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         userProfile = UserDefaults.getUserProfile()
-
-        configureGooglePhoto()
+        hasLoggedInUser = userProfile != nil ? true : false
         
-        if let firstName = userProfile?.givenName,
-           let lastName = userProfile?.familyName {
-            fullNameLabel.configureDefault(withSize: 20)
-            fullNameLabel.text = "\(firstName) \(lastName)"
-        }
+        configureStyle()
     }
     
     //MARK: Util Methods
+    private func configureStyle() {
+        if hasLoggedInUser == true {
+            userInformationShadowView.isHidden = false
+
+            configureGooglePhoto()
+            
+            if let firstName = userProfile?.givenName,
+               let lastName = userProfile?.familyName {
+                fullNameLabel.configureDefault(withSize: 20)
+                fullNameLabel.text = "\(firstName) \(lastName)"
+            }
+            signOutButton.setTitle("Sign Out", for: .normal)
+            
+        } else {
+            userInformationShadowView.isHidden = true
+            signOutButton.setTitle("Go To Login", for: .normal)
+        }
+    }
+    
     private func configureGooglePhoto(){
         let pic = userProfile?.imageURL(withDimension: 300)
         userAccountPhotoImageView.kf.setImage(with: pic)
@@ -50,17 +71,7 @@ class SettingsViewController: ICViewController {
         userAccountPhotoImageView.layer.cornerRadius = userAccountPhotoImageView.frame.size.width / 2
     }
     
-    private func addSignOutButton() {
-        let signOut = UIButton(frame: CGRect(x: 50, y: 50, width: 100, height: 30))
-        signOut.backgroundColor = .red
-        signOut.setTitle("Sign Out", for: .normal)
-        signOut.center = view.center
-        signOut.center.y = view.center.y + 100
-        signOut.addTarget(self, action: #selector(self.signOut(_:)), for: .touchUpInside)
-        self.view.addSubview(signOut)
-    }
-    
-    @objc func signOut(_ sender: UIButton) {
+    @objc private func signOut(_ sender: UIButton) {
         GIDSignIn.sharedInstance.signOut()
         
         let firebaseAuth = Auth.auth()
@@ -71,14 +82,19 @@ class SettingsViewController: ICViewController {
             print("Error signing out: %@", signOutError)
         }
         
-        let alertVC = UIAlertController(title: "Logout", message: "Are you sure?", preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "No", style: .cancel, handler: {_ in return}))
-        alertVC.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { [weak self] _ in
+        var alertVC: UIAlertController?
+        if hasLoggedInUser == true{
+            alertVC = UIAlertController(title: "Sign Out", message: "Are you sure?", preferredStyle: .alert)
+        } else {
+            alertVC = UIAlertController(title: "Go to login", message: "Are you sure?", preferredStyle: .alert)
+        }
+        alertVC?.addAction(UIAlertAction(title: "No", style: .cancel, handler: {_ in return}))
+        alertVC?.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { [weak self] _ in
             HUD.flash(.success, delay: 0.3)
             UserDefaults.deleteUserProfile()
             self?.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
         }))
-        present(alertVC, animated: true, completion: nil)
+        present(alertVC!, animated: true, completion: nil)
     }
     
 }

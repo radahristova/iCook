@@ -20,9 +20,12 @@ extension UserDefaults {
     }
     
     static func getUserProfile() -> GIDProfileData? {
-        let decodedUserProfileData = UserDefaults.standard.object(forKey: UserDefaultsKeys.userProfileData.rawValue) as! Data
-        let userProfileData = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(decodedUserProfileData) as? GIDProfileData
-        return userProfileData
+        if let decodedUserProfileData = UserDefaults.standard.object(forKey: UserDefaultsKeys.userProfileData.rawValue) as? Data {
+            let userProfileData = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(decodedUserProfileData) as? GIDProfileData
+            return userProfileData
+        } else {
+            return nil
+        }
     }
     
     static func deleteUserProfile() {
