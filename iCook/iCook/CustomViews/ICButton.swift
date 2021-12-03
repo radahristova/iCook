@@ -32,8 +32,8 @@ class ICButton: UIButton {
     }
     
     func configureForSignOut() {
-        tintColor = .red
-        setTitleColor(.red, for: .normal)
+        tintColor = .icRedColor
+        setTitleColor(.icRedColor, for: .normal)
     }
     
     //MARK: Util Methods
