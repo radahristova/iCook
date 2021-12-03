@@ -25,13 +25,13 @@ class ICTableViewCell: UITableViewCell {
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 25, bottom: 10, right: 25))
         contentView.backgroundColor = .white
         contentView.clipsToBounds = true
-        contentView.layer.cornerRadius = 10
+        contentView.layer.cornerRadius = CORNER_RADIUS
         clipsToBounds = true
-        layer.cornerRadius = 10
+        layer.cornerRadius = CORNER_RADIUS
         backgroundColor = .clear
         layer.masksToBounds = true
         layer.shadowOpacity = 0.5
-        layer.shadowRadius = 7
+        layer.shadowRadius = SHADOW_RADIUS
         layer.shadowOffset = .zero
         
         //    addLineDivider()

@@ -42,13 +42,13 @@ class ICButton: UIButton {
         setTitleColor(.icAccentColor, for: .normal)
         titleLabel?.font = .defaultFont?.withSize(18)
                 
-        layer.cornerRadius = 12
+        layer.cornerRadius = CORNER_RADIUS
         
         //Shadow
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.4
         layer.shadowOffset = .zero
-        layer.shadowRadius = 4.5
+        layer.shadowRadius = SHADOW_RADIUS
     }
     
     @objc private func hapticFeedbackOnPress() {
