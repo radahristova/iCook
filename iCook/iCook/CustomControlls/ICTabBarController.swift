@@ -47,7 +47,7 @@ class ICTabBarController: UITabBarController {
                                          selectedImage: UIImage(systemName: "house.fill"))
         home.tabBarItem = tabTwoBarItem
         
-        let settings = ICNavigationController(rootViewController: ICViewController())
+        let settings = ICNavigationController(rootViewController: SettingsViewController())
         let tabThreeBarItem = UITabBarItem(title: "Settings",
                                          image: UIImage(systemName: "gearshape"),
                                          selectedImage: UIImage(systemName: "gearshape.fill"))

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		242D0375275121A5008EFF95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 242D0374275121A5008EFF95 /* GoogleService-Info.plist */; };
 		248FA5932742B5A600D40BC4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA5912742B5A600D40BC4 /* HomeViewController.swift */; };
 		248FA5942742B5A600D40BC4 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 248FA5922742B5A600D40BC4 /* HomeViewController.xib */; };
 		248FA59B2743B27C00D40BC4 /* CategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FA5992743B27C00D40BC4 /* CategoriesTableViewCell.swift */; };
@@ -27,10 +28,12 @@
 		24AC3813274CE5DE00850B71 /* MealDetailsInformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24AC3811274CE5DE00850B71 /* MealDetailsInformationTableViewCell.xib */; };
 		24AC3814274CF7B300850B71 /* MealDetailsInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC3810274CE5DE00850B71 /* MealDetailsInformationTableViewCell.swift */; };
 		24AC3816274CFF7E00850B71 /* UILabel+Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC3815274CFF7E00850B71 /* UILabel+Height.swift */; };
-		24AC3818274D2CB400850B71 /* UserDefaults+Favourites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC3817274D2CB400850B71 /* UserDefaults+Favourites.swift */; };
+		24AC3818274D2CB400850B71 /* UserDefaults+UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC3817274D2CB400850B71 /* UserDefaults+UserProfile.swift */; };
 		24AC381C274E2D0700850B71 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC381A274E2D0700850B71 /* FavoritesViewController.swift */; };
 		24AC381D274E2D0700850B71 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24AC381B274E2D0700850B71 /* FavoritesViewController.xib */; };
 		24AC381F274E345800850B71 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC381E274E345800850B71 /* StorageManager.swift */; };
+		24B7492D2756321E004136DC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B7492B2756321E004136DC /* SettingsViewController.swift */; };
+		24B7492E2756321E004136DC /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24B7492C2756321E004136DC /* SettingsViewController.xib */; };
 		24CEA365273E6C3100414D31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA364273E6C3100414D31 /* AppDelegate.swift */; };
 		24CEA367273E6C3100414D31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA366273E6C3100414D31 /* SceneDelegate.swift */; };
 		24CEA369273E6C3100414D31 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA368273E6C3100414D31 /* LoginViewController.swift */; };
@@ -41,14 +44,20 @@
 		24CEA37D273E79C500414D31 /* ICRoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA37C273E79C500414D31 /* ICRoundedImageView.swift */; };
 		24CEA37F273E79EC00414D31 /* ICLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA37E273E79EC00414D31 /* ICLabel.swift */; };
 		24CEA381273E7A0C00414D31 /* ICButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA380273E7A0C00414D31 /* ICButton.swift */; };
+		A1211E55430225B6BF171B3E /* Pods_iCook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E88705D126F9F578197AE697 /* Pods_iCook.framework */; };
+		B20468BD27590CEF00C555BA /* ICShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20468BC27590CEF00C555BA /* ICShadowView.swift */; };
+		B20468BF275A19E600C555BA /* UIFont+AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20468BE275A19E600C555BA /* UIFont+AppFonts.swift */; };
+		B20468C1275A1FE400C555BA /* ICConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20468C0275A1FE400C555BA /* ICConstants.swift */; };
+		B20468C3275A215E00C555BA /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20468C2275A215E00C555BA /* UIView+Shadow.swift */; };
 		B213280B273EB7BB00061877 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213280A273EB7BB00061877 /* UIColor+HEX.swift */; };
 		B21C1CF727466CED00B1E844 /* ICServerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21C1CF627466CED00B1E844 /* ICServerConstants.swift */; };
 		B2F0FA37274CD5A3004BBE75 /* MealDetailsImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F0FA35274CD5A3004BBE75 /* MealDetailsImageTableViewCell.swift */; };
 		B2F0FA38274CD5A3004BBE75 /* MealDetailsImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F0FA36274CD5A3004BBE75 /* MealDetailsImageTableViewCell.xib */; };
-		CA2329DACD60C4F7EEC9AEC5 /* Pods_iCook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9349394DF9E3E478BD989F68 /* Pods_iCook.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		218CF855A4A257C05908E111 /* Pods-iCook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCook.release.xcconfig"; path = "Target Support Files/Pods-iCook/Pods-iCook.release.xcconfig"; sourceTree = "<group>"; };
+		242D0374275121A5008EFF95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		248FA5912742B5A600D40BC4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		248FA5922742B5A600D40BC4 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		248FA5992743B27C00D40BC4 /* CategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewCell.swift; sourceTree = "<group>"; };
@@ -69,10 +78,12 @@
 		24AC3810274CE5DE00850B71 /* MealDetailsInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsInformationTableViewCell.swift; sourceTree = "<group>"; };
 		24AC3811274CE5DE00850B71 /* MealDetailsInformationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealDetailsInformationTableViewCell.xib; sourceTree = "<group>"; };
 		24AC3815274CFF7E00850B71 /* UILabel+Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Height.swift"; sourceTree = "<group>"; };
-		24AC3817274D2CB400850B71 /* UserDefaults+Favourites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Favourites.swift"; sourceTree = "<group>"; };
+		24AC3817274D2CB400850B71 /* UserDefaults+UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+UserProfile.swift"; sourceTree = "<group>"; };
 		24AC381A274E2D0700850B71 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		24AC381B274E2D0700850B71 /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
 		24AC381E274E345800850B71 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		24B7492B2756321E004136DC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		24B7492C2756321E004136DC /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		24CEA361273E6C3100414D31 /* iCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CEA364273E6C3100414D31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24CEA366273E6C3100414D31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,13 +96,16 @@
 		24CEA37C273E79C500414D31 /* ICRoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICRoundedImageView.swift; sourceTree = "<group>"; };
 		24CEA37E273E79EC00414D31 /* ICLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICLabel.swift; sourceTree = "<group>"; };
 		24CEA380273E7A0C00414D31 /* ICButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICButton.swift; sourceTree = "<group>"; };
-		77073026F8380DE5A091F009 /* Pods-iCook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCook.release.xcconfig"; path = "Target Support Files/Pods-iCook/Pods-iCook.release.xcconfig"; sourceTree = "<group>"; };
-		9349394DF9E3E478BD989F68 /* Pods_iCook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DB1021999DC7C8A5A375316 /* Pods-iCook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCook.debug.xcconfig"; path = "Target Support Files/Pods-iCook/Pods-iCook.debug.xcconfig"; sourceTree = "<group>"; };
+		B20468BC27590CEF00C555BA /* ICShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICShadowView.swift; sourceTree = "<group>"; };
+		B20468BE275A19E600C555BA /* UIFont+AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+AppFonts.swift"; sourceTree = "<group>"; };
+		B20468C0275A1FE400C555BA /* ICConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICConstants.swift; sourceTree = "<group>"; };
+		B20468C2275A215E00C555BA /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		B213280A273EB7BB00061877 /* UIColor+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HEX.swift"; sourceTree = "<group>"; };
 		B21C1CF627466CED00B1E844 /* ICServerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICServerConstants.swift; sourceTree = "<group>"; };
 		B2F0FA35274CD5A3004BBE75 /* MealDetailsImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsImageTableViewCell.swift; sourceTree = "<group>"; };
 		B2F0FA36274CD5A3004BBE75 /* MealDetailsImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealDetailsImageTableViewCell.xib; sourceTree = "<group>"; };
+		E54C19CDE8E05E5B8BDA142C /* Pods-iCook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCook.debug.xcconfig"; path = "Target Support Files/Pods-iCook/Pods-iCook.debug.xcconfig"; sourceTree = "<group>"; };
+		E88705D126F9F578197AE697 /* Pods_iCook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA2329DACD60C4F7EEC9AEC5 /* Pods_iCook.framework in Frameworks */,
+				A1211E55430225B6BF171B3E /* Pods_iCook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,19 +160,10 @@
 		248FA5AD27454B9500D40BC4 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				248FA5AE27454BA300D40BC4 /* Networking */,
+				248FA5AF27454BFD00D40BC4 /* HTTPManager.swift */,
 				24AC381E274E345800850B71 /* StorageManager.swift */,
 			);
 			path = Managers;
-			sourceTree = "<group>";
-		};
-		248FA5AE27454BA300D40BC4 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				248FA5AF27454BFD00D40BC4 /* HTTPManager.swift */,
-				B21C1CF627466CED00B1E844 /* ICServerConstants.swift */,
-			);
-			path = Networking;
 			sourceTree = "<group>";
 		};
 		248FA5B1274661FC00D40BC4 /* MealsList */ = {
@@ -217,13 +222,22 @@
 			path = Favorites;
 			sourceTree = "<group>";
 		};
+		24B7492A275631EA004136DC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				24B7492B2756321E004136DC /* SettingsViewController.swift */,
+				24B7492C2756321E004136DC /* SettingsViewController.xib */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		24CEA358273E6C3100414D31 = {
 			isa = PBXGroup;
 			children = (
 				24CEA363273E6C3100414D31 /* iCook */,
 				24CEA362273E6C3100414D31 /* Products */,
 				8CA6E7FEDDA0E2A63C843CE4 /* Pods */,
-				4FC5696A723950279247CF91 /* Frameworks */,
+				413ADE116878915F9D7B24D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -241,7 +255,9 @@
 				B213280C273EBE1E00061877 /* Classes */,
 				248FA5AD27454B9500D40BC4 /* Managers */,
 				24CEA379273E6F2F00414D31 /* CustomControlls */,
+				B20468C5275A237600C555BA /* CustomViews */,
 				B2132809273EB78A00061877 /* Extensions */,
+				B20468C4275A232500C555BA /* Constants */,
 				24CEA378273E6DD100414D31 /* Utils */,
 			);
 			path = iCook;
@@ -251,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				24CEA372273E6C3400414D31 /* Info.plist */,
+				242D0374275121A5008EFF95 /* GoogleService-Info.plist */,
 				24CEA36F273E6C3400414D31 /* LaunchScreen.storyboard */,
 				24CEA36D273E6C3400414D31 /* Assets.xcassets */,
 				24CEA366273E6C3100414D31 /* SceneDelegate.swift */,
@@ -263,20 +280,16 @@
 			isa = PBXGroup;
 			children = (
 				24CEA37A273E76CF00414D31 /* ICViewController.swift */,
-				24CEA37C273E79C500414D31 /* ICRoundedImageView.swift */,
-				24CEA37E273E79EC00414D31 /* ICLabel.swift */,
-				24CEA380273E7A0C00414D31 /* ICButton.swift */,
 				249F6D3F274265BF0084ABDD /* ICTabBarController.swift */,
 				248FA5A727440D1F00D40BC4 /* ICNavigationController.swift */,
-				248FA5AB2745143300D40BC4 /* ICTableViewCell.swift */,
 			);
 			path = CustomControlls;
 			sourceTree = "<group>";
 		};
-		4FC5696A723950279247CF91 /* Frameworks */ = {
+		413ADE116878915F9D7B24D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9349394DF9E3E478BD989F68 /* Pods_iCook.framework */,
+				E88705D126F9F578197AE697 /* Pods_iCook.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -284,18 +297,41 @@
 		8CA6E7FEDDA0E2A63C843CE4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9DB1021999DC7C8A5A375316 /* Pods-iCook.debug.xcconfig */,
-				77073026F8380DE5A091F009 /* Pods-iCook.release.xcconfig */,
+				E54C19CDE8E05E5B8BDA142C /* Pods-iCook.debug.xcconfig */,
+				218CF855A4A257C05908E111 /* Pods-iCook.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B20468C4275A232500C555BA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B20468C0275A1FE400C555BA /* ICConstants.swift */,
+				B21C1CF627466CED00B1E844 /* ICServerConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		B20468C5275A237600C555BA /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				24CEA37E273E79EC00414D31 /* ICLabel.swift */,
+				24CEA380273E7A0C00414D31 /* ICButton.swift */,
+				248FA5AB2745143300D40BC4 /* ICTableViewCell.swift */,
+				B20468BC27590CEF00C555BA /* ICShadowView.swift */,
+				24CEA37C273E79C500414D31 /* ICRoundedImageView.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		B2132809273EB78A00061877 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B20468C2275A215E00C555BA /* UIView+Shadow.swift */,
+				B20468BE275A19E600C555BA /* UIFont+AppFonts.swift */,
 				B213280A273EB7BB00061877 /* UIColor+HEX.swift */,
 				24AC3815274CFF7E00850B71 /* UILabel+Height.swift */,
-				24AC3817274D2CB400850B71 /* UserDefaults+Favourites.swift */,
+				24AC3817274D2CB400850B71 /* UserDefaults+UserProfile.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -308,6 +344,7 @@
 				248FA5B1274661FC00D40BC4 /* MealsList */,
 				24AC3808274BD39800850B71 /* MealDetails */,
 				24AC3819274E2CC600850B71 /* Favorites */,
+				24B7492A275631EA004136DC /* Settings */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -330,11 +367,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24CEA375273E6C3400414D31 /* Build configuration list for PBXNativeTarget "iCook" */;
 			buildPhases = (
-				9E973D44BFB581B6B9461006 /* [CP] Check Pods Manifest.lock */,
+				EBC81EB9F8896CF6A879A3F8 /* [CP] Check Pods Manifest.lock */,
 				24CEA35D273E6C3100414D31 /* Sources */,
 				24CEA35E273E6C3100414D31 /* Frameworks */,
 				24CEA35F273E6C3100414D31 /* Resources */,
-				F5811E3AEDDA985B41C7A237 /* [CP] Embed Pods Frameworks */,
+				7691ADF1C69932F0DAE8A73A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -383,11 +420,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24B7492E2756321E004136DC /* SettingsViewController.xib in Resources */,
 				B2F0FA38274CD5A3004BBE75 /* MealDetailsImageTableViewCell.xib in Resources */,
 				24CEA371273E6C3400414D31 /* LaunchScreen.storyboard in Resources */,
 				248FA5B52746624700D40BC4 /* MealsListViewController.xib in Resources */,
 				24AC380C274BD3CE00850B71 /* MealDetailsViewController.xib in Resources */,
 				24CEA36E273E6C3400414D31 /* Assets.xcassets in Resources */,
+				242D0375275121A5008EFF95 /* GoogleService-Info.plist in Resources */,
 				24AC381D274E2D0700850B71 /* FavoritesViewController.xib in Resources */,
 				248FA59C2743B27C00D40BC4 /* CategoriesTableViewCell.xib in Resources */,
 				248FA5BF274664D300D40BC4 /* MealListTableViewCell.xib in Resources */,
@@ -400,7 +439,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9E973D44BFB581B6B9461006 /* [CP] Check Pods Manifest.lock */ = {
+		7691ADF1C69932F0DAE8A73A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iCook/Pods-iCook-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iCook/Pods-iCook-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iCook/Pods-iCook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBC81EB9F8896CF6A879A3F8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -420,23 +476,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F5811E3AEDDA985B41C7A237 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iCook/Pods-iCook-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iCook/Pods-iCook-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iCook/Pods-iCook-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -459,8 +498,10 @@
 				248FA5B027454BFD00D40BC4 /* HTTPManager.swift in Sources */,
 				24CEA365273E6C3100414D31 /* AppDelegate.swift in Sources */,
 				248FA59B2743B27C00D40BC4 /* CategoriesTableViewCell.swift in Sources */,
-				24AC3818274D2CB400850B71 /* UserDefaults+Favourites.swift in Sources */,
+				B20468BF275A19E600C555BA /* UIFont+AppFonts.swift in Sources */,
+				24AC3818274D2CB400850B71 /* UserDefaults+UserProfile.swift in Sources */,
 				248FA5B82746634D00D40BC4 /* MealListModel.swift in Sources */,
+				B20468BD27590CEF00C555BA /* ICShadowView.swift in Sources */,
 				248FA5BE274664D300D40BC4 /* MealListTableViewCell.swift in Sources */,
 				248FA5932742B5A600D40BC4 /* HomeViewController.swift in Sources */,
 				24AC3814274CF7B300850B71 /* MealDetailsInformationTableViewCell.swift in Sources */,
@@ -468,7 +509,10 @@
 				B2F0FA37274CD5A3004BBE75 /* MealDetailsImageTableViewCell.swift in Sources */,
 				248FA5B42746624700D40BC4 /* MealsListViewController.swift in Sources */,
 				24AC381F274E345800850B71 /* StorageManager.swift in Sources */,
+				B20468C3275A215E00C555BA /* UIView+Shadow.swift in Sources */,
 				24CEA381273E7A0C00414D31 /* ICButton.swift in Sources */,
+				24B7492D2756321E004136DC /* SettingsViewController.swift in Sources */,
+				B20468C1275A1FE400C555BA /* ICConstants.swift in Sources */,
 				24CEA37D273E79C500414D31 /* ICRoundedImageView.swift in Sources */,
 				24CEA367273E6C3100414D31 /* SceneDelegate.swift in Sources */,
 				24AC380B274BD3CE00850B71 /* MealDetailsViewController.swift in Sources */,
@@ -616,7 +660,7 @@
 		};
 		24CEA376273E6C3400414D31 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9DB1021999DC7C8A5A375316 /* Pods-iCook.debug.xcconfig */;
+			baseConfigurationReference = E54C19CDE8E05E5B8BDA142C /* Pods-iCook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -631,6 +675,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -647,7 +692,7 @@
 		};
 		24CEA377273E6C3400414D31 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77073026F8380DE5A091F009 /* Pods-iCook.release.xcconfig */;
+			baseConfigurationReference = 218CF855A4A257C05908E111 /* Pods-iCook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -662,6 +707,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

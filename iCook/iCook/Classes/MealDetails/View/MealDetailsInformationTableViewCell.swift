@@ -12,6 +12,7 @@ class MealDetailsInformationTableViewCell: ICTableViewCell {
     //MARK: Constants
     static let CELL_IDENTIFIER = "MealDetailsInformationTableViewCell"
     static let CELL_BASE_HEIGHT = CGFloat(150)
+    private let DEFAULT_FONT_LABEL = CGFloat(19)
     
     //MARK: IBOutlets
     @IBOutlet weak var categoryDescriptionLabel: ICLabel!
@@ -26,19 +27,17 @@ class MealDetailsInformationTableViewCell: ICTableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        categoryDescriptionLabel.configureBoldItalic(withSize: 19)
-        areaDescriptionLabel.configureBoldItalic(withSize: 19)
-        instructionsDescriptionLabel.configureBoldItalic(withSize: 19)
-     
-        categoryValueLabel.configureItalic(withSize: 19)
-        areaValueLabel.configureItalic(withSize: 19)
+        categoryDescriptionLabel.configureBoldItalic(withSize: DEFAULT_FONT_LABEL)
+        areaDescriptionLabel.configureBoldItalic(withSize: DEFAULT_FONT_LABEL)
+        instructionsDescriptionLabel.configureBoldItalic(withSize: DEFAULT_FONT_LABEL)
+        categoryValueLabel.configureItalic(withSize: DEFAULT_FONT_LABEL)
+        areaValueLabel.configureItalic(withSize: DEFAULT_FONT_LABEL)
  
         categoryDescriptionLabel.text = "Category:"
         areaDescriptionLabel.text = "Area:"
         instructionsDescriptionLabel.text = "Instructions:"
         
-        instructionsValueLabel.configureDefault(withSize: 17)
-        
+        instructionsValueLabel.configureDefault(withSize: 17)     
     }
     
     func populate(withMeal meal: MealDetailsModel) {
