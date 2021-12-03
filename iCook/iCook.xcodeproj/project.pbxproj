@@ -48,6 +48,7 @@
 		B20468BD27590CEF00C555BA /* ICShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20468BC27590CEF00C555BA /* ICShadowView.swift */; };
 		B20468BF275A19E600C555BA /* UIFont+AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20468BE275A19E600C555BA /* UIFont+AppFonts.swift */; };
 		B20468C1275A1FE400C555BA /* ICConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20468C0275A1FE400C555BA /* ICConstants.swift */; };
+		B20468C3275A215E00C555BA /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20468C2275A215E00C555BA /* UIView+Shadow.swift */; };
 		B213280B273EB7BB00061877 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213280A273EB7BB00061877 /* UIColor+HEX.swift */; };
 		B21C1CF727466CED00B1E844 /* ICServerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21C1CF627466CED00B1E844 /* ICServerConstants.swift */; };
 		B2F0FA37274CD5A3004BBE75 /* MealDetailsImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F0FA35274CD5A3004BBE75 /* MealDetailsImageTableViewCell.swift */; };
@@ -98,6 +99,7 @@
 		B20468BC27590CEF00C555BA /* ICShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICShadowView.swift; sourceTree = "<group>"; };
 		B20468BE275A19E600C555BA /* UIFont+AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+AppFonts.swift"; sourceTree = "<group>"; };
 		B20468C0275A1FE400C555BA /* ICConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICConstants.swift; sourceTree = "<group>"; };
+		B20468C2275A215E00C555BA /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		B213280A273EB7BB00061877 /* UIColor+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HEX.swift"; sourceTree = "<group>"; };
 		B21C1CF627466CED00B1E844 /* ICServerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICServerConstants.swift; sourceTree = "<group>"; };
 		B2F0FA35274CD5A3004BBE75 /* MealDetailsImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsImageTableViewCell.swift; sourceTree = "<group>"; };
@@ -158,19 +160,10 @@
 		248FA5AD27454B9500D40BC4 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				248FA5AE27454BA300D40BC4 /* Networking */,
+				248FA5AF27454BFD00D40BC4 /* HTTPManager.swift */,
 				24AC381E274E345800850B71 /* StorageManager.swift */,
 			);
 			path = Managers;
-			sourceTree = "<group>";
-		};
-		248FA5AE27454BA300D40BC4 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				248FA5AF27454BFD00D40BC4 /* HTTPManager.swift */,
-				B21C1CF627466CED00B1E844 /* ICServerConstants.swift */,
-			);
-			path = Networking;
 			sourceTree = "<group>";
 		};
 		248FA5B1274661FC00D40BC4 /* MealsList */ = {
@@ -262,7 +255,9 @@
 				B213280C273EBE1E00061877 /* Classes */,
 				248FA5AD27454B9500D40BC4 /* Managers */,
 				24CEA379273E6F2F00414D31 /* CustomControlls */,
+				B20468C5275A237600C555BA /* CustomViews */,
 				B2132809273EB78A00061877 /* Extensions */,
+				B20468C4275A232500C555BA /* Constants */,
 				24CEA378273E6DD100414D31 /* Utils */,
 			);
 			path = iCook;
@@ -271,7 +266,6 @@
 		24CEA378273E6DD100414D31 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				B20468C0275A1FE400C555BA /* ICConstants.swift */,
 				24CEA372273E6C3400414D31 /* Info.plist */,
 				242D0374275121A5008EFF95 /* GoogleService-Info.plist */,
 				24CEA36F273E6C3400414D31 /* LaunchScreen.storyboard */,
@@ -286,13 +280,8 @@
 			isa = PBXGroup;
 			children = (
 				24CEA37A273E76CF00414D31 /* ICViewController.swift */,
-				24CEA37C273E79C500414D31 /* ICRoundedImageView.swift */,
-				24CEA37E273E79EC00414D31 /* ICLabel.swift */,
-				24CEA380273E7A0C00414D31 /* ICButton.swift */,
 				249F6D3F274265BF0084ABDD /* ICTabBarController.swift */,
 				248FA5A727440D1F00D40BC4 /* ICNavigationController.swift */,
-				248FA5AB2745143300D40BC4 /* ICTableViewCell.swift */,
-				B20468BC27590CEF00C555BA /* ICShadowView.swift */,
 			);
 			path = CustomControlls;
 			sourceTree = "<group>";
@@ -314,9 +303,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B20468C4275A232500C555BA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B20468C0275A1FE400C555BA /* ICConstants.swift */,
+				B21C1CF627466CED00B1E844 /* ICServerConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		B20468C5275A237600C555BA /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				24CEA37E273E79EC00414D31 /* ICLabel.swift */,
+				24CEA380273E7A0C00414D31 /* ICButton.swift */,
+				248FA5AB2745143300D40BC4 /* ICTableViewCell.swift */,
+				B20468BC27590CEF00C555BA /* ICShadowView.swift */,
+				24CEA37C273E79C500414D31 /* ICRoundedImageView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		B2132809273EB78A00061877 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B20468C2275A215E00C555BA /* UIView+Shadow.swift */,
 				B20468BE275A19E600C555BA /* UIFont+AppFonts.swift */,
 				B213280A273EB7BB00061877 /* UIColor+HEX.swift */,
 				24AC3815274CFF7E00850B71 /* UILabel+Height.swift */,
@@ -498,6 +509,7 @@
 				B2F0FA37274CD5A3004BBE75 /* MealDetailsImageTableViewCell.swift in Sources */,
 				248FA5B42746624700D40BC4 /* MealsListViewController.swift in Sources */,
 				24AC381F274E345800850B71 /* StorageManager.swift in Sources */,
+				B20468C3275A215E00C555BA /* UIView+Shadow.swift in Sources */,
 				24CEA381273E7A0C00414D31 /* ICButton.swift in Sources */,
 				24B7492D2756321E004136DC /* SettingsViewController.swift in Sources */,
 				B20468C1275A1FE400C555BA /* ICConstants.swift in Sources */,

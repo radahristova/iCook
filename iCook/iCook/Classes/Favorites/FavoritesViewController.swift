@@ -56,7 +56,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let delete = UIContextualAction(style: .destructive, title: "Delete") { [unowned self] action, view, completionHandler in
+        let delete = UIContextualAction(style: .destructive, title: "Delete") { action, view, completionHandler in
             StorageManager.sharedInstance.remove(fromFavoritesAt: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             

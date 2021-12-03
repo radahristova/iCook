@@ -11,31 +11,21 @@ import Kingfisher
 
 class ICTableViewCell: UITableViewCell {
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        //Remove cell selection color
         selectionStyle = .none
-        
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 25, bottom: 10, right: 25))
+        
         contentView.backgroundColor = .white
-        contentView.clipsToBounds = true
         contentView.layer.cornerRadius = CORNER_RADIUS
-        clipsToBounds = true
         layer.cornerRadius = CORNER_RADIUS
         backgroundColor = .clear
-        layer.masksToBounds = true
-        layer.shadowOpacity = 0.5
-        layer.shadowRadius = SHADOW_RADIUS
-        layer.shadowOffset = .zero
-        
-        //    addLineDivider()
-        //    chevron()
+        addShadow()
     }
     
     //MARK: Private Methods
@@ -52,7 +42,6 @@ class ICTableViewCell: UITableViewCell {
             lineDivider.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
             lineDivider.heightAnchor.constraint(equalToConstant: 1.5)
         ])
-        
     }
     
     private func chevron() {
@@ -68,7 +57,6 @@ class ICTableViewCell: UITableViewCell {
             chevronImage.heightAnchor.constraint(equalToConstant: 13),
             chevronImage.widthAnchor.constraint(equalToConstant: 13)
         ])
-        
     }
     
 }

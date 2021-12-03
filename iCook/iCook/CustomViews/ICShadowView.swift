@@ -17,11 +17,7 @@ class ICShadowView: UIView {
     
     private func configureStyle() {
         backgroundColor = .icBackgroundColor
-
-        layer.shadowOffset = .zero
-        layer.cornerRadius = CORNER_RADIUS
-        layer.shadowOpacity = 0.5
-        layer.shadowRadius = SHADOW_RADIUS
+        addShadow()
     }
     
 }

@@ -45,10 +45,7 @@ class ICButton: UIButton {
         layer.cornerRadius = CORNER_RADIUS
         
         //Shadow
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.4
-        layer.shadowOffset = .zero
-        layer.shadowRadius = SHADOW_RADIUS
+        addShadow()
     }
     
     @objc private func hapticFeedbackOnPress() {
