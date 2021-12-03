@@ -46,6 +46,7 @@
 		24CEA381273E7A0C00414D31 /* ICButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA380273E7A0C00414D31 /* ICButton.swift */; };
 		A1211E55430225B6BF171B3E /* Pods_iCook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E88705D126F9F578197AE697 /* Pods_iCook.framework */; };
 		B20468BD27590CEF00C555BA /* ICShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20468BC27590CEF00C555BA /* ICShadowView.swift */; };
+		B20468BF275A19E600C555BA /* UIFont+AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20468BE275A19E600C555BA /* UIFont+AppFonts.swift */; };
 		B213280B273EB7BB00061877 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213280A273EB7BB00061877 /* UIColor+HEX.swift */; };
 		B21C1CF727466CED00B1E844 /* ICServerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21C1CF627466CED00B1E844 /* ICServerConstants.swift */; };
 		B2F0FA37274CD5A3004BBE75 /* MealDetailsImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F0FA35274CD5A3004BBE75 /* MealDetailsImageTableViewCell.swift */; };
@@ -94,6 +95,7 @@
 		24CEA37E273E79EC00414D31 /* ICLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICLabel.swift; sourceTree = "<group>"; };
 		24CEA380273E7A0C00414D31 /* ICButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICButton.swift; sourceTree = "<group>"; };
 		B20468BC27590CEF00C555BA /* ICShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICShadowView.swift; sourceTree = "<group>"; };
+		B20468BE275A19E600C555BA /* UIFont+AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+AppFonts.swift"; sourceTree = "<group>"; };
 		B213280A273EB7BB00061877 /* UIColor+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HEX.swift"; sourceTree = "<group>"; };
 		B21C1CF627466CED00B1E844 /* ICServerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICServerConstants.swift; sourceTree = "<group>"; };
 		B2F0FA35274CD5A3004BBE75 /* MealDetailsImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsImageTableViewCell.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 		B2132809273EB78A00061877 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B20468BE275A19E600C555BA /* UIFont+AppFonts.swift */,
 				B213280A273EB7BB00061877 /* UIColor+HEX.swift */,
 				24AC3815274CFF7E00850B71 /* UILabel+Height.swift */,
 				24AC3817274D2CB400850B71 /* UserDefaults+UserProfile.swift */,
@@ -481,6 +484,7 @@
 				248FA5B027454BFD00D40BC4 /* HTTPManager.swift in Sources */,
 				24CEA365273E6C3100414D31 /* AppDelegate.swift in Sources */,
 				248FA59B2743B27C00D40BC4 /* CategoriesTableViewCell.swift in Sources */,
+				B20468BF275A19E600C555BA /* UIFont+AppFonts.swift in Sources */,
 				24AC3818274D2CB400850B71 /* UserDefaults+UserProfile.swift in Sources */,
 				248FA5B82746634D00D40BC4 /* MealListModel.swift in Sources */,
 				B20468BD27590CEF00C555BA /* ICShadowView.swift in Sources */,

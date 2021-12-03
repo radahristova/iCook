@@ -10,15 +10,50 @@ import UIKit
 
 class ICButton: UIButton {
     
-    var cornerRadius: CGFloat {
-        
-        get {
-            return layer.cornerRadius
+    //MARK: Variables
+    override open var isHighlighted: Bool {
+        didSet {
+            backgroundColor = isHighlighted ? .icBackgroundColor.withAlphaComponent(0.7) : .icBackgroundColor
         }
-        set {
-            layer.cornerRadius = newValue
-            clipsToBounds = true
-        }
-    
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        addTarget(self, action: #selector(hapticFeedbackOnPress), for: .touchUpInside)
+        configureStyle()
+    }
+    
+    //MARK: Public Methods
+    func addBorder(color: UIColor? = .icAccentColor,
+                   width: CGFloat? = 2) {
+        layer.borderColor = color?.cgColor
+        layer.borderWidth = width!
+    }
+    
+    func configureForSignOut() {
+        tintColor = .red
+        setTitleColor(.red, for: .normal)
+    }
+    
+    //MARK: Util Methods
+    private func configureStyle() {
+        backgroundColor = .icBackgroundColor
+        setTitleColor(.icAccentColor, for: .normal)
+        titleLabel?.font = .defaultFont?.withSize(18)
+                
+        layer.cornerRadius = 12
+        
+        //Shadow
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.4
+        layer.shadowOffset = .zero
+        layer.shadowRadius = 4.5
+    }
+    
+    @objc private func hapticFeedbackOnPress() {
+        let generator = UIImpactFeedbackGenerator(style: .soft)
+        generator.impactOccurred()
+    }
+    
 }

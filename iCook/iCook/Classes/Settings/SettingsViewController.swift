@@ -27,10 +27,7 @@ class SettingsViewController: ICViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        signOutButton.cornerRadius = 10
-        signOutButton.tintColor = .red
-        signOutButton.layer.borderWidth = 2
-        signOutButton.layer.borderColor = UIColor.red.cgColor
+        signOutButton.configureForSignOut()
         signOutButton.addTarget(self, action: #selector(self.signOut(_:)), for: .touchUpInside)
     }
     
