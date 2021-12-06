@@ -1112,7 +1112,7 @@
 		02E3B3F520FE1EE113EBE95CD7FE4C30 /* FBLPromiseError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBLPromiseError.m; path = Sources/FBLPromises/FBLPromiseError.m; sourceTree = "<group>"; };
 		03015933F3E72D0A16D0E4B784ED100A /* FIRAuthRPCResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRAuthRPCResponse.h; path = FirebaseAuth/Sources/Backend/FIRAuthRPCResponse.h; sourceTree = "<group>"; };
 		03180DCA5C74A8E8F710357C3E186826 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		0384A86B94A4935DDE8AF7BF785E42F2 /* Pods-iCook */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-iCook"; path = Pods_iCook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0384A86B94A4935DDE8AF7BF785E42F2 /* Pods_iCook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		038F61FC3792C519781AFF6816FB6484 /* FIRVersion.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRVersion.m; path = FirebaseCore/Sources/FIRVersion.m; sourceTree = "<group>"; };
 		0397B0C9BE5811CC872A13372C8B2C83 /* AppAuth.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AppAuth.modulemap; sourceTree = "<group>"; };
 		039F87BF3DA1A9D734A357CED7399EFA /* pl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = pl.lproj; path = GoogleSignIn/Sources/Strings/pl.lproj; sourceTree = "<group>"; };
@@ -2876,7 +2876,7 @@
 				06FC5C9CF96D60C50FCD47D339C91951 /* nanopb.framework */,
 				05A2656F46E8CA87E77A035911B33D10 /* PKHUD.framework */,
 				BFCB2D5C605270A32522299AED3B5AE6 /* PKHUDResources.bundle */,
-				0384A86B94A4935DDE8AF7BF785E42F2 /* Pods-iCook */,
+				0384A86B94A4935DDE8AF7BF785E42F2 /* Pods_iCook.framework */,
 				3347A1AB6546F0A3977529B8F199DC41 /* FBLPromises.framework */,
 			);
 			name = Products;
@@ -3775,7 +3775,7 @@
 			);
 			name = "Pods-iCook";
 			productName = Pods_iCook;
-			productReference = 0384A86B94A4935DDE8AF7BF785E42F2 /* Pods-iCook */;
+			productReference = 0384A86B94A4935DDE8AF7BF785E42F2 /* Pods_iCook.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		2BBF7206D7FAC92C82A042A99C4A98F8 /* PromisesObjC */ = {

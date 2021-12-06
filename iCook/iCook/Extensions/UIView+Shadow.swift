@@ -14,6 +14,7 @@ extension UIView {
         layer.cornerRadius = CORNER_RADIUS
         layer.shadowOpacity = SHADOW_OPACITY
         layer.shadowRadius = SHADOW_RADIUS
+        layer.shadowColor = UIColor.icShadowColor.cgColor
     }
     
 }

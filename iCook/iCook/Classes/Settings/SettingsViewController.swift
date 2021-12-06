@@ -17,7 +17,10 @@ class SettingsViewController: ICViewController {
     @IBOutlet weak var userInformationShadowView: ICShadowView!
     @IBOutlet weak var fullNameLabel: ICLabel!
     @IBOutlet weak var userAccountPhotoImageView: UIImageView!
+    
+    @IBOutlet weak var appThemeLabel: ICLabel!
     @IBOutlet weak var signOutButton: ICButton!
+    @IBOutlet weak var selectedSegmentControl: UISegmentedControl!
     
     //MARK: Variables
     private var userProfile: GIDProfileData?
@@ -27,8 +30,12 @@ class SettingsViewController: ICViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        appThemeLabel.text = "App Theme"
+        appThemeLabel.configureDefault(withSize: 17)
+        
         signOutButton.configureForSignOut()
         signOutButton.addTarget(self, action: #selector(self.signOut(_:)), for: .touchUpInside)
+        selectedSegmentControl.selectedSegmentTintColor = .icAccentColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +45,19 @@ class SettingsViewController: ICViewController {
         hasLoggedInUser = userProfile != nil ? true : false
         
         configureStyle()
+    }
+    
+    //MARK: IBActions
+    @IBAction func didThemeChanged(_ sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            view.window?.overrideUserInterfaceStyle = .unspecified
+        case 1:
+            view.window?.overrideUserInterfaceStyle = .light
+        default:
+            view.window?.overrideUserInterfaceStyle = .dark
+        }
     }
     
     //MARK: Util Methods

@@ -64,7 +64,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2xj-iG-0bW" userLabel="Bottom View">
                                         <rect key="frame" x="0.0" y="546" width="414" height="272"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZg-XW-lD4">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZg-XW-lD4" customClass="ICButton" customModule="iCook" customModuleProvider="target">
                                                 <rect key="frame" x="119" y="212" width="176" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="jjf-ZX-OzB"/>
@@ -72,11 +72,7 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Continue Without Login">
-                                                    <backgroundConfiguration key="background">
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <color key="strokeColor" red="0.93820375199999995" green="0.56087571380000001" blue="0.32150018219999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    </backgroundConfiguration>
-                                                    <color key="baseForegroundColor" red="0.93820375199999995" green="0.56087571380000001" blue="0.32150018219999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <backgroundConfiguration key="background"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="didPressContinueWithoutLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PD5-p3-Vrt"/>
@@ -116,6 +112,7 @@
                     </view>
                     <connections>
                         <outlet property="appNameLabel" destination="Q61-MO-VSu" id="d0I-P1-ITS"/>
+                        <outlet property="continueWithoutLoginButton" destination="iZg-XW-lD4" id="NSd-Fi-rlD"/>
                         <outlet property="descriptionLabel" destination="j6a-rr-cdT" id="F6G-Nf-8hb"/>
                         <outlet property="iCookLogo" destination="Ou0-Qp-BW3" id="cj7-Jn-dKm"/>
                     </connections>

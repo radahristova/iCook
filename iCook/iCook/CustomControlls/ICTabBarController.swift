@@ -18,6 +18,7 @@ class ICTabBarController: UITabBarController {
         
         configureViewControllers()
         
+        
     }
     
     private func configureStyle() {
@@ -29,6 +30,11 @@ class ICTabBarController: UITabBarController {
         tabBar.unselectedItemTintColor = .black.withAlphaComponent(0.7)
         tabBar.tintColor = .icAccentColor
       //  tabBar.barTintColor = .icDarkColor
+        
+        let appearance = UITabBarAppearance()
+        appearance.backgroundColor = .icBackgroundColor
+        tabBar.standardAppearance = appearance;
+        tabBar.scrollEdgeAppearance = tabBar.standardAppearance
     }
     
     private func configureViewControllers() {

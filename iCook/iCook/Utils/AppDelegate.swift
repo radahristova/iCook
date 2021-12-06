@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
      
         UINavigationBar.appearance().tintColor = .icAccentColor
-        
+
         return true
     }
     

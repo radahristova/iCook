@@ -16,6 +16,7 @@ class LoginViewController: ICViewController {
     @IBOutlet weak var iCookLogo: ICRoundedImageView!
     @IBOutlet weak var appNameLabel: ICLabel!
     @IBOutlet weak var descriptionLabel: ICLabel!
+    @IBOutlet weak var continueWithoutLoginButton: ICButton!
     
     //MARK: Life Cycle
     override func viewDidLoad() {
@@ -23,11 +24,15 @@ class LoginViewController: ICViewController {
         
         appNameLabel.configureDefault(withSize: 30)
         descriptionLabel.configureDefault(withSize: 26)
+        continueWithoutLoginButton.setTitle("Continue Without Login", for: .normal)
+        continueWithoutLoginButton.configureContinueWithoutLogin()
+        continueWithoutLoginButton.addBorder()
         checkIfAlreadyLoggedIn()
+        
     }
     
     //MARK: IBActions
-    @IBAction func didPressContinueWithoutLogin(_ sender: UIButton!) {
+    @IBAction func didPressContinueWithoutLogin(_ sender: ICButton!) {
         UserDefaults.deleteUserProfile()
         openApp()
     }
@@ -35,6 +40,7 @@ class LoginViewController: ICViewController {
     @IBAction func didTouchUpInside(_ button: GIDSignInButton) {
         googleSignIn()
     }
+    
     
     //MARK: Util Methods
     @objc private func googleSignIn() {
