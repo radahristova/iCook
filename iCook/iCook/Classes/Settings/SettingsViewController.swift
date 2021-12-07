@@ -36,6 +36,7 @@ class SettingsViewController: ICViewController {
         signOutButton.configureForSignOut()
         signOutButton.addTarget(self, action: #selector(self.signOut(_:)), for: .touchUpInside)
         selectedSegmentControl.selectedSegmentTintColor = .icAccentColor
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,22 +50,23 @@ class SettingsViewController: ICViewController {
     
     //MARK: IBActions
     @IBAction func didThemeChanged(_ sender: UISegmentedControl) {
-        
+        guard let window = view.window else { return }
         switch sender.selectedSegmentIndex {
         case 0:
-            view.window?.overrideUserInterfaceStyle = .unspecified
+            window.overrideUserInterfaceStyle = .unspecified
         case 1:
-            view.window?.overrideUserInterfaceStyle = .light
+            window.overrideUserInterfaceStyle = .light
         default:
-            view.window?.overrideUserInterfaceStyle = .dark
+            window.overrideUserInterfaceStyle = .dark
         }
+        UserDefaults.standardThemeStyle = window.overrideUserInterfaceStyle
     }
     
     //MARK: Util Methods
     private func configureStyle() {
         if hasLoggedInUser == true {
             userInformationShadowView.isHidden = false
-
+            
             configureGooglePhoto()
             
             if let firstName = userProfile?.givenName,
@@ -115,3 +117,5 @@ class SettingsViewController: ICViewController {
     }
     
 }
+
+

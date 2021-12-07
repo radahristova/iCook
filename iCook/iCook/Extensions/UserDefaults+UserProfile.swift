@@ -7,6 +7,7 @@
 
 import Foundation
 import GoogleSignIn
+import UIKit
 
 private enum UserDefaultsKeys: String {
     case userProfileData = "UserProfileData"
@@ -30,6 +31,34 @@ extension UserDefaults {
     
     static func deleteUserProfile() {
         UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.userProfileData.rawValue)
+        
+    }
+    
+    static var standardThemeStyle: UIUserInterfaceStyle {
+        set {
+            standard.themeStyle = newValue
+        }
+        get {
+            standard.themeStyle
+        }
+    }
+    
+    var themeStyle: UIUserInterfaceStyle {
+        set {
+            set(newValue.rawValue, forKey: "themeStyle")
+        }
+        get {
+            if let rawValue = value(forKey: "themeStyle") as? Int,
+               let style = UIUserInterfaceStyle(rawValue: rawValue) {
+                return style
+            }
+            return .unspecified
+        }
     }
     
 }
+
+
+
+
+
