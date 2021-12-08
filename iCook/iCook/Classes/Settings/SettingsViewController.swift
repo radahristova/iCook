@@ -22,9 +22,10 @@ class SettingsViewController: ICViewController {
     @IBOutlet weak var signOutButton: ICButton!
     @IBOutlet weak var selectedSegmentControl: UISegmentedControl!
     
-    //MARK: Variables
+    //MARK: Variables and Constants
     private var userProfile: GIDProfileData?
     private var hasLoggedInUser: Bool?
+    private let chosenTheme = "chosenTheme"
     
     //MARK: Life Cycle
     override func viewDidLoad() {
@@ -41,7 +42,7 @@ class SettingsViewController: ICViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let value = UserDefaults.standard.value(forKey: "chosenTheme"){
+        if let value = UserDefaults.standard.value(forKey: chosenTheme){
             let selectedIndex = value as! Int
             selectedSegmentControl.selectedSegmentIndex = selectedIndex
         }
@@ -63,7 +64,7 @@ class SettingsViewController: ICViewController {
         default:
             window.overrideUserInterfaceStyle = .dark
         }
-        UserDefaults.standard.set(sender.selectedSegmentIndex, forKey: "chosenTheme")
+        UserDefaults.standard.set(sender.selectedSegmentIndex, forKey: chosenTheme)
         UserDefaults.standardThemeStyle = window.overrideUserInterfaceStyle
     }
     
