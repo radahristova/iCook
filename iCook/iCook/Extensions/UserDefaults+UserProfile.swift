@@ -11,6 +11,7 @@ import UIKit
 
 private enum UserDefaultsKeys: String {
     case userProfileData = "UserProfileData"
+    case themeStyle = "themeStyle"
 }
 
 extension UserDefaults {
