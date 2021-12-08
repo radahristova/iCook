@@ -46,10 +46,10 @@ extension UserDefaults {
     
     var themeStyle: UIUserInterfaceStyle {
         set {
-            set(newValue.rawValue, forKey: "themeStyle")
+            set(newValue.rawValue, forKey: UserDefaultsKeys.themeStyle.rawValue)
         }
         get {
-            if let rawValue = value(forKey: "themeStyle") as? Int,
+            if let rawValue = value(forKey: UserDefaultsKeys.themeStyle.rawValue) as? Int,
                let style = UIUserInterfaceStyle(rawValue: rawValue) {
                 return style
             }

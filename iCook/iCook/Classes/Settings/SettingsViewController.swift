@@ -35,12 +35,16 @@ class SettingsViewController: ICViewController {
         
         signOutButton.configureForSignOut()
         signOutButton.addTarget(self, action: #selector(self.signOut(_:)), for: .touchUpInside)
-        selectedSegmentControl.selectedSegmentTintColor = .icAccentColor
-        
+        selectedSegmentControl.selectedSegmentTintColor = .icAccentColor      
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if let value = UserDefaults.standard.value(forKey: "chosenTheme"){
+            let selectedIndex = value as! Int
+            selectedSegmentControl.selectedSegmentIndex = selectedIndex
+        }
         
         userProfile = UserDefaults.getUserProfile()
         hasLoggedInUser = userProfile != nil ? true : false
@@ -59,6 +63,7 @@ class SettingsViewController: ICViewController {
         default:
             window.overrideUserInterfaceStyle = .dark
         }
+        UserDefaults.standard.set(sender.selectedSegmentIndex, forKey: "chosenTheme")
         UserDefaults.standardThemeStyle = window.overrideUserInterfaceStyle
     }
     
