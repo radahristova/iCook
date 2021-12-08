@@ -9,9 +9,10 @@ import Foundation
 import GoogleSignIn
 import UIKit
 
-private enum UserDefaultsKeys: String {
+enum UserDefaultsKeys: String {
     case userProfileData = "UserProfileData"
     case themeStyle = "themeStyle"
+    case chosenTheme = "chosenTheme"
 }
 
 extension UserDefaults {
