@@ -46,6 +46,7 @@ class MealDetailsViewController: ICViewController {
         
         // Divider Color set to clear
         tableView.separatorColor = .clear
+        tableView.backgroundColor = .icBackgroundColor
         showDetails()
     }
     

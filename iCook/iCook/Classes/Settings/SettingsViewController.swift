@@ -17,7 +17,10 @@ class SettingsViewController: ICViewController {
     @IBOutlet weak var userInformationShadowView: ICShadowView!
     @IBOutlet weak var fullNameLabel: ICLabel!
     @IBOutlet weak var userAccountPhotoImageView: UIImageView!
+    
+    @IBOutlet weak var appThemeLabel: ICLabel!
     @IBOutlet weak var signOutButton: ICButton!
+    @IBOutlet weak var selectedSegmentControl: UISegmentedControl!
     
     //MARK: Variables
     private var userProfile: GIDProfileData?
@@ -27,12 +30,21 @@ class SettingsViewController: ICViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        appThemeLabel.text = "App Theme"
+        appThemeLabel.configureDefault(withSize: 17)
+        
         signOutButton.configureForSignOut()
         signOutButton.addTarget(self, action: #selector(self.signOut(_:)), for: .touchUpInside)
+        selectedSegmentControl.selectedSegmentTintColor = .icAccentColor      
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if let value = UserDefaults.standard.value(forKey: UserDefaultsKeys.chosenTheme.rawValue){
+            let selectedIndex = value as! Int
+            selectedSegmentControl.selectedSegmentIndex = selectedIndex
+        }
         
         userProfile = UserDefaults.getUserProfile()
         hasLoggedInUser = userProfile != nil ? true : false
@@ -40,11 +52,26 @@ class SettingsViewController: ICViewController {
         configureStyle()
     }
     
+    //MARK: IBActions
+    @IBAction func didThemeChanged(_ sender: UISegmentedControl) {
+        guard let window = view.window else { return }
+        switch sender.selectedSegmentIndex {
+        case 0:
+            window.overrideUserInterfaceStyle = .unspecified
+        case 1:
+            window.overrideUserInterfaceStyle = .light
+        default:
+            window.overrideUserInterfaceStyle = .dark
+        }
+        UserDefaults.standard.set(sender.selectedSegmentIndex, forKey: UserDefaultsKeys.chosenTheme.rawValue)
+        UserDefaults.standardThemeStyle = window.overrideUserInterfaceStyle
+    }
+    
     //MARK: Util Methods
     private func configureStyle() {
         if hasLoggedInUser == true {
             userInformationShadowView.isHidden = false
-
+            
             configureGooglePhoto()
             
             if let firstName = userProfile?.givenName,
@@ -95,3 +122,5 @@ class SettingsViewController: ICViewController {
     }
     
 }
+
+

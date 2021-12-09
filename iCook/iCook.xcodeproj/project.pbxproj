@@ -34,6 +34,7 @@
 		24AC381F274E345800850B71 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC381E274E345800850B71 /* StorageManager.swift */; };
 		24B7492D2756321E004136DC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B7492B2756321E004136DC /* SettingsViewController.swift */; };
 		24B7492E2756321E004136DC /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24B7492C2756321E004136DC /* SettingsViewController.xib */; };
+		24B74930275E065A004136DC /* ICView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B7492F275E065A004136DC /* ICView.swift */; };
 		24CEA365273E6C3100414D31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA364273E6C3100414D31 /* AppDelegate.swift */; };
 		24CEA367273E6C3100414D31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA366273E6C3100414D31 /* SceneDelegate.swift */; };
 		24CEA369273E6C3100414D31 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA368273E6C3100414D31 /* LoginViewController.swift */; };
@@ -84,6 +85,7 @@
 		24AC381E274E345800850B71 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		24B7492B2756321E004136DC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		24B7492C2756321E004136DC /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		24B7492F275E065A004136DC /* ICView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICView.swift; sourceTree = "<group>"; };
 		24CEA361273E6C3100414D31 /* iCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CEA364273E6C3100414D31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24CEA366273E6C3100414D31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				248FA5AB2745143300D40BC4 /* ICTableViewCell.swift */,
 				B20468BC27590CEF00C555BA /* ICShadowView.swift */,
 				24CEA37C273E79C500414D31 /* ICRoundedImageView.swift */,
+				24B7492F275E065A004136DC /* ICView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				248FA5B82746634D00D40BC4 /* MealListModel.swift in Sources */,
 				B20468BD27590CEF00C555BA /* ICShadowView.swift in Sources */,
 				248FA5BE274664D300D40BC4 /* MealListTableViewCell.swift in Sources */,
+				24B74930275E065A004136DC /* ICView.swift in Sources */,
 				248FA5932742B5A600D40BC4 /* HomeViewController.swift in Sources */,
 				24AC3814274CF7B300850B71 /* MealDetailsInformationTableViewCell.swift in Sources */,
 				249F6D40274265BF0084ABDD /* ICTabBarController.swift in Sources */,

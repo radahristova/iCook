@@ -10,7 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="iCook" customModuleProvider="target">
             <connections>
+                <outlet property="appThemeLabel" destination="tm7-pz-Ukq" id="EmR-5y-b61"/>
                 <outlet property="fullNameLabel" destination="CvM-Zz-zIc" id="0Tc-3R-7ia"/>
+                <outlet property="selectedSegmentControl" destination="vRh-Da-tPc" id="zc9-JJ-uit"/>
                 <outlet property="signOutButton" destination="D1F-C7-2AN" id="Zoh-7U-i8U"/>
                 <outlet property="userAccountPhotoImageView" destination="KxZ-fy-1dQ" id="BBZ-Ys-jsX"/>
                 <outlet property="userInformationShadowView" destination="wKT-lX-yLK" id="1CA-im-Efc"/>
@@ -23,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="b6z-Sw-tQ9">
-                    <rect key="frame" x="0.0" y="44" width="414" height="218"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="283"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wKT-lX-yLK" customClass="ICShadowView" customModule="iCook" customModuleProvider="target">
                             <rect key="frame" x="15" y="15" width="384" height="130"/>
@@ -51,8 +53,38 @@
                                 <constraint firstItem="KxZ-fy-1dQ" firstAttribute="leading" secondItem="wKT-lX-yLK" secondAttribute="leading" constant="25" id="izn-KG-G2f"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZWp-86-G7P">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tl1-Cr-8i8" customClass="ICShadowView" customModule="iCook" customModuleProvider="target">
                             <rect key="frame" x="15" y="160" width="384" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="tm7-pz-Ukq" customClass="ICLabel" customModule="iCook" customModuleProvider="target">
+                                    <rect key="frame" x="10" y="15" width="41.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vRh-Da-tPc">
+                                    <rect key="frame" x="186" y="9.5" width="197" height="32"/>
+                                    <segments>
+                                        <segment title="System"/>
+                                        <segment title="Light"/>
+                                        <segment title="Dark"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="didThemeChanged:" destination="-1" eventType="valueChanged" id="FhJ-cQ-eBS"/>
+                                    </connections>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="tm7-pz-Ukq" firstAttribute="leading" secondItem="tl1-Cr-8i8" secondAttribute="leading" constant="10" id="7e0-il-0e5"/>
+                                <constraint firstAttribute="trailing" secondItem="vRh-Da-tPc" secondAttribute="trailing" constant="1" id="Qui-as-loM"/>
+                                <constraint firstItem="vRh-Da-tPc" firstAttribute="centerY" secondItem="tl1-Cr-8i8" secondAttribute="centerY" id="cB8-Zd-c0f"/>
+                                <constraint firstItem="tm7-pz-Ukq" firstAttribute="centerY" secondItem="tl1-Cr-8i8" secondAttribute="centerY" id="jrV-Am-Z6l"/>
+                                <constraint firstAttribute="height" constant="50" id="wxK-2R-tFz"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZWp-86-G7P">
+                            <rect key="frame" x="15" y="225" width="384" height="50"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1F-C7-2AN" customClass="ICButton" customModule="iCook" customModuleProvider="target">
                                     <rect key="frame" x="117" y="5" width="150" height="40"/>
@@ -82,7 +114,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b6z-Sw-tQ9" secondAttribute="trailing" id="VwO-Qp-NZl"/>
                 <constraint firstItem="b6z-Sw-tQ9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="g2n-eJ-Bkw"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="63"/>
+            <point key="canvasLocation" x="137.68115942028987" y="62.946428571428569"/>
         </view>
     </objects>
     <resources>

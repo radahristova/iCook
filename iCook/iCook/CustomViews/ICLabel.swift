@@ -13,6 +13,7 @@ class ICLabel: UILabel {
     //MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
+        textColor = .icDefaultLabelColor
     }
     
     //MARK: Public Methods

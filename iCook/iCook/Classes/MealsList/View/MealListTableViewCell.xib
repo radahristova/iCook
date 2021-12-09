@@ -20,7 +20,7 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iCookLogo" translatesAutoresizingMaskIntoConstraints="NO" id="dTn-Jv-8fq" customClass="ICRoundedImageView" customModule="iCook" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
                     </imageView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHC-cz-VXo">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHC-cz-VXo" customClass="ICView" customModule="iCook" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="130" width="320" height="50"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="8v9-wB-yaI" customClass="ICLabel" customModule="iCook" customModuleProvider="target">

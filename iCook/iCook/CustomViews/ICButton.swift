@@ -13,7 +13,7 @@ class ICButton: UIButton {
     //MARK: Variables
     override open var isHighlighted: Bool {
         didSet {
-            backgroundColor = isHighlighted ? .icBackgroundColor.withAlphaComponent(0.7) : .icBackgroundColor
+            backgroundColor = isHighlighted ? .icViewBackgroundColor.withAlphaComponent(0.7) : .icViewBackgroundColor
         }
     }
     
@@ -31,6 +31,10 @@ class ICButton: UIButton {
         layer.borderWidth = width!
     }
     
+    func configureContinueWithoutLogin() {
+        tintColor = .icAccentColor
+    }
+    
     func configureForSignOut() {
         tintColor = .icRedColor
         setTitleColor(.icRedColor, for: .normal)
@@ -38,7 +42,7 @@ class ICButton: UIButton {
     
     //MARK: Util Methods
     private func configureStyle() {
-        backgroundColor = .icBackgroundColor
+        backgroundColor = .icViewBackgroundColor
         setTitleColor(.icAccentColor, for: .normal)
         titleLabel?.font = .defaultFont?.withSize(18)
                 

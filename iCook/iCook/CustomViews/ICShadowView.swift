@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ICShadowView: UIView {
+class ICShadowView: ICView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -16,8 +16,13 @@ class ICShadowView: UIView {
     }
     
     private func configureStyle() {
-        backgroundColor = .icBackgroundColor
         addShadow()
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            configureStyle()
+        } 
+    }
 }

@@ -21,7 +21,7 @@ class ICTableViewCell: UITableViewCell {
         super.layoutSubviews()
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 25, bottom: 10, right: 25))
         
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = .icViewBackgroundColor
         contentView.layer.cornerRadius = CORNER_RADIUS
         layer.cornerRadius = CORNER_RADIUS
         backgroundColor = .clear

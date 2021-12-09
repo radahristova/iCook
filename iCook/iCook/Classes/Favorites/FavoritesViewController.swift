@@ -24,6 +24,8 @@ class FavoritesViewController: ICViewController {
         
         // Divider Color set to clear
         tableView.separatorColor = .clear
+        tableView.backgroundColor = .icBackgroundColor
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
