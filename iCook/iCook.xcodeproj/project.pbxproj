@@ -45,8 +45,7 @@
 		24CEA37D273E79C500414D31 /* ICRoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA37C273E79C500414D31 /* ICRoundedImageView.swift */; };
 		24CEA37F273E79EC00414D31 /* ICLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA37E273E79EC00414D31 /* ICLabel.swift */; };
 		24CEA381273E7A0C00414D31 /* ICButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CEA380273E7A0C00414D31 /* ICButton.swift */; };
-		32F0A3677C8242C230998D4A /* Pods_iCook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418372A62DE9E9CB46AB74CA /* Pods_iCook.framework */; };
-		A1211E55430225B6BF171B3E /* Podfile in Frameworks */ = {isa = PBXBuildFile; fileRef = E88705D126F9F578197AE697 /* Podfile */; };
+		A1211E55430225B6BF171B3E /* Pods_iCook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E88705D126F9F578197AE697 /* Pods_iCook.framework */; };
 		B20468BD27590CEF00C555BA /* ICShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20468BC27590CEF00C555BA /* ICShadowView.swift */; };
 		B20468BF275A19E600C555BA /* UIFont+AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20468BE275A19E600C555BA /* UIFont+AppFonts.swift */; };
 		B20468C1275A1FE400C555BA /* ICConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20468C0275A1FE400C555BA /* ICConstants.swift */; };
@@ -99,7 +98,6 @@
 		24CEA37C273E79C500414D31 /* ICRoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICRoundedImageView.swift; sourceTree = "<group>"; };
 		24CEA37E273E79EC00414D31 /* ICLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICLabel.swift; sourceTree = "<group>"; };
 		24CEA380273E7A0C00414D31 /* ICButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICButton.swift; sourceTree = "<group>"; };
-		418372A62DE9E9CB46AB74CA /* Pods_iCook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B20468BC27590CEF00C555BA /* ICShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICShadowView.swift; sourceTree = "<group>"; };
 		B20468BE275A19E600C555BA /* UIFont+AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+AppFonts.swift"; sourceTree = "<group>"; };
 		B20468C0275A1FE400C555BA /* ICConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICConstants.swift; sourceTree = "<group>"; };
@@ -109,7 +107,7 @@
 		B2F0FA35274CD5A3004BBE75 /* MealDetailsImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsImageTableViewCell.swift; sourceTree = "<group>"; };
 		B2F0FA36274CD5A3004BBE75 /* MealDetailsImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealDetailsImageTableViewCell.xib; sourceTree = "<group>"; };
 		E54C19CDE8E05E5B8BDA142C /* Pods-iCook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCook.debug.xcconfig"; path = "Target Support Files/Pods-iCook/Pods-iCook.debug.xcconfig"; sourceTree = "<group>"; };
-		E88705D126F9F578197AE697 /* Podfile */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Podfile; path = ../../../../../../../../Documents/icook/iCook/Podfile; sourceTree = BUILT_PRODUCTS_DIR; };
+		E88705D126F9F578197AE697 /* Pods_iCook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1211E55430225B6BF171B3E /* Podfile in Frameworks */,
-				32F0A3677C8242C230998D4A /* Pods_iCook.framework in Frameworks */,
+				A1211E55430225B6BF171B3E /* Pods_iCook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,8 +291,7 @@
 		413ADE116878915F9D7B24D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E88705D126F9F578197AE697 /* Podfile */,
-				418372A62DE9E9CB46AB74CA /* Pods_iCook.framework */,
+				E88705D126F9F578197AE697 /* Pods_iCook.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
