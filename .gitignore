@@ -41,6 +41,10 @@ TEST*.xml
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 
+Pods/
+*/xcuserdata/
+DerivedData/*
+
 # Playgrounds
 timeline.xctimeline
 playground.xcworkspace
