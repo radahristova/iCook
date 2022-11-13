@@ -15,7 +15,6 @@ extension UILabel {
         }
         return text.height(withWidth: width, font: font)
     }
-    
 }
 
 extension String {
@@ -24,6 +23,5 @@ extension String {
         let actualSize = self.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin], attributes: [.font : font], context: nil)
         return actualSize.height
     }
-    
 }
 

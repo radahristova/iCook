@@ -16,7 +16,7 @@ enum UserDefaultsKeys: String {
 }
 
 extension UserDefaults {
-    
+
     static func saveUserProfile(_ userProfileData: GIDProfileData) {
         let encodedUserProfileData = try? NSKeyedArchiver.archivedData(withRootObject: userProfileData, requiringSecureCoding: false)
         standard.set(encodedUserProfileData, forKey: UserDefaultsKeys.userProfileData.rawValue)

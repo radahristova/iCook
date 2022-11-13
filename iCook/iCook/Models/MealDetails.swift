@@ -6,39 +6,21 @@
 //
 
 import Foundation
+import RealmSwift
 
-class MealDetailsModelResponse: BaseAPIObject {
-    var mealDetails: [MealDetailsModel]?
-    
-    private enum CodingKeys: String, CodingKey {
-        case meals
-    }
-    
-    required init(from decoder: Decoder) throws {
-        let container = try? decoder.container(keyedBy: CodingKeys.self)
-        mealDetails = try? container?.decode([MealDetailsModel].self, forKey: .meals)
-        
-        super.init()
-    }
-}
+class MealDetails: Object {
+    @Persisted var area: String
+    @Persisted var instructions: String
+    @Persisted var categoryName: String?
 
-class MealDetailsModel: BaseAPIObject {
-
-    var strCategory: String?
-    var strArea: String?
-    var strInstructions: String?
-  
-    private enum CodingKeys: String, CodingKey {
-        case strCategory
-        case strArea
-        case strInstructions
-    }
-  
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        strCategory = try container.decode(String.self, forKey: .strCategory)
-        strArea = try container.decode(String.self, forKey: .strArea)
-        strInstructions = try container.decode(String.self, forKey: .strInstructions)
-        super.init()
+    convenience init?(from json: [AnyHashable: Any]) {
+        guard let instructions = json["strInstructions"] as? String,
+              let area = json["strArea"] as? String else {
+            return nil
+        }
+        self.init()
+        self.area = area
+        self.instructions = instructions
+        categoryName = json["strCategory"] as? String
     }
 }

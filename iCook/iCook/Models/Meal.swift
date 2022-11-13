@@ -6,43 +6,24 @@
 //
 
 import Foundation
+import RealmSwift
 
-class MealListModelResponse: BaseAPIObject {
-    var mealList: [Meal]?
-    
-    private enum CodingKeys: String, CodingKey {
-        case meals
-    }
-    
-    required init(from decoder: Decoder) throws {
-        let container = try? decoder.container(keyedBy: CodingKeys.self)
-        mealList = try? container?.decode([Meal].self, forKey: .meals)
-        
-        super.init()
-                                 
-    }
-}
+class Meal: Object {
+    @Persisted var name: String
+    @Persisted var id: String
+    @Persisted private var thumbnailString: String
+    var thumbnailURL: URL? { URL(string: thumbnailString) }
+    var details: MealDetails?
 
-
-class Meal: Codable {
-    
-    var strMeal: String?
-    var strMealThumb: String?
-    var idMeal: String?
-    var details: MealDetailsModel?
-    
-    private enum CodingKeys: String, CodingKey {
-        case strMeal
-        case strMealThumb
-        case idMeal
-        case details
-    }
-    
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        strMeal = try container.decode(String.self, forKey: .strMeal)
-        strMealThumb = try container.decode(String.self, forKey: .strMealThumb)
-        idMeal = try container.decode(String.self, forKey: .idMeal)
-        details = try? container.decode(MealDetailsModel.self, forKey: .details)
+    convenience init?(from json: [AnyHashable: Any]) {
+        guard let id = json["idMeal"] as? String,
+              let name = json["strMeal"] as? String,
+              let thumbnailString = json["strMealThumb"] as? String else {
+            return nil
+        }
+        self.init()
+        self.id = id
+        self.name = name
+        self.thumbnailString = thumbnailString
     }
 }

@@ -16,5 +16,5 @@ extension UIView {
         layer.shadowRadius = SHADOW_RADIUS
         layer.shadowColor = UIColor.icShadowColor.cgColor
     }
-    
+
 }

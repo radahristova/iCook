@@ -11,14 +11,12 @@ import GoogleSignIn
 import simd
 
 class LoginViewController: ICViewController {
-    
-    //MARK: IBOutlets
+
     @IBOutlet weak var iCookLogo: ICRoundedImageView!
     @IBOutlet weak var appNameLabel: ICLabel!
     @IBOutlet weak var descriptionLabel: ICLabel!
     @IBOutlet weak var continueWithoutLoginButton: ICButton!
-    
-    //MARK: Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,21 +26,17 @@ class LoginViewController: ICViewController {
         continueWithoutLoginButton.configureContinueWithoutLogin()
         continueWithoutLoginButton.addBorder()
         checkIfAlreadyLoggedIn()
-        
     }
-    
-    //MARK: IBActions
+
     @IBAction func didPressContinueWithoutLogin(_ sender: ICButton!) {
         UserDefaults.deleteUserProfile()
         openApp()
     }
-    
+
     @IBAction func didTouchUpInside(_ button: GIDSignInButton) {
         googleSignIn()
     }
-    
-    
-    //MARK: Util Methods
+
     @objc private func googleSignIn() {
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
         let config = GIDConfiguration(clientID: clientID)
@@ -75,7 +69,7 @@ class LoginViewController: ICViewController {
         //not loggedIn
         }
     }
-    
+
     private func fireBaseLogin(with credential: AuthCredential) {
         Auth.auth().signIn(with: credential) { [weak self] authResult, error in
             if let error = error {
@@ -86,11 +80,11 @@ class LoginViewController: ICViewController {
             }
         }
     }
-    
+
     private func openApp() {
         let tabBar = ICTabBarController()
         tabBar.selectedIndex = 1
         present(tabBar, animated: true, completion: nil)
     }
-    
+
 }

@@ -10,13 +10,11 @@ import UIKit
 
 class ICLabel: UILabel {
        
-    //MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
         textColor = .icDefaultLabelColor
     }
-    
-    //MARK: Public Methods
+
     func setFontSize(_ size: CGFloat) {
         font = UIFont(name: self.font.fontName, size: size)
     }
@@ -33,6 +31,6 @@ class ICLabel: UILabel {
     func configureBoldItalic(withSize size: CGFloat) {
         font = .boldItalicFont?.withSize(size)
     }
-    
-   
+
+
 }

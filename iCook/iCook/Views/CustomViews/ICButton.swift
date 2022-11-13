@@ -9,22 +9,19 @@ import Foundation
 import UIKit
 
 class ICButton: UIButton {
-    
-    //MARK: Variables
+
     override open var isHighlighted: Bool {
         didSet {
             backgroundColor = isHighlighted ? .icViewBackgroundColor.withAlphaComponent(0.7) : .icViewBackgroundColor
         }
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         addTarget(self, action: #selector(hapticFeedbackOnPress), for: .touchUpInside)
         configureStyle()
     }
-    
-    //MARK: Public Methods
+
     func addBorder(color: UIColor? = .icAccentColor,
                    width: CGFloat? = 2) {
         layer.borderColor = color?.cgColor
@@ -34,13 +31,12 @@ class ICButton: UIButton {
     func configureContinueWithoutLogin() {
         tintColor = .icAccentColor
     }
-    
+
     func configureForSignOut() {
         tintColor = .icRedColor
         setTitleColor(.icRedColor, for: .normal)
     }
-    
-    //MARK: Util Methods
+
     private func configureStyle() {
         backgroundColor = .icViewBackgroundColor
         setTitleColor(.icAccentColor, for: .normal)
@@ -51,10 +47,10 @@ class ICButton: UIButton {
         //Shadow
         addShadow()
     }
-    
+
     @objc private func hapticFeedbackOnPress() {
         let generator = UIImpactFeedbackGenerator(style: .soft)
         generator.impactOccurred()
     }
-    
+
 }

@@ -6,44 +6,22 @@
 //
 
 import Foundation
-import UIKit
 
-class CategoryModelResponse: BaseAPIObject {
-    
-    var categories: [CategoryModel]?
-    
-    private enum CodingKeys: String, CodingKey {
-        case categories
+class Category {
+    var id: String
+    var name: String
+    var thumbnail: URL?
+
+
+    init?(from json: [AnyHashable: Any]) {
+        guard let id = json["idCategory"] as? String,
+              let name = json["strCategory"] as? String else {
+            return nil
+        }
+        self.id = id
+        self.name = name
+        if let string = json["strCategoryThumb"] as? String {
+            thumbnail = URL(string: string)
+        }
     }
-
-    required init(from decoder: Decoder) throws {
-        let container = try? decoder.container(keyedBy: CodingKeys.self)
-        categories = try? container?.decode([CategoryModel].self, forKey: .categories)
-
-        super.init()
-    }
-    
-}
-
-class CategoryModel: BaseAPIObject {
-
-    var idCategory: String?
-    var strCategory: String?
-    var strCategoryThumb: String?
-    
-    private enum CodingKeys: String, CodingKey {
-        case idCategory
-        case strCategory
-        case strCategoryThumb
-    }
-    
-    required init(from decoder: Decoder) throws {
-        let container = try? decoder.container(keyedBy: CodingKeys.self)
-        idCategory = try? container?.decode(String.self, forKey: .idCategory)
-        strCategory = try? container?.decode(String.self, forKey: .strCategory)
-        strCategoryThumb = try? container?.decode(String.self, forKey: .strCategoryThumb)
-        
-        super.init()
-    }
-    
 }

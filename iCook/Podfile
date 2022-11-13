@@ -8,5 +8,7 @@ target 'iCook' do
   pod 'PKHUD'
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
+  pod 'RealmSwift', '~>10'
+  pod 'Alamofire'
 
 end

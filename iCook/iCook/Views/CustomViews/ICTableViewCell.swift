@@ -10,13 +10,13 @@ import UIKit
 import Kingfisher
 
 class ICTableViewCell: UITableViewCell {
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
         selectionStyle = .none
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 25, bottom: 10, right: 25))
@@ -27,7 +27,7 @@ class ICTableViewCell: UITableViewCell {
         backgroundColor = .clear
         addShadow()
     }
-    
+
     //MARK: Private Methods
     private func addLineDivider() {
         let lineDivider = UIView()
@@ -43,14 +43,12 @@ class ICTableViewCell: UITableViewCell {
             lineDivider.heightAnchor.constraint(equalToConstant: 1.5)
         ])
     }
-    
+
     private func chevron() {
         let chevronImage = UIImageView(image: UIImage(systemName: "chevron.compact.right"))
-   //     chevronImage.tintColor = .icDarkColor
         chevronImage.translatesAutoresizingMaskIntoConstraints = false
-        
+
         contentView.addSubview(chevronImage)
-        
         NSLayoutConstraint.activate([
             chevronImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0),
             chevronImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
@@ -58,5 +56,5 @@ class ICTableViewCell: UITableViewCell {
             chevronImage.widthAnchor.constraint(equalToConstant: 13)
         ])
     }
-    
+
 }

@@ -12,21 +12,17 @@ import PKHUD
 import Kingfisher
 
 class SettingsViewController: ICViewController {
-    
-    //MARK: IBOutlets
+
     @IBOutlet weak var userInformationShadowView: ICShadowView!
     @IBOutlet weak var fullNameLabel: ICLabel!
     @IBOutlet weak var userAccountPhotoImageView: UIImageView!
-    
     @IBOutlet weak var appThemeLabel: ICLabel!
     @IBOutlet weak var signOutButton: ICButton!
     @IBOutlet weak var selectedSegmentControl: UISegmentedControl!
-    
-    //MARK: Variables
+
     private var userProfile: GIDProfileData?
     private var hasLoggedInUser: Bool?
-    
-    //MARK: Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,7 +33,7 @@ class SettingsViewController: ICViewController {
         signOutButton.addTarget(self, action: #selector(self.signOut(_:)), for: .touchUpInside)
         selectedSegmentControl.selectedSegmentTintColor = .icAccentColor      
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -45,14 +41,13 @@ class SettingsViewController: ICViewController {
             let selectedIndex = value as! Int
             selectedSegmentControl.selectedSegmentIndex = selectedIndex
         }
-        
+
         userProfile = UserDefaults.getUserProfile()
         hasLoggedInUser = userProfile != nil ? true : false
-        
+
         configureStyle()
     }
-    
-    //MARK: IBActions
+
     @IBAction func didThemeChanged(_ sender: UISegmentedControl) {
         guard let window = view.window else { return }
         switch sender.selectedSegmentIndex {
@@ -66,38 +61,34 @@ class SettingsViewController: ICViewController {
         UserDefaults.standard.set(sender.selectedSegmentIndex, forKey: UserDefaultsKeys.chosenTheme.rawValue)
         UserDefaults.standardThemeStyle = window.overrideUserInterfaceStyle
     }
-    
-    //MARK: Util Methods
+
     private func configureStyle() {
         if hasLoggedInUser == true {
             userInformationShadowView.isHidden = false
-            
             configureGooglePhoto()
-            
+
             if let firstName = userProfile?.givenName,
                let lastName = userProfile?.familyName {
                 fullNameLabel.configureDefault(withSize: 20)
                 fullNameLabel.text = "\(firstName) \(lastName)"
             }
             signOutButton.setTitle("Sign Out", for: .normal)
-            
         } else {
             userInformationShadowView.isHidden = true
             signOutButton.setTitle("Go To Login", for: .normal)
         }
     }
-    
+
     private func configureGooglePhoto(){
         let pic = userProfile?.imageURL(withDimension: 300)
         userAccountPhotoImageView.kf.setImage(with: pic)
-        
         userAccountPhotoImageView.clipsToBounds = true
         userAccountPhotoImageView.layer.cornerRadius = userAccountPhotoImageView.frame.size.width / 2
     }
-    
+
     @objc private func signOut(_ sender: UIButton) {
         GIDSignIn.sharedInstance.signOut()
-        
+
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
@@ -105,7 +96,7 @@ class SettingsViewController: ICViewController {
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)
         }
-        
+
         var alertVC: UIAlertController?
         if hasLoggedInUser == true{
             alertVC = UIAlertController(title: "Sign Out", message: "Are you sure?", preferredStyle: .alert)
@@ -120,7 +111,5 @@ class SettingsViewController: ICViewController {
         }))
         present(alertVC!, animated: true, completion: nil)
     }
-    
+
 }
-
-

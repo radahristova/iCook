@@ -13,8 +13,7 @@ class ICNavigationController: UINavigationController {
     override func viewDidLoad() {
         configureStyle()
     }
-    
-    
+
     private func configureStyle() {
         let appearance = UINavigationBarAppearance()
         modalPresentationStyle = .fullScreen
@@ -25,7 +24,6 @@ class ICNavigationController: UINavigationController {
         navigationBar.standardAppearance = appearance;
         navigationBar.scrollEdgeAppearance = navigationBar.standardAppearance
         navigationBar.tintColor = .icAccentColor
-
     }
-    
+
 }

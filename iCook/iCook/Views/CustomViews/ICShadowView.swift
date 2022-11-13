@@ -8,13 +8,12 @@
 import UIKit
 
 class ICShadowView: ICView {
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         configureStyle()
     }
-    
+
     private func configureStyle() {
         addShadow()
     }
@@ -25,4 +24,5 @@ class ICShadowView: ICView {
             configureStyle()
         } 
     }
+
 }
