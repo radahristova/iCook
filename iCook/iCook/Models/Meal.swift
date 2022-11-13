@@ -6,24 +6,25 @@
 //
 
 import Foundation
-import RealmSwift
 
-class Meal: Object {
-    @Persisted var name: String
-    @Persisted var id: String
-    @Persisted private var thumbnailString: String
-    var thumbnailURL: URL? { URL(string: thumbnailString) }
+class Meal {
     var details: MealDetails?
-
-    convenience init?(from json: [AnyHashable: Any]) {
+    var id: String
+    var name: String
+    var thumbnailURL: URL?
+    
+    init(details: MealDetails? = nil, id: String, name: String, thumbnailURL: URL? = nil) {
+        self.details = details; self.id = id; self.name = name; self.thumbnailURL = thumbnailURL
+    }
+    
+    init?(from json: [AnyHashable: Any]) {
         guard let id = json["idMeal"] as? String,
               let name = json["strMeal"] as? String,
-              let thumbnailString = json["strMealThumb"] as? String else {
+              let string = json["strMealThumb"] as? String else {
             return nil
         }
-        self.init()
         self.id = id
         self.name = name
-        self.thumbnailString = thumbnailString
+        self.thumbnailURL = URL(string: string)
     }
 }

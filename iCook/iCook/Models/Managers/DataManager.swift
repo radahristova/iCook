@@ -5,7 +5,7 @@
 //  Created by Rada Hristova on 12.11.22.
 //
 
-import RealmSwift
+import Foundation
 
 class MealsAPI {
     let BASE_URL: URL = URL(string: "https://www.themealdb.com/api/json/v1/1")!
@@ -17,7 +17,6 @@ class MealsAPI {
 
 class DataManager {
     let api: MealsAPI
-    let realm = try! Realm()
     
     init(api: MealsAPI = MealsAPI()) {
         self.api = api

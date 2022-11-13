@@ -47,7 +47,10 @@ class MealsListViewController: ICViewController {
         // Divider Color set to clear
         tableView.separatorColor = .clear
         tableView.backgroundColor = .icBackgroundColor
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         manager?.get(in: category) { [weak self] in self?.meals = $0 }
     }
 }
@@ -72,7 +75,10 @@ extension MealsListViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let meal = meals?[indexPath.row] {
-            let mealDetailsVC = MealDetailsViewController(with: meal, manager: manager)
+            let mealDetailsVC = MealDetailsViewController(
+                meal: meal,
+                manager: manager
+            )
             navigationController?.pushViewController(mealDetailsVC, animated: true)
         }
     }

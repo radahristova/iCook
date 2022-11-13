@@ -5,14 +5,16 @@
 //  Created by Rada Hristova on 24.11.21.
 //
 
-import Foundation
+import RealmSwift
 
 extension DataManager: DataSaving {
+    
+    private var realm: Realm { try! Realm() }
     
     func save(meal: Meal) {
         do {
             try realm.write {
-                realm.add(meal)
+                realm.add(MealPersistent(meal: meal))
             }
         } catch let error {
             print(error)
@@ -20,9 +22,7 @@ extension DataManager: DataSaving {
     }
     
     func savedMeals() -> [Meal]? {
-        let result = realm.objects(Meal.self)
-        let array = Array(result)
-        return array.isEmpty == false ? array : nil
+        savedMealsPersistent()?.compactMap { Meal(object: $0) }
     }
     
     func hasSavedMeal(withID mealID: String) -> Bool {
@@ -42,60 +42,36 @@ extension DataManager: DataSaving {
         }
     }
     
-    private func meal(withID id: String) -> Meal? {
-        savedMeals()?.first(where: { $0.id == id })
+    private func savedMealsPersistent() -> [MealPersistent]? {
+        let result = realm.objects(MealPersistent.self)
+        let array = Array(result)
+        return array.isEmpty == false ? array : nil
+    }
+    
+    private func meal(withID id: String) -> MealPersistent? {
+        savedMealsPersistent()?.first(where: { $0.id == id })
     }
 }
 
-//class StorageManager : StorageManaging {
-//    static var sharedInstance = StorageManager()
-//    private init() {}
-//
-//    var favoritesCount: Int {
-//        favorites.count
-//    }
-//    var hasAddedMaxFavorites: Bool {
-//        favorites.count >= maxFavorites
-//    }
-//    var maxFavorites: Int {
-//        10
-//    }
-//
-//    private var favorites: [Meal] {
-//        set {
-//            favoritesInMemory = newValue
-//            let data = try? JSONEncoder().encode(newValue)
-//            UserDefaults.standard.set(data, forKey: "favorites")
-//        }
-//        get {
-////            if favoritesInMemory == nil,
-////               let data = UserDefaults.standard.value(forKey: "favorites") as? Data,
-//////               let favorites = try? JSONDecoder().decode([Meal].self, from: data) {
-////                favoritesInMemory = favorites
-////            }
-//            return favoritesInMemory ?? []
-//        }
-//    }
-//
-//    private var favoritesInMemory: [Meal]?
-//
-//    func add(toFavorites meal: Meal) -> Bool {
-//        if hasAddedMaxFavorites == false {
-//            favorites.append(meal)
-//            return true
-//        }
-//        return false
-//    }
-//
-//    func hasAddedAtIndex(toFavorites mealID: String?) -> Int? {
-//        favorites.firstIndex(where: { $0.id == mealID })
-//    }
-//
-//    func remove(fromFavoritesAt index: Int)  {
-//        favorites.remove(at: index)
-//    }
-//
-//    func meal(at index: Int) -> Meal? {
-//        favorites[safe: index]
-//    }
-//}
+extension Meal {
+    convenience init(object: MealPersistent) {
+        var url: URL?
+        if let string = object.thumbnailString {
+            url = URL(string: string)
+        }
+        self.init(id: object.id, name: object.name, thumbnailURL: url)
+    }
+}
+
+class MealPersistent: Object {
+    @Persisted var name: String
+    @Persisted var id: String
+    @Persisted var thumbnailString: String?
+
+    convenience init(meal: Meal) {
+        self.init()
+        name = meal.name
+        id = meal.id
+        thumbnailString = meal.thumbnailURL?.absoluteString
+    }
+}

@@ -6,19 +6,17 @@
 //
 
 import Foundation
-import RealmSwift
 
-class MealDetails: Object {
-    @Persisted var area: String
-    @Persisted var instructions: String
-    @Persisted var categoryName: String?
+class MealDetails {
+    var area: String
+    var instructions: String
+    var categoryName: String?
 
-    convenience init?(from json: [AnyHashable: Any]) {
+    init?(from json: [AnyHashable: Any]) {
         guard let instructions = json["strInstructions"] as? String,
               let area = json["strArea"] as? String else {
             return nil
         }
-        self.init()
         self.area = area
         self.instructions = instructions
         categoryName = json["strCategory"] as? String

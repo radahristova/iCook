@@ -57,7 +57,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let meal = meals?[indexPath.item] {
-            let mealDetailsVC = MealDetailsViewController(with: meal, manager: manager)
+            let mealDetailsVC = MealDetailsViewController(meal: meal, manager: manager)
             navigationController?.pushViewController(mealDetailsVC, animated: true)
         }
     }

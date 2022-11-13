@@ -18,7 +18,7 @@ class MealDetailsViewController: ICViewController {
     private let meal: Meal!
     private let manager: DataManaging?
 
-    init(with meal: Meal, manager: DataManaging?) {
+    init(meal: Meal, manager: DataManaging?) {
         self.meal = meal; self.manager = manager
         super.init(nibName: "MealDetailsViewController", bundle: nil)
     }
