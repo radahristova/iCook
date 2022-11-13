@@ -8,7 +8,7 @@
 import Foundation
 
 class MealListModelResponse: BaseAPIObject {
-    var mealList: [MealListModel]?
+    var mealList: [Meal]?
     
     private enum CodingKeys: String, CodingKey {
         case meals
@@ -16,7 +16,7 @@ class MealListModelResponse: BaseAPIObject {
     
     required init(from decoder: Decoder) throws {
         let container = try? decoder.container(keyedBy: CodingKeys.self)
-        mealList = try? container?.decode([MealListModel].self, forKey: .meals)
+        mealList = try? container?.decode([Meal].self, forKey: .meals)
         
         super.init()
                                  
@@ -24,7 +24,7 @@ class MealListModelResponse: BaseAPIObject {
 }
 
 
-class MealListModel: Codable {
+class Meal: Codable {
     
     var strMeal: String?
     var strMealThumb: String?

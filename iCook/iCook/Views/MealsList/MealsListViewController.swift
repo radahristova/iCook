@@ -16,7 +16,7 @@ class MealsListViewController: ICViewController {
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: Variables
-    private var mealList: [MealListModel]? {
+    private var mealList: [Meal]? {
         didSet{
             DispatchQueue.main.async { [weak self] in
                 self?.tableView.reloadData()

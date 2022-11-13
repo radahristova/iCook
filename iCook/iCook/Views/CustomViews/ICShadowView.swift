@@ -2,7 +2,7 @@
 //  ICShadowView.swift
 //  iCook
 //
-//  Created by Yavor Stanoev on 2.12.21.
+//  Created by Rada Hristova on 2.12.21.
 //
 
 import UIKit

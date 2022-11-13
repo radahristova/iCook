@@ -2,7 +2,7 @@
 //  ICConstants.swift
 //  iCook
 //
-//  Created by Yavor Stanoev on 3.12.21.
+//  Created by Rada Hristova on 3.12.21.
 //
 
 import UIKit

@@ -2,7 +2,7 @@
 //  UIColor+HEX.swift
 //  iCook
 //
-//  Created by Yavor Stanoev on 12.11.21.
+//  Created by Rada Hristova on 12.11.21.
 //
 
 import Foundation

@@ -19,10 +19,10 @@ class MealDetailsViewController: ICViewController {
     
     
     //MARK: Variables
-    private var meal: MealListModel!
+    private var meal: Meal!
     
     //MARK: Life Cycle
-    init(with meal: MealListModel) {
+    init(with meal: Meal) {
         self.meal = meal
         super.init(nibName: "MealDetailsViewController", bundle: nil)
         

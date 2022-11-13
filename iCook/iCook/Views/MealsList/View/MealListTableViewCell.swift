@@ -30,7 +30,7 @@ class MealListTableViewCell: ICTableViewCell {
         
     }
     
-    func populate(withMeal meal: MealListModel) {
+    func populate(withMeal meal: Meal) {
         let url = URL(string: meal.strMealThumb ?? "")
         categoryImageView.kf.setImage(with: url)
         categoryMealLabel.text = meal.strMeal

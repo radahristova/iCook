@@ -12,10 +12,10 @@ protocol StorageManaging {
     var maxFavorites: Int { get }
     var hasAddedMaxFavorites: Bool { get }
     @discardableResult
-    func add(toFavorites meal: MealListModel) -> Bool
+    func add(toFavorites meal: Meal) -> Bool
     func remove(fromFavoritesAt index: Int)
     func hasAddedAtIndex(toFavorites mealID: String?) -> Int?
-    func meal(at index: Int) -> MealListModel?
+    func meal(at index: Int) -> Meal?
    
 }
 
@@ -33,7 +33,7 @@ class StorageManager : StorageManaging {
         10
     }
     
-    private var favorites: [MealListModel] {
+    private var favorites: [Meal] {
         set {
             favoritesInMemory = newValue
             let data = try? JSONEncoder().encode(newValue)
@@ -42,16 +42,16 @@ class StorageManager : StorageManaging {
         get {
             if favoritesInMemory == nil,
                let data = UserDefaults.standard.value(forKey: "favorites") as? Data,
-               let favorites = try? JSONDecoder().decode([MealListModel].self, from: data) {
+               let favorites = try? JSONDecoder().decode([Meal].self, from: data) {
                 favoritesInMemory = favorites
             }
             return favoritesInMemory ?? []
         }
     }
     
-    private var favoritesInMemory: [MealListModel]?
+    private var favoritesInMemory: [Meal]?
     
-    func add(toFavorites meal: MealListModel) -> Bool {
+    func add(toFavorites meal: Meal) -> Bool {
         if hasAddedMaxFavorites == false {
             favorites.append(meal)
             return true
@@ -60,14 +60,14 @@ class StorageManager : StorageManaging {
     }
     
     func hasAddedAtIndex(toFavorites mealID: String?) -> Int? {
-        favorites.firstIndex(where: { $0.idMeal == mealID })
+        favorites.firstIndex(where: { $0.id == mealID })
     }
     
     func remove(fromFavoritesAt index: Int)  {
         favorites.remove(at: index)
     }
     
-    func meal(at index: Int) -> MealListModel? {
+    func meal(at index: Int) -> Meal? {
         favorites[safe: index]
     }
     
