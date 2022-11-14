@@ -60,7 +60,7 @@ extension DataManager: DataSaving {
     }
 }
 
-fileprivate extension Meal {
+extension Meal {
     convenience init(object: MealPersistent) {
         var url: URL?
         if let string = object.thumbnailString {
@@ -70,7 +70,7 @@ fileprivate extension Meal {
     }
 }
 
-fileprivate class MealPersistent: Object {
+class MealPersistent: Object {
     @Persisted var name: String
     @Persisted var id: String
     @Persisted var thumbnailString: String?
